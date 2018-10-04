@@ -1,1 +1,1 @@
-# Top level information for the Western CubeSat Project
+Check out the Wiki for Project Information
