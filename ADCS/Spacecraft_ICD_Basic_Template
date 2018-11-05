@@ -1,18 +1,68 @@
 Basic Spacecraft Interface Control Document
 
-INTERFACE: %% State Your Subsystem Here
+INTERFACE: Attitude Determination and Control System (ADCS)
 
 MECHANICAL INTERFACES:
--- SUBSYSTEM %% Replace with your subsystem name
+-- Attitude Determination and Control System (ADCS))
 
 %% Here is where you describe your mechanical interface. Provide information on materials and type of fastener. Provide information on mass, volume, and centre of mass of unit. Provide information on thermal constraints. If any are unknown, state that they are unknown (as that will be your future action item).
 
--- MECHANICAL %% Identify either Spirit or Opportunity
+-- MECHANICAL (Spirit & Opportunity)
+	- We will be using 3 gyroscopes along each axis for attitude determination during an eclipse:
+		- Material composition:
+		- Type of fastener:
+		- Mass:
+  - We will also be using a magnetometer for attitude determination when using the gyroscopes:
+    - Material composition:
+		- Type of fastener:
+		- Mass:
+  - We will also be using a sun sensor for attitude determination during normal operation:
+    - Material composition:
+		- Type of fastener:
+		- Mass:
+	- We will be using 3 magnetorquers for attitude control:
+		- Material composition:
+		- Type of fastener:
+		- Mass:
 
 %% Here, the mechanical team acknowledges the interface / requests specific information / highlights any conflicts. In the case of the ADCS or OBDH subsystem, BOTH mechanical teams must acknowledge the interface.
 
 ELECTRICAL INTERFACES:
--- SUBSYSTEM %% Replace with your subsystem name
+-- Attitude Determination and Control System (ADCS)
+
+-- ELECTRICAL (Spirit & Opportunity)
+	- We will be using 3 gyroscopes along each axis for attitude determination during an eclipse:
+		- Required voltage:
+		- Nominal current:
+		- Nominal power:
+		- Standby current draw:
+		- Standby power draw:
+		- Power switching (at what rate can the unit be switched on and off):
+		- Required connector:
+  - We will also be using a magnetometer for attitude determination when using the gyroscopes:
+  	- Required voltage:
+		- Nominal current:
+		- Nominal power:
+		- Standby current draw:
+		- Standby power draw:
+		- Power switching (at what rate can the unit be switched on and off):
+		- Required connector:
+  - We will also be using a sun sensor for attitude determination during normal operation:
+  	- Required voltage:
+		- Nominal current:
+		- Nominal power:
+		- Standby current draw:
+		- Standby power draw:
+		- Power switching (at what rate can the unit be switched on and off):
+		- Required connector:
+	- We will be using 3 magnetorquers as actuators:
+		- Required voltage:
+		- Nominal current:
+		- Nominal power:
+		- Standby current draw:
+		- Standby power draw:
+		- Power switching (at what rate the unit can be switched on and off):
+		- Required connector:
 
 %% Here is where you describe your electrical interface. Provide information on required voltage, nominal current draw (or power), standby current draw (or power), power switching (at what rate can the unit be switched on and off), required connector. If any are unknown, state that they are unknown (as that will be your future action item).
 
@@ -22,10 +72,15 @@ ELECTRICAL INTERFACES:
 
 
 DATA INTERFACES:
--- SUBSYSTEM %% Replace with your subsystem name
+-- Attitude Determination and Control System (ADCS)
+	- Description of data interface:
+	- Physical data connector:
+	- Estimated data rate:
+	- Description of required software commands (for example, does your unit broadcast status values once per minute, or does a request have to be sent to your unit to send that status? Does your unit require an instruction to switch on and then switch off? Does your unit have multiple components that each require individual instructions?):
+
 
 %% Here is where you describe your data interface. Provide information on the physical data connector, estimated data rate, description of required software commands (for example, does your unit broadcast status values once per minute, or does a request have to be sent to your unit to send that status? Does your unit require an instruction to switch on and then switch off? Does your unit have multiple components that each require individual instructions?). If any are unknown, state they are unknown (as that will be your future action item).
 
 -- OBDH
 
-%% Here, the onboard computer team acknowledges the interface / requests specific information / highlights any conflicts. 
+%% Here, the onboard computer team acknowledges the interface / requests specific information / highlights any conflicts.
