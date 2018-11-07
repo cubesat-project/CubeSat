@@ -1,13 +1,13 @@
 Basic Spacecraft Interface Control Document
 
-INTERFACE: %% State Your Subsystem Here
+INTERFACE: STRU Opportunity
 
 MECHANICAL INTERFACES:
--- SUBSYSTEM %% Replace with your subsystem name
+-- SUBSYSTEM Opportunity
 
 %% Here is where you describe your mechanical interface. Provide information on materials and type of fastener. Provide information on mass, volume, and centre of mass of unit. Provide information on thermal constraints. If any are unknown, state that they are unknown (as that will be your future action item).
 
--- MECHANICAL %% Identify either Spirit or Opportunity
+-- MECHANICAL %%  Opportunity
 
 %% Here, the mechanical team acknowledges the interface / requests specific information / highlights any conflicts. In the case of the ADCS or OBDH subsystem, BOTH mechanical teams must acknowledge the interface.
 
