@@ -7,10 +7,15 @@ MECHANICAL INTERFACES:
 
 Solar panels mounted to the outside surfaces of the long sides of the CubeSat (along x,y axes). Panels mounted via corner screws.
 Temperature range: -40 to +85 Celcius
-Mass: 100g
+Mass: 100-160g
 
 EPS board mounted in stacked formation with corner screws (most likely)
-Temperature and mass currently unknown
+Temperature range: -40 to +85 Celcius
+Mass: 80-200g
+
+Batteries mounted with board (most likely)
+Temperature range: -40 to +85 Celcius
+Mass: 100-200g
 
 -- MECHANICAL Opportunity
 
