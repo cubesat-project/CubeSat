@@ -1,31 +1,33 @@
 Basic Spacecraft Interface Control Document
 
-INTERFACE: %% State Your Subsystem Here
+INTERFACE: EPS Opportunity
 
 MECHANICAL INTERFACES:
--- SUBSYSTEM %% Replace with your subsystem name
+-- SUBSYSTEM: Structure
 
-%% Here is where you describe your mechanical interface. Provide information on materials and type of fastener. Provide information on mass, volume, and centre of mass of unit. Provide information on thermal constraints. If any are unknown, state that they are unknown (as that will be your future action item).
+Solar panels mounted to the outside surfaces of the long sides of the CubeSat (along x,y axes). Panels mounted via corner screws.
+Temperature range: -40 to +85 Celcius
+Mass: 100g
 
--- MECHANICAL %% Identify either Spirit or Opportunity
+EPS board mounted in stacked formation with corner screws (most likely)
+Temperature and mass currently unknown
+
+-- MECHANICAL Opportunity
 
 %% Here, the mechanical team acknowledges the interface / requests specific information / highlights any conflicts. In the case of the ADCS or OBDH subsystem, BOTH mechanical teams must acknowledge the interface.
 
 ELECTRICAL INTERFACES:
--- SUBSYSTEM %% Replace with your subsystem name
+-- SUBSYSTEM: ADCS, OBDH, Communication, Payload
 
-%% Here is where you describe your electrical interface. Provide information on required voltage, nominal current draw (or power), standby current draw (or power), power switching (at what rate can the unit be switched on and off), required connector. If any are unknown, state that they are unknown (as that will be your future action item).
+Providing power to all components during entire orbit period either from solar panels, batteries or both.
 
--- EPS %% Identify either Spirit or Opportunity
-
-%% Here, the electrical team acknowledges the interface / requests specific information / highlights any conflicts. In the case of the ADCS or OBDH subsystem, BOTH electrical teams must acknowledge the interface.
-
+-- EPS Opportunity
 
 DATA INTERFACES:
--- SUBSYSTEM %% Replace with your subsystem name
+-- SUBSYSTEM: OBDH
 
-%% Here is where you describe your data interface. Provide information on the physical data connector, estimated data rate, description of required software commands (for example, does your unit broadcast status values once per minute, or does a request have to be sent to your unit to send that status? Does your unit require an instruction to switch on and then switch off? Does your unit have multiple components that each require individual instructions?). If any are unknown, state they are unknown (as that will be your future action item).
+Sending sensor data on voltage, current and temperature levels as well as battery charge levels.
 
--- OBDH
+-- OBDH: Opportunity
 
 %% Here, the onboard computer team acknowledges the interface / requests specific information / highlights any conflicts. 
