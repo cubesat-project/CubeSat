@@ -8,22 +8,22 @@ MECHANICAL INTERFACES:
 %% Here is where you describe your mechanical interface. Provide information on materials and type of fastener. Provide information on mass, volume, and centre of mass of unit. Provide information on thermal constraints. If any are unknown, state that they are unknown (as that will be your future action item).
 
 -- MECHANICAL (Spirit & Opportunity)
-	- We will be using 3 gyroscopes along each axis for attitude determination during an eclipse:
-		- Material composition:
-		- Type of fastener:
-		- Mass:
+  - We will be using 3 gyroscopes along each axis for attitude determination during an eclipse:
+	- Material composition:
+	- Type of fastener:
+	- Mass: 0.3g
   - We will also be using a magnetometer for attitude determination when using the gyroscopes:
-    - Material composition:
-		- Type of fastener:
-		- Mass:
+    	- Material composition:
+	- Type of fastener:
+	- Mass:
   - We will also be using a sun sensor for attitude determination during normal operation:
-    - Material composition:
-		- Type of fastener:
-		- Mass:
-	- We will be using 3 magnetorquers for attitude control:
-		- Material composition:
-		- Type of fastener:
-		- Mass:
+    	- Material composition: 
+	- Type of fastener: 3x M2 threaded holes
+	- Mass: < 5g
+  - We will be using 3 magnetorquers for attitude control:
+   	 - Material composition:
+	- Type of fastener: Tied directly to PCB
+	- Mass: < 30g
 
 %% Here, the mechanical team acknowledges the interface / requests specific information / highlights any conflicts. In the case of the ADCS or OBDH subsystem, BOTH mechanical teams must acknowledge the interface.
 
@@ -31,38 +31,38 @@ ELECTRICAL INTERFACES:
 -- Attitude Determination and Control System (ADCS)
 
 -- ELECTRICAL (Spirit & Opportunity)
-	- We will be using 3 gyroscopes along each axis for attitude determination during an eclipse:
-		- Required voltage:
-		- Nominal current:
-		- Nominal power:
-		- Standby current draw:
-		- Standby power draw:
-		- Power switching (at what rate can the unit be switched on and off):
-		- Required connector:
+  - We will be using 3 gyroscopes along each axis for attitude determination during an eclipse:
+	- Required voltage: 2.7-3.6V 
+	- Nominal current:
+	- Nominal power: 
+	- Standby current draw:
+	- Standby power draw:
+	- Power switching (at what rate can the unit be switched on and off):
+	- Required connector:
   - We will also be using a magnetometer for attitude determination when using the gyroscopes:
-  	- Required voltage:
-		- Nominal current:
-		- Nominal power:
-		- Standby current draw:
-		- Standby power draw:
-		- Power switching (at what rate can the unit be switched on and off):
-		- Required connector:
+  	- Required voltage: 1.7-3.6V
+	- Nominal current:
+	- Nominal power:
+	- Standby current draw:
+	- Standby power draw:
+	- Power switching (at what rate can the unit be switched on and off):
+	- Required connector:
   - We will also be using a sun sensor for attitude determination during normal operation:
-  	- Required voltage:
-		- Nominal current:
-		- Nominal power:
-		- Standby current draw:
-		- Standby power draw:
-		- Power switching (at what rate can the unit be switched on and off):
-		- Required connector:
-	- We will be using 3 magnetorquers as actuators:
-		- Required voltage:
-		- Nominal current:
-		- Nominal power:
-		- Standby current draw:
-		- Standby power draw:
-		- Power switching (at what rate the unit can be switched on and off):
-		- Required connector:
+  	- Required voltage: 5V
+	- Nominal current:
+	- Nominal power:
+	- Standby current draw:
+	- Standby power draw:
+	- Power switching (at what rate can the unit be switched on and off):
+	- Required connector:
+  - We will be using 3 magnetorquers as actuators:
+	- Required voltage: 5 Vdc
+	- Nominal current:
+	- Nominal power:
+	- Standby current draw:
+	- Standby power draw:
+	- Power switching (at what rate the unit can be switched on and off):
+	- Required connector:
 
 %% Here is where you describe your electrical interface. Provide information on required voltage, nominal current draw (or power), standby current draw (or power), power switching (at what rate can the unit be switched on and off), required connector. If any are unknown, state that they are unknown (as that will be your future action item).
 
