@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">CubeSat Portal</a>
+  <button class="navbar-toggler btn btn-outline-primary" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="navbarNav" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed">
+    <ul  *ngIf="auth.isAuthenticated()" class="navbar-nav">
+      <li *ngFor="let header of headers"
+      (click)="onSelect(header)"
+      [class.active]="header == activeHeader"
+      class="nav-item">
+        <a class="nav-link" routerLink={{header.route}}>{{header.friendlyValue}}</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-auto"></ul>
+    <ul class="navbar-nav">
+      <li *ngIf="!auth.isAuthenticated(); else alreadyAuthenticated" class="nav-item">
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <ng-template #alreadyAuthenticated>
+        <li class="nav-item dropdown" ngbDropdown placement="bottom-right">
+          <a class="nav-link dropdown-toggle" ngbDropdownToggle id="userDropdown" role="button" aria-haspopup="true" aria-expanded="false">{{auth.getCurrentUser()?.getName()}}</a>
+          <div ngbDropdownMenu aria-labelledby="userDropdown">
+            <a class="dropdown-item" routerLink="/users/edit" [queryParams]='{ id: auth.getCurrentUser()?.id }'>Edit Profile</a>
+            <ng-container *ngIf="auth.isAdministrator()">
+                <a class="dropdown-item" routerLink="/anomaly-subscription" [queryParams]='{ id: auth.getCurrentUser()?.id }'>Manage Anomaly Subscriptions</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" routerLink="/users">Manage Users</a>
+              <a class="dropdown-item" routerLink="/system-inputs">Manage System Inputs</a>
+            </ng-container>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" routerLink="/logout"><strong>Logout</strong></a>
+          </div>
+        </li>
+        <li class = "nav-item">
+          <a class="nav-link" routerLink="/logout">Logout</a>
+        </li>
+      </ng-template>
+    </ul>
+  </div>
+</nav>

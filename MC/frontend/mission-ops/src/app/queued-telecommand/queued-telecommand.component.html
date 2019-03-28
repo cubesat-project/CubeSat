@@ -1,0 +1,56 @@
+<div *ngIf="queuedTelecommand && telecommandDetails">
+  <div style="cursor: pointer;" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="queuedTelecommandDetailsPane">  
+    <span class = "align-middle">
+        <span class = "badge badge-success">{{orderRank}}</span>
+        &nbsp;
+        <ng-container>
+            <span *ngIf = "queuedTelecommand.priority" class = "badge badge-danger">!</span>
+            <span *ngIf = "!queuedTelecommand.priority" class = "badge" style = "color: transparent;">!</span>
+        </ng-container>
+        &nbsp;
+        <b>{{telecommandDetails.name}}</b>
+        &nbsp;
+        {{getFormatedDate()}}
+        <ng-container *ngIf="!isInPast">
+          <button (click)="deleteQueuedTelecommand()" type="button" class="btn btn-outline-danger d-flex float-right"><i class = "fa fa-trash"></i></button>
+        </ng-container>
+    </span>
+  </div>
+  <div id="queuedTelecommandDetailsPane" [ngbCollapse]="isCollapsed">
+    <form>
+      <hr/>
+      <div class="form-check">
+        <input [ngModel] = "queuedTelecommand.priority" type="checkbox" class="form-check-input" name="queuedTelecommandPriority" disabled readonly>
+        <label>High Priority Command</label>
+      </div>
+      <div class="form-row">
+        <div class = "col">
+            <label>Transmission Pass</label>
+        </div>
+        <div class = "col">
+            <input [ngModel] = "queuedTelecommand.transmissionPassID"  class="form-control" name= "queuedTelecommandTransmissionPassID" readonly>
+        </div>
+       <div class = "col">
+          <label>Execution Pass</label>
+       </div>
+        <div class = "col">
+            <input [ngModel] = "queuedTelecommand.executionPassID"  class="form-control" name= "queuedTelecommandExecutionPassID" readonly>
+        </div>
+      </div>
+      <div class = "form-group">
+        <label>Execution Datetime</label>
+        <input [value] = "getFormatedDate()"  class="form-control" name= "queuedTelecommandExecutionTimeUTC" readonly>
+      </div>
+      <ng-container *ngIf = "queuedTelecommand.commandParameters.trim() != ''">
+        <div class = "form-group">
+          <label>Command Parameters</label>
+          <input [ngModel] = "queuedTelecommand.commandParameters"  class="form-control" name= "queuedTelecommandCommandParams" readonly>
+        </div>
+      </ng-container>
+      <div *ngIf="user" class = "form-group">
+        <label>Responsible User</label>
+        <input [ngModel] = "user.getName()"  class="form-control" name= "queuedTelecommandUser" readonly>
+      </div>
+    </form>
+  </div>
+</div>

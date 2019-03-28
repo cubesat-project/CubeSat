@@ -1,0 +1,13 @@
+<div class="container text-center">
+  <ng-container *ngIf="!errorMsg; else showError">
+    <h2 class="mb-3">{{media?.name}}</h2>
+    <div class="row justify-content-md-center">
+      <app-panorama-viewer [inputData]="media"></app-panorama-viewer>
+    </div>
+  </ng-container>
+  <ng-template #showError>
+    <h2 class="mb-3">Error</h2>
+    <p>{{errorMsg}}</p>
+  </ng-template>
+  <a class="btn btn-outline-secondary mt-3" routerLink="/payloadData" role="button">Payload Data Gallery</a>
+</div>

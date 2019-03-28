@@ -1,0 +1,12 @@
+<div [formGroup] = "formGroup">
+  <div class="input-group">
+      <input class="form-control" [owlDateTime]="dt" [formControlName]="dateFormControlName">
+      <div class="input-group-append">
+        <div class="btn btn-outline-secondary" style="border-top-right-radius: 0.25rem;border-bottom-right-radius:0.25rem" [owlDateTimeTrigger]="dt">
+          <i class="fa fa-calendar"></i>
+        </div>
+      </div>
+      <owl-date-time #dt [showSecondsTimer]="true"></owl-date-time>
+  </div>
+</div>
+

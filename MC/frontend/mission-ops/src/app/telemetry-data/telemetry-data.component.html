@@ -1,0 +1,22 @@
+<div *ngIf = "componentTelemetry">
+  <div *ngIf = "telemetryData; else noData">
+        <app-chart [values] = "telemetryValues"
+        [title] = "componentTelemetry.name"
+        [xAxis] = "'Time'"
+        [name] = "'Some Measurement'"
+        [labels] = "telemetryTimes"
+        [maxValue] = "componentTelemetry.upperBound"
+        [minValue] = "componentTelemetry.lowerBound"
+        [startDate] = "startDate"
+        [endDate] = "endDate"
+        [yAxis] = "telemetryTypeUnit"></app-chart>
+  </div>
+</div>
+
+<ng-template #noData>
+  <div class = "text-center">
+    <div class = "spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>

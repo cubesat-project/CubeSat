@@ -1,0 +1,107 @@
+<h2 class="mb-3">Queue</h2>
+<div class = "row">
+  <div class = "col">
+      <div class="btn-group" role="group">
+          <button class = "btn btn-outline-success" (click) = "promptAddQueuedTelecommand()">Add Telecommand to Queue</button>
+          <button class = "btn btn-outline-success" (click) = "promptAddQueuedTelecommandBatch()">Add Telecommand Batch to Queue</button>
+          <button class="btn btn-outline-success" (click)="promptAddPass()">Add New Pass</button>
+        </div>
+  </div>
+</div>
+<br/>
+<div class = "row">
+  <div class = "col">
+    <ngb-tabset activeId="ngb-tab-1">
+      <ngb-tab title="Past">
+        <ng-template ngbTabContent>
+          <ul class="list-group mt-2">
+            <ng-container *ngIf = "pastPasses && pastPasses.length > 0; else noPastPasses">
+              <li *ngFor="let pass of pastPassesObs | async"
+              (click)="onSelect(pass)"
+              [class.active]="pass === selectedPass"
+              class="list-group-item">
+                <b>Pass {{pass.passID}}</b> Actual Pass Time: {{getFormatedDate(pass.actualPassDateTime)}}
+                <br/>
+                <small class="text-muted">Total Allowed Bandwidth: <b>{{pass.availableBandwidth}}</b></small>
+                &nbsp;
+                <small class="text-muted">Total Allowed Power: <b>{{pass.availablePower}}</b></small>
+              </li>
+            </ng-container>
+            </ul> 
+            <div class="d-flex justify-content-between p-2">
+              <ngb-pagination
+                [collectionSize]="(pastPassesTotal | async)" [(page)]="passService.page" [pageSize]="passService.pageSize">
+            </ngb-pagination>
+              <select class="custom-select" style="width: auto" name="passService.pageSize" [(ngModel)]="passService.pageSize">
+                <option [ngValue]="10">10 items per page</option>
+                <option [ngValue]="20">20 items per page</option>
+              </select>
+            </div>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab title="Future">
+          <ng-template ngbTabContent>
+            <ul class="list-group mt-2">
+              <ng-container *ngIf = "futurePasses && futurePasses.length > 0; else noFuturePasses">
+                  <li *ngFor="let pass of futurePassesObs | async"
+                  (click)="onSelect(pass)"
+                  [class.active]="pass === selectedPass"
+                  class="list-group-item">
+                    <b>Pass {{pass.passID}}</b> Estimated Pass Time: {{getFormatedDate(pass.estimatedPassDateTime)}}
+                    <br/>
+                    <small class="text-muted">Total Allowed Bandwidth: <b>{{pass.availableBandwidth}}</b></small>
+                    &nbsp;
+                    <small class="text-muted">Total Allowed Power: <b>{{pass.availablePower}}</b></small>
+                  </li>
+              </ng-container>
+              </ul>
+              <div class="d-flex justify-content-between p-2">
+                <ngb-pagination
+                  [collectionSize]="(futurePassesTotal | async)" [(page)]="passService.page" [pageSize]="passService.pageSize">
+              </ngb-pagination>
+                <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="passService.pageSize">
+                  <option [ngValue]="10">10 items per page</option>
+                  <option [ngValue]="20">20 items per page</option>
+                </select>
+              </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+  </div>
+  <div class = "col">
+    <ngb-tabset *ngIf="selectedPass">
+      <ngb-tab>
+        <ng-template ngbTabTitle>Transmission Queue <span class="badge badge-info">{{selectedPass.numberOfTelecommandsToBeTransmitted}}</span></ng-template>
+          <ng-template ngbTabContent>
+            <app-transmission-queue [selectedPass] = "selectedPass" [telecommands] = "telecommands"></app-transmission-queue>
+        </ng-template>
+      </ngb-tab>
+      <ngb-tab>
+        <ng-template ngbTabTitle>Execution Queue <span class="badge badge-info">{{selectedPass.numberOfTelecommandsToBeExecuted}}</span></ng-template>
+        <ng-template ngbTabContent>
+            <app-execution-queue [selectedPass] = "selectedPass" [telecommands] = "telecommands"></app-execution-queue>
+        </ng-template>
+      </ngb-tab>
+    </ngb-tabset>
+  </div>
+</div>
+
+<ng-template #noPastPasses>
+  <ng-container *ngIf = "pastPasses && pastPasses.length == 0; else spinner">
+    <p class = "font-weight-bolder mt-2">No past passes are available to view.</p>
+  </ng-container>
+</ng-template>
+
+<ng-template #noFuturePasses>
+  <ng-container *ngIf = "futurePasses && futurePasses.length == 0; else spinner">
+    <p class = "font-weight-bolder mt-2">No future passes are available to view.</p>
+  </ng-container>
+</ng-template>
+
+<ng-template #spinner>
+  <div class = "text-center">
+    <div class = "spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>

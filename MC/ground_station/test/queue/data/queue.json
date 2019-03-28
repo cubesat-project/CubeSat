@@ -1,0 +1,1 @@
+{"batch":[{"id":1,"component":"blah","command":"A","name":"example name","defaultPriorityLevel":true,"bandwidthUsage":0.5,"powerConsumption":0.9},{"id":2,"component":"blah","command":"B","name":"boop","defaultPriorityLevel":true,"bandwidthUsage":0.5,"powerConsumption":0.9}]}

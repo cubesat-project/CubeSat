@@ -1,0 +1,31 @@
+<nav aria-label="User page navigation">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="page === minPage">
+      <a class="page-link" aria-label="First" (click)="firstPage()">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item" [class.disabled]="page === minPage">
+      <a class="page-link" aria-label="Previous" (click)="prevPage()">
+        <span aria-hidden="true">&lsaquo;</span>
+      </a>
+    </li>
+    <ng-container *ngFor="let displayPage of displayPages">
+      <li class="page-item" [class.active]="page === displayPage">
+        <a class="page-link" (click)="goToPage(displayPage)">
+          {{displayPage}}
+        </a>
+      </li>
+    </ng-container>
+    <li class="page-item" [class.disabled]="page === maxPage">
+      <a class="page-link" aria-label="Next" (click)="nextPage()">
+        <span aria-hidden="true">&rsaquo;</span>
+      </a>
+    </li>
+    <li class="page-item" [class.disabled]="page === maxPage">
+      <a class="page-link" aria-label="Last" (click)="lastPage()">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>

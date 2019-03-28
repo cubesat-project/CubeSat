@@ -1,0 +1,42 @@
+<div class="col">
+  <div *ngIf="selectedPass">
+    <ng-container *ngIf="!selectedPass.passHasOccurred"> 
+      <div class = "row d-flex justify-content-center mt-2">
+      <button class = "btn btn-outline-success" (click) = "submitTransmissionQueueToGroundStation()">
+        Save to Ground Station <i class="fa fa-upload"></i>
+      </button>
+    </div>
+    </ng-container>
+    <ul class = "list-group mt-2">
+      <ng-container *ngIf = "passQueuedTelecommands && passQueuedTelecommands.length > 0; else noTelecommands">
+        <li *ngFor="let queuedTelecommand of passQueuedTelecommands, let i = index"
+        class="list-group-item border border-primary">
+          <app-queued-telecommand
+              [queuedTelecommand] = "queuedTelecommand" 
+              [telecommands] = "telecommands"
+              [users] = "users"
+              [orderRank]="i+1"
+              [isInPast]="selectedPass.passHasOccurred"
+              (reloadQueuedTelecommands)="reloadQueuedTelecommands($event)">
+          </app-queued-telecommand>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</div>
+
+<ng-template #noTelecommands>
+  <ng-container *ngIf = "passQueuedTelecommands && passQueuedTelecommands.length == 0; else spinner">
+    <div class="row justify-content-center">
+      <p><b>No telecommands are being transmitted during this pass.</b></p>
+    </div>
+  </ng-container>
+</ng-template>
+
+<ng-template #spinner>
+  <div class = "text-center">
+    <div class = "spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,42 @@
+[
+    { 
+    	"componentTelemetryID": 23,
+    	"collectionDateTime": "2019-03-17 02:51:37",
+    	"telemetryValue": 55
+    },
+    { 
+    	"componentTelemetryID": 22,
+    	"collectionDateTime": "2019-03-17 03:52:40",
+    	"telemetryValue": 126
+    },
+    { 
+    	"componentTelemetryID": 50,
+    	"collectionDateTime": "2019-03-17 02:53:12",
+    	"telemetryValue": 3.7
+    },
+    { 
+    	"componentTelemetryID": 50,
+    	"collectionDateTime": "2019-03-17 03:54:39",
+    	"telemetryValue": 1.8
+    },
+    { 
+    	"componentTelemetryID": 23,
+    	"collectionDateTime": "2019-03-17 02:05:32",
+    	"telemetryValue": 36
+    },
+    { 
+    	"componentTelemetryID": 23,
+    	"collectionDateTime": "2019-03-17 03:55:43",
+    	"telemetryValue": 30
+    },
+    { 
+    	"componentTelemetryID": 25,
+    	"collectionDateTime": "2019-03-17 02:56:43",
+    	"telemetryValue": 43
+    },
+    { 
+    	"componentTelemetryID": 25,
+    	"collectionDateTime": "2019-03-17 03:57:59",
+    	"telemetryValue": 39
+    }
+]

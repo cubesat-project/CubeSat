@@ -1,0 +1,4 @@
+.btn-group > .btn:not(:hover) {
+    border-color: var(--dark);
+    color: var(--dark);
+}

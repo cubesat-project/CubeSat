@@ -1,0 +1,16 @@
+<ng-template #modalContent let-modal>
+  <div class="modal-header">
+    <div class="modal-title">
+      <ng-content select="[modal-title]"></ng-content>
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross Clicked')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <ng-content select="[modal-body]"></ng-content>
+  </div>
+  <div class="modal-footer">
+    <ng-content select="[modal-footer]"></ng-content>
+  </div>
+</ng-template>

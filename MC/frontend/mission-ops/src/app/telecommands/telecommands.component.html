@@ -1,0 +1,30 @@
+<h2 class="mb-3">Telecommands</h2>
+<div class="row">
+    <div class="col">
+      <button type="button"
+      *ngIf="viewingExistingTelecommand"
+      class="btn btn-outline-success"
+      (click)="addNewTelecommand()">Add New Telecommand</button>
+      <br/>
+      <br/>
+      <ul class="list-group">
+        <li *ngFor="let telecommand of telecommands"
+        (click)="onSelect(telecommand)"
+        [class.active]="telecommand === selectedTelecommand"
+        class="list-group-item">
+          {{telecommand.name}}
+        </li>
+      </ul>
+      <div *ngIf = "telecommands && telecommands.length == 0;">
+        <br/>
+        <p class = "font-weight-bolder">No telecommands have been created.</p>
+      </div>
+    </div>
+    <div class="col">
+      <app-telecommand-details [telecommand] = "selectedTelecommand" [existingTelecommand] = "viewingExistingTelecommand"></app-telecommand-details>      
+      <app-alert [alertStyle]="'danger'"></app-alert>
+      <button *ngIf="!viewingExistingTelecommand" (click)="saveTelecommand()" type="button" class="btn btn-outline-info mr-1">Save Changes</button>
+      <button *ngIf="selectedTelecommand && viewingExistingTelecommand" (click)="archiveTelecommand()" type="button" class="btn btn-outline-danger">Archive Telecommand</button>
+      <button *ngIf="selectedTelecommand && !viewingExistingTelecommand" (click)="discardTelecommand()" type="button" class="btn btn-outline-danger">Discard Telecommand</button>
+    </div>
+</div>
