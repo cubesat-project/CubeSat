@@ -1,0 +1,24 @@
+<div *ngIf="telecommand">
+    <form>
+      <div class="form-group">
+        <label >Telecommand Name</label>
+        <input [readonly]="existingTelecommand" [(ngModel)] = "telecommand.name" class="form-control" name = "telecommandName">
+      </div>
+      <div class="form-group">
+        <label >Bandwidth Usage</label>
+        <input [readonly]="existingTelecommand" [(ngModel)] = "telecommand.bandwidthUsage" class="form-control" name = "telecommandBandwidthUsage">
+      </div>
+      <div class="form-group">
+        <label >Power Consumption</label>
+        <input [readonly]="existingTelecommand" [(ngModel)] = "telecommand.powerConsumption"  class="form-control" name = "telecommandPowerConsumption">
+      </div>
+      <div class="form-check">
+        <input [readonly]="existingTelecommand" [(ngModel)] = "telecommand.defaultPriorityLevel" type="checkbox" class="form-check-input" name="telecommandDefaultPriorityLevel">
+        <label>High Priority Command</label>
+      </div>
+      <div class="form-group">
+        <label>Command JSON</label>
+        <textarea [readonly]="existingTelecommand" [(ngModel)] = "telecommand.command"  class="form-control" rows=10 name= "telecommandCommand"></textarea>
+      </div>
+    </form>
+</div>

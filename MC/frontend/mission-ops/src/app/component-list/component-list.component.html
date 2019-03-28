@@ -1,0 +1,63 @@
+<h2 class="mb-3">Telemetry</h2>
+<div class = "row">
+  <div class = "col mb-3">
+    <form class = "d-flex" [formGroup] = "chooseDataRangeForm" (ngSubmit) = "submitDataRange()">
+      <label for ="startDate" class = "align-self-center px-1 pt-1">From:</label>
+      <app-datetime-picker dateFormControlName = "startDate" [formGroup] = "chooseDataRangeForm"></app-datetime-picker>
+      <label for ="endDate" class = "align-self-center pr-1 pl-2 pt-1">To:</label>
+      <app-datetime-picker dateFormControlName = "endDate" [formGroup] = "chooseDataRangeForm"></app-datetime-picker>
+      <button class = "btn btn-outline-success align-self-start ml-2" [disabled] = "!chooseDataRangeForm.valid">
+        Refresh <i class="fa fa-refresh"></i>
+      </button>
+    </form>
+  </div>
+</div>
+<div class = "row">
+    <div class = "col-md-4">
+      <div class="list-group list-group-flush mt-2 accordion border" id = "systemAccordion">
+        <div *ngFor = "let sys of systems">
+          <div class = "card">
+            <div class = "card-header list-group-item mb-0" [id]="'heading-'+sys.systemID" [class.active]="sys === selectedSystem"
+            (click)="onSelect(sys)" type="button" [attr.aria-expanded]="!isCollapsed" [attr.aria-controls]="sys.systemID">
+                {{sys.systemName}}
+            </div>
+          <div [id]="sys.systemID" [ngbCollapse] = "sys != selectedSystem">
+            <div class="card-body border">
+                <ng-container *ngIf = "components && components.length > 0; else noComponents">
+                  <div *ngFor="let comp of components"
+                    (click) = "onSelectComp(comp)"
+                    [class.active]="comp === selectedComponent"
+                    class="list-group-item mb-0 border">
+                    {{comp.name}}
+                  </div>
+                </ng-container>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class = "col-md-8">
+      <div class = "mb-2">
+        <div *ngIf = "selectedComponent">
+            <app-component-telemetry [telemetryTypes] = "telemetryTypes" [component] = "selectedComponent" [dateRangeObj] = "dateRangeObj"></app-component-telemetry>
+        </div>
+      </div>
+  </div>
+</div>
+
+<ng-template #noComponents>
+  <ng-container *ngIf = "components && components.length == 0; else spinner">
+      <p>
+        No components available for this system.
+      </p>
+  </ng-container>
+</ng-template>
+
+<ng-template #spinner>
+  <div *ngIf = "selectedSystem" class = "text-center">
+    <div class = "spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</ng-template>

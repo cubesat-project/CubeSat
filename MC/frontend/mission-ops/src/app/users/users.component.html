@@ -1,0 +1,85 @@
+<h2 class="mb-3">Manage Users</h2>
+<div class="row">
+  <div class="col mb-3">
+    <a class="btn btn-outline-success" role="button" routerLink="/users/create">
+      Add New User
+    </a>
+  </div>
+</div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Status</th>
+        <th scope="col">Admin</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="userList; else tableSpinner">
+        <tr *ngFor="let user of userList.items">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.status}}</td>
+          <td>
+            <div class="form-check">
+              <input [ngModel]="user.administrator" type="checkbox" class="form-check-input" disabled>
+            </div>
+          </td>
+          <td class="text-left">
+            <div class="btn-group" role="group">
+              <a class="btn btn-outline-info" routerLink="/users/edit" [queryParams]="{ id: user.id }"role="button">Edit</a>
+              <button (click)="promptDeleteUser(user)" class="btn btn-outline-danger" [attr.disabled]="auth.getCurrentUser().email === user.email ? '' : null">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-template #tableSpinner>
+        <tr>
+          <td colspan="3">
+            <div class="text-center">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </table>
+
+  <div class="row justify-content-center">
+    <div class="col-sm-auto">
+      <app-pagination [maxPage]="pages" (pageChange)="pageChanged($event)"></app-pagination>
+    </div>
+    <div class="col-sm-auto">
+      <select [(ngModel)]="userLimit" class="custom-select" style="width: auto">
+        <option value="5">5 items per page</option>
+        <option value="10">10 items per page</option>
+        <option value="25">25 items per page</option>
+        <option value="100">100 items per page</option>
+      </select>
+    </div>
+  </div>
+
+<app-modal #deleteUserModal>
+  <ng-container modal-title>
+    <h1>Are You Sure?</h1>
+  </ng-container>
+  <ng-container modal-body>
+    <p>Are you sure you want to delete user <span class="text-primary">{{deletingUser?.email}}</span>?</p>
+    <p>They will be deleted <span class="text-danger">permanently</span> and can never be recovered.</p>
+    <p>Enter their email into the field below to confirm you want to delete them.</p>
+    <input [(ngModel)]="deleteConfirm" class="form-control" type="email" placeholder="Email" name="deleteConfirm">
+    <app-alert #deleteUserAlert [alertStyle]="'danger'"></app-alert>
+  </ng-container>
+  <ng-container modal-footer>
+    <button (click)="deleteUser()" class="btn btn-outline-danger" [attr.disabled]="deleteConfirm !== deletingUser?.email ? '' : null">
+      Delete
+      <span *ngIf="processing" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    </button>
+  </ng-container>
+</app-modal>

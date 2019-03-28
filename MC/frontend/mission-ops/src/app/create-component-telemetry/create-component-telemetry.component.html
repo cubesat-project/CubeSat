@@ -1,0 +1,72 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{modalTitle}}</h4>
+    <button type="button" class="close" aria-label="Close"
+     (click)="activeModal.dismiss('Cross click')">
+     <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup] = "createCompTelemForm" (ngSubmit) = "submitNewCompTelem()">
+    <div class = "modal-body">
+      <div class = "container">
+        <div class = "form-group">
+          <label for = "system">System</label>
+          <input type = "text"
+            [value] = "system.systemName"
+            class = "form-control"
+            name = "system"
+            readonly/>
+        </div>
+        <div class = "form-group">
+          <label for = "component">Component</label>
+          <input type = "text"
+            [value] = "component.name"
+            class = "form-control"
+            name = "component"
+            readonly/>
+        </div>
+        <div class = "form-group">
+          <label for = "name">Component Telemetry Name</label>
+          <input type = "text"
+            class = "form-control"
+            formControlName = "name"/>
+        </div>
+        <div class = "form-group">
+            <label for = "telemetryTypeID">Telemetry Type</label>
+            <select class="form-control" 
+                    id="telemetryTypeID" 
+                    formControlName="telemetryTypeID"
+                    (change) = "updateTelemetryType($event.target.value)">
+                <option *ngFor="let tt of telemetryTypes, let i = index" 
+                        [attr.selected] = "i == 0 ? true : null" 
+                        [value] = "tt.telemetryTypeID"
+                        [attr.value] = "tt.telemetryTypeID">
+                        {{tt.name}} ({{tt.telemetryUnit}})
+                        </option>
+            </select>
+        </div>
+        <div class="form-check">
+          <input [checked]="hasBounds"  formControlName = "newComponentTelemetryHasBounds" type="checkbox" class="form-check-input" (change)="hasBounds = !hasBounds">
+          <label>Has Range</label>
+        </div>
+        <div *ngIf = "hasBounds">
+          <div class = "form-group">
+              <label for = "lowerBound">Lower Bound</label>
+              <input type = "number"
+                class = "form-control"
+                formControlName = "lowerBound"/>
+              <label for = "upperBound">Upper Bound</label>
+              <input type = "number"
+                class = "form-control"
+                formControlName = "upperBound"/>
+          </div>
+        </div>
+      </div>
+      <app-alert [alertStyle]="'danger'"></app-alert>
+    </div>
+  <div class="modal-footer">
+    <button [ngClass] = "isEditing ? 'btn btn-outline-info' : 'btn btn-outline-success'"
+      [disabled] = "!createCompTelemForm.valid">
+      {{modalSubmit}}
+    </button>
+  </div>
+  </form>

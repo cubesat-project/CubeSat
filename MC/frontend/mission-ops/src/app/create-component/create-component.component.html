@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{modalTitle}}</h4>
+    <button type="button" class="close" aria-label="Close"
+     (click)="activeModal.dismiss('Cross click')">
+     <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form [formGroup] = "createCompForm" (ngSubmit) = "submitNewComp()">
+    <div class = "modal-body">
+      <div class = "container">
+        <div class = "form-group">
+          <label for = "system">System</label>
+          <input type = "text"
+            [value] = "system.systemName"
+            class = "form-control"
+            formControlName = "system"
+            readonly/>
+        </div>
+        <div class = "form-group">
+          <label for = "name">Component Name</label>
+          <input type = "text"
+            class = "form-control"
+            formControlName = "name"/>
+        </div>
+      </div>
+      <app-alert [alertStyle]="'danger'"></app-alert>
+    </div>
+  <div class="modal-footer">
+    <button [ngClass] = "isEditing ? 'btn btn-outline-info' : 'btn btn-outline-success'"
+      [disabled] = "!createCompForm.valid">
+      {{modalSubmit}}
+    </button>
+  </div>
+  </form>

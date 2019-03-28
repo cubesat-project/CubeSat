@@ -1,0 +1,89 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+    cubesat-cognito
+
+    Sample SAM Template for cubesat-cognito
+    
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+    Function:
+        Timeout: 3
+
+
+Resources:
+    # Authentication Resources
+    CognitoUserPool:
+        Type: AWS::Cognito::UserPool
+        Properties:
+            UserPoolName: CubeSatCognitoUserPool
+            Schema:
+                -  
+                    AttributeDataType: Boolean
+                    Name: administrator
+                    Mutable: True
+                -
+                    AttributeDataType: String
+                    Name: prefContactMethod
+                    Mutable: True
+            UsernameAttributes: 
+                - email
+            EmailVerificationSubject: 'Mission Control Verification'
+            EmailVerificationMessage: 'Your verification code is {####}'
+            AdminCreateUserConfig:
+                AllowAdminCreateUserOnly: true
+                InviteMessageTemplate:
+                    EmailSubject: 'Welcome to CubeSat Mission Control'
+            MfaConfiguration: 'OFF'
+
+    CognitoUserPoolClient:
+        Type: AWS::Cognito::UserPoolClient
+        Properties:
+            ClientName: CubeSatCognitoClient
+            GenerateSecret: false
+            UserPoolId: !Ref CognitoUserPool
+    
+    CognitoIdPool:
+        Type: AWS::Cognito::IdentityPool
+        Properties:
+            IdentityPoolName: CubeSatCognitoIdentityPool
+            CognitoIdentityProviders:
+                -
+                    ClientId: !Ref CognitoUserPoolClient
+                    ProviderName: !GetAtt CognitoUserPool.ProviderName
+            AllowUnauthenticatedIdentities: false
+    
+    CognitoIAMUser:
+        Type: AWS::IAM::User
+        Properties:
+            Policies:
+                -
+                    PolicyName: CognitoListUsers
+                    PolicyDocument:
+                        Version: '2012-10-17'
+                        Statement:
+                            - 
+                                Effect: Allow
+                                Action:
+                                    - cognito-idp:ListUsers
+                                    - cognito-idp:AdminCreateUser
+                                    - cognito-idp:AdminDeleteUser
+                                    - cognito-idp:AdminGetUser
+                                    - cognito-idp:AdminResetUserPassword
+                                    - cognito-idp:AdminUpdateUserAttributes
+                                Resource: !GetAtt CognitoUserPool.Arn
+    
+    CognitoIAMUserAccessKey:
+        Type: AWS::IAM::AccessKey
+        Properties:
+            UserName: !Ref CognitoIAMUser
+            
+Outputs:
+    
+    CognitoAccessKey:
+        Description: "Access key for the CognitoIAMUserAccessKey"
+        Value: !Ref CognitoIAMUserAccessKey
+
+    CognitoAccessKeySecretKey:
+        Description: "Secret key for the CognitoIAMUserAccessKey"
+        Value: !GetAtt CognitoIAMUserAccessKey.SecretAccessKey

@@ -1,0 +1,12 @@
+<div *ngIf="showAlert" [class]="alertClasses" role="alert">
+    <button (click)="hide()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <p class="alert-heading"><b>{{heading}}</b></p>
+    <ul *ngIf="listBody; else simpleBody" class="my-0">
+      <li *ngFor="let item of bodyList">{{item}}</li>
+    </ul>
+    <ng-template #simpleBody>
+        <p class="mb-0">{{body}}</p>
+    </ng-template>
+  </div>

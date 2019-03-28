@@ -1,0 +1,31 @@
+<h2 class="mb-3">Payload Data</h2>
+<div>
+  <ng-container *ngIf="mediaList; else loadingSpinner">
+    <div class="row">
+      <div *ngFor="let m of mediaList.items; index as i" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+        <a routerLink="view" [queryParams]="{ id: m.id }"style="color: inherit">
+          <div class="card">
+            <img src="{{m.previewSrc}}" class="card-img-top" [hidden]="loading[i]" (load)="loading[i] = false">
+            <div *ngIf="loading[i]" class="text-center">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-title">
+                <b>{{m.name}}</b>
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #loadingSpinner>
+    <div class="text-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+  </ng-template>
+</div>

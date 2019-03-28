@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title">Create New Pass</h4>
+  <button type="button" class="close" aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<form [formGroup] = "createPassForm" (ngSubmit) = "submitPass()">
+    <div class = "modal-body">
+      <div class = "container">
+        <div class = "form-group">
+          <label for = "passDate">Pass Datetime</label>
+          <app-datetime-picker dateFormControlName = "passDate" timeFormControlName = "passTime" [formGroup] = "createPassForm"></app-datetime-picker>
+        </div>
+        <div class = "form-group">
+          <label for = "availablePower">Available Power:</label>
+          <input type = "text" class = "form-control" formControlName="availablePower" [formGroup] = "createPassForm">
+        </div>
+        <div class = "form-group">
+          <label for = "availableBandwidth">Available Bandwidth:</label>
+          <input type = "text" class = "form-control" formControlName="availableBandwidth" [formGroup] = "createPassForm">
+        </div>
+      </div>
+      <app-alert [alertStyle]="'danger'"></app-alert>
+    </div>
+    <div class="modal-footer">
+      <button class = "btn btn-outline-success"
+              [disabled] = "!createPassForm.valid">
+                Add Pass
+      </button>
+    </div>
+  </form>

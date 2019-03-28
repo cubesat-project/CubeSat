@@ -1,0 +1,178 @@
+<h2 class="mb-3">CubeSat System Inputs</h2>
+<div class = "row">
+  <div class = "col-md-3">
+    <div class = "container">
+      <h4 class="mb-2">Systems</h4>
+      <ng-container *ngIf="systems && systems.length > 0; else noAvailableSystems">
+        <ul class="list-group">
+          <li *ngFor="let system of systems"
+          (click)="onSelectSys(system)"
+          [class.active]="system === selectedSystem"
+          class="list-group-item">
+            {{system.systemName}}
+          </li>
+        </ul>
+      </ng-container>
+      <ng-template #noAvailableSystems>
+        <p>No systems have been registered.</p>
+      </ng-template>
+      <div class = "btn-group mt-3 w-100">
+          <button type="button" class="btn btn-outline-success" (click)="promptAddSystem()">Add</button>
+          <button type="button" class="btn btn-outline-info" (click)="promptEditSystem()" [disabled]="!selectedSystem">Edit</button>
+          <button type="button" class="btn btn-outline-danger" (click)="promptDeleteSystem()" [disabled]="!selectedSystem">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div class = "col-md-3">
+    <div class = "container">
+      <h4 class="mb-2">Components</h4>
+      <div *ngIf = "selectedSystem && components && components.length > 0; else noSystem">
+          <ul class="list-group">
+              <li *ngFor="let component of components"
+              (click)="onSelectComp(component)"
+              [class.active]="component === selectedComponent"
+              class="list-group-item">
+                {{component.name}}
+              </li>
+            </ul>
+      </div>
+      <div class = "btn-group mt-3 w-100">
+          <button type="button" class="btn btn-outline-success" (click)="promptAddComponent()" [disabled] = "!selectedSystem">Add</button>
+          <button type="button" class="btn btn-outline-info" (click)="promptEditComponent()" [disabled]="!selectedComponent">Edit</button>
+          <button type="button" class="btn btn-outline-danger" (click)="promptDeleteComponent()" [disabled]="!selectedComponent">Delete</button>
+      </div>
+      <ng-template #noSystem>
+        <ng-container *ngIf = "selectedSystem && components && components.length == 0; else pleaseSelectSystem">
+          <p>No components have been registered to this system.</p>
+        </ng-container>
+      </ng-template>
+      <ng-template #pleaseSelectSystem>
+        <p>
+          Please select a system to view, modify and delete components.
+        </p>
+      </ng-template>
+    </div>
+  </div>
+  <div class = "col-md-6">
+    <div class = "container">
+      <h4 class="mb-2">Component Telemetry</h4>
+      <div *ngIf = "selectedComponent && compTelemetries && compTelemetries.length > 0; else noComponent">
+          <ul class="list-group">
+              <li *ngFor="let compTelem of compTelemetries"
+              (click)="onSelectCompTelem(compTelem)"
+              [class.active]="compTelem === selectedCompTelem"
+              class="list-group-item">
+                {{compTelem.name}}
+                <div *ngIf = "compTelem.upperBound">
+                  <span class="badge badge-warning mr-2"> LB: {{compTelem.lowerBound}}</span>
+                  <span class="badge badge-warning"> UB: {{compTelem.upperBound}}</span>
+                </div>
+                <div class="badge badge-success"> TT: {{getTelemetryType(compTelem.telemetryTypeID).name}}</div>
+              </li>
+            </ul>
+      </div>
+      <div class = "btn-group mt-3 w-100">
+          <button type="button" class="btn btn-outline-success" (click)="promptAddCompTelem()" [disabled] = "!selectedSystem || !selectedComponent">Add</button>
+          <button type="button" class="btn btn-outline-info" (click)="promptEditCompTelem()" [disabled]="!selectedCompTelem">Edit</button>
+          <button type="button" class="btn btn-outline-danger" (click)="promptDeleteCompTelem()" [disabled]="!selectedCompTelem">Delete</button>
+      </div>
+      <ng-template #noComponent>
+        <ng-container *ngIf = "selectedComponent && compTelemetries && compTelemetries.length == 0; else pleaseSelectComp">
+          <p>No component telemetry have been registered to this system.</p>
+        </ng-container>
+      </ng-template>
+      <ng-template #pleaseSelectComp>
+        <p>
+          Please select a component to view, modify and delete component telemetry.
+        </p>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<hr/>
+<div class = "row mt-3">
+  <div class = "col-md-4">
+    <div class = "container">
+      <h4 class="mb-2">Telemetry Types</h4>
+      <ng-container *ngIf = "telemetryTypes && telemetryTypes.length > 0; else noTelemetryTypes">
+        <ul class = "list-group">
+          <li *ngFor="let tt of telemetryTypes"
+          (click)="onSelectTelemetryType(tt)"
+          [class.active]="tt===selectedTelemetryType"
+          class="list-group-item">
+            {{tt.name}} <span class = "badge badge-secondary">{{tt.telemetryUnit}}</span>
+          </li>
+        </ul>
+      </ng-container>
+      <ng-template #noTelemetryTypes>
+        <p>No telemetry types have been registered.</p>
+      </ng-template>
+      <div class = "btn-group mt-3 w-100">
+        <button type="button" class="btn btn-outline-success" (click)="promptAddTelemetryType()">Add</button>
+        <button type="button" class="btn btn-outline-info" (click)="promptEditTelemetryType()" [disabled]="!selectedTelemetryType">Edit</button>
+        <button type="button" class="btn btn-outline-danger" (click)="promptDeleteTelemetryType()" [disabled]="!selectedTelemetryType">Delete</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<app-modal #deleteSystemModal>
+  <ng-container modal-title>
+    <h1>Are You Sure?</h1>
+  </ng-container>
+  <ng-container modal-body>
+    <p>Are you sure you want to delete system <span class="text-primary">{{selectedSystem?.systemName}}</span>?</p>
+    <p>It will be deleted <span class="text-danger">permanently</span> along with <span class = "text-danger">all associated components and component telemetry</span> and can never be recovered.</p>
+  </ng-container>
+  <ng-container modal-footer>
+    <button (click)="deleteSystem()" class="btn btn-outline-danger">
+      Delete System
+    </button>
+  </ng-container>
+</app-modal>
+
+<app-modal #deleteComponentModal>
+  <ng-container modal-title>
+    <h1>Are You Sure?</h1>
+  </ng-container>
+  <ng-container modal-body>
+    <p>Are you sure you want to delete component <span class="text-primary">{{selectedComponent?.name}}</span>?</p>
+    <p>It will be deleted <span class="text-danger">permanently</span> along with <span class = "text-danger">all associated component telemetry</span> and can never be recovered.</p>
+  </ng-container>
+  <ng-container modal-footer>
+    <button (click)="deleteComponent()" class="btn btn-outline-danger">
+      Delete Component
+    </button>
+  </ng-container>
+</app-modal>
+
+<app-modal #deleteCompTelemModal>
+    <ng-container modal-title>
+      <h1>Are You Sure?</h1>
+    </ng-container>
+    <ng-container modal-body>
+      <p>Are you sure you want to delete component telemetry <span class="text-primary">{{selectedCompTelem?.name}}</span>?</p>
+      <p>It will be deleted <span class="text-danger">permanently</span> and can never be recovered.</p>
+    </ng-container>
+    <ng-container modal-footer>
+      <button (click)="deleteCompTelem()" class="btn btn-outline-danger">
+        Delete Component Telemetry
+      </button>
+    </ng-container>
+  </app-modal>
+
+<app-modal #deleteTelemetryTypeModal>
+  <ng-container modal-title>
+    <h1>Are You Sure?</h1>
+  </ng-container>
+  <ng-container modal-body>
+    <p>Are you sure you want to delete telemetry type <span class="text-primary">{{selectedTelemetryType?.name}}</span>?</p>
+    <p>It will be deleted <span class="text-danger">permanently</span> and can never be recovered.</p>
+  </ng-container>
+  <ng-container modal-footer>
+    <button (click)="deleteTelemetryType()" class="btn btn-outline-danger">
+      Delete Telemetry Type
+    </button>
+  </ng-container>
+</app-modal>
+  

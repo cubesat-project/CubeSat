@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css"; 
+@import '~font-awesome/css/font-awesome.css';
+@import '~ngx-toastr/toastr.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,600');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans:400,700');
+
+* {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+    }
+    font-family: 'Noto Sans', sans-serif;
+    b {
+        font-family: 'Poppins Semi-Bold', sans-serif;
+    }
+}
+
+.app {
+    min-height: calc(100vh - 150px);
+}
+
+// Fix to bug in the ng-pick-datetime module where it won't display the popup when contained in a modal window.
+.cdk-overlay-container, .cdk-global-overlay-wrapper, .cdk-overlay-backdrop, .cdk-overlay-connected-position-bounding-box, .owl-dt-container {
+    z-index: 1999!important;
+}

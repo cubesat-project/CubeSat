@@ -1,0 +1,63 @@
+<h2 class="mb-3">Telecommand Batches</h2>
+<div class="row">
+  <div class="col">
+    <button type="button"
+    class="btn btn-outline-success"
+    (click)="addNewTelecommandBatch()">Add New Telecommand Batch</button>
+    <br />
+    <br />
+    <ul class="list-group">
+      <li *ngFor="let batch of telecommandBatches"
+      (click)="onSelect(batch)"
+      [class.active]="batch === selectedBatch"
+      class="list-group-item">
+        {{batch.name}}
+      </li>
+    </ul>
+    <div *ngIf = "telecommandBatches && telecommandBatches.length == 0;">
+      <br/>
+      <p class = "font-weight-bolder">No telecommand batches have been created.</p>
+    </div>
+  </div>
+  <div class="col">
+    <div *ngIf="selectedBatch">
+        <form>
+          <div class="form-group">
+            <label>Batch Name</label>
+            <div class="input-group">
+              <input [(ngModel)] = "selectedBatch.name" class="form-control" name = "selectedBatchName">
+              <div class="input-group-append">
+                <button type="button"
+                class="btn btn-outline-success"
+                (click)="saveBatchName()">Save Name</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <ul class="list-group">
+            <app-preset-telecommand-details
+            class="list-group-item border border-primary"
+            *ngFor="let presetCommand of selectedPresetTelecommands"
+            [presetTelecommand]="presetCommand"
+            (reloadPresetTelecommands)="reloadPresetTelecommands($event)">
+          </app-preset-telecommand-details>
+        </ul>
+        <form class="form-inline my-3">
+            <label class="mr-1">New Telecommand: </label>
+            <div class="input-group">
+              <app-telecommand-dropdown
+              [telecommands] = "telecommands"
+              [selectedTelecommand] = "selectedTelecommand"
+              (newSelectedTelecommand) = "updateSelectedTelecommand($event)">
+              </app-telecommand-dropdown>
+              <button type="button"
+              class="btn btn-outline-success ml-1"
+              (click)="addNewPresetTelecommand()">Add Telecommand To Batch</button>
+          </div>
+        </form>
+        <button type="button"
+        class="btn btn-outline-danger"
+        (click)="deleteBatch()">Delete Batch</button>
+    </div>
+  </div>
+</div>

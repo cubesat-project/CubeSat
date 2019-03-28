@@ -1,0 +1,74 @@
+<div class = "col d-flex justify-content-center align-items-center">
+  <div class = "jumbotron">
+    <div class = "row justify-content-center">
+      <h3 class="display-4">CubeSat Portal Login</h3>
+    </div>
+    <div class = "row justify-content-center">
+      <form>
+          <div class="form-group">
+            <label for="emailInput">Email</label>
+            <input [(ngModel)]="email" type="Email" class="form-control" id="emailInput" placeholder="Email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="passwordInput">Password</label>
+            <input [(ngModel)]="password" type="password" class="form-control" id="passwordInput" placeholder="Password" name="password">
+          </div>
+          <app-alert [alertStyle]="'danger'" #loginAlert></app-alert>
+          <button (click)="signIn()" class="btn btn-outline-primary">
+            Sign In
+            <span *ngIf="processing" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          </button>
+          &nbsp;
+          <button (click)="forgotPassword()" class="btn btn-link btn-sm">
+            Forgot Password?
+          </button>
+        </form>
+    </div>
+  </div>
+</div>
+
+<app-modal [dataSource]="pwd" #newPwdModal>
+  <ng-container modal-title>
+    New Password Required
+  </ng-container>
+  <ng-container modal-body>
+    <app-new-password #pwd></app-new-password>
+  </ng-container>
+  <ng-container modal-footer>
+      <button (click)="pwd.changePassword()" class="btn btn-outline-primary">
+        Change Password
+        <span *ngIf="pwd.processing" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+      </button>
+  </ng-container>
+</app-modal>
+
+<app-modal #resetPwdModal>
+  <ng-container modal-title>
+    Reset Password
+  </ng-container>
+  <ng-container modal-body>
+    <form>
+      <div class="form-group">
+        <label for="verificationCodeInput">Verification Code</label>
+        <input [(ngModel)]="verificationCode" type="text" class="form-control" id="verificationCodeInput" placeholder="Verification Code" name="verificationCode">
+        <small id="verificationCodeHelp" class="form-text text-muted">This verification code was sent to {{username}} when your password was reset.</small>
+      </div>
+      <div class="form-group">
+        <label for="newPasswordInput">New Password</label>
+        <input [(ngModel)]="newPassword" type="password" class="form-control" id="newPasswordInput" placeholder="New Password" name="newPassword">
+        <small id="newPasswordHelp" class="form-text text-muted">Password must be at least 8 characters long, and contain at least one lowercase letter, one uppercase letter, one number, and one special character.</small>
+      </div>
+      <div class="form-group">
+        <label for="confirmNewPasswordInput">Confirm New Password</label>
+        <input [(ngModel)]="confirmNewPassword" type="password" class="form-control" id="confirmNewPasswordInput" placeholder="Confirm New Password" name="confirmNewPassword">
+      </div>
+      <app-alert [alertStyle]="'danger'" #resetPwdAlert></app-alert>
+    </form>
+  </ng-container>
+  <ng-container modal-footer>
+    <button (click)="resetPassword()" class="btn btn-outline-primary">
+      Reset Password
+      <span *ngIf="processingNewPassword" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    </button>
+  </ng-container>
+</app-modal>

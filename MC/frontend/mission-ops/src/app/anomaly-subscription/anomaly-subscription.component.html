@@ -1,0 +1,17 @@
+<h2 class="mb-3">Manage Anomaly Subscriptions</h2>
+<div *ngIf="systems && systems.length > 0; else noSystems" class="col-md-8">
+  <ul class="list-group">
+    <li *ngFor="let sys of systems"
+     [class.active]="sys === selectedSys"
+      class="list-group-item">
+      {{sys.systemName}}
+      <button *ngIf="isSubscribed(sys.systemID)" class="btn btn-outline-danger" (click)="removeSub(sys.systemID, sys.systemName)" style="width: 130px; float: right">Unsubscribe</button>
+      <button *ngIf="!isSubscribed(sys.systemID)" class="btn btn-outline-success" (click)="addSubscription(sys.systemID, sys.systemName)" style="width: 130px; float: right">Subscribe</button>
+    </li>
+   </ul>
+</div>
+<ng-template #noSystems>
+    <p>
+      There are no systems to subscribe to.
+    </p>
+</ng-template>

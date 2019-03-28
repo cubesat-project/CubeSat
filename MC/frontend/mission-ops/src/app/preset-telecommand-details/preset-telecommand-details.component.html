@@ -1,0 +1,42 @@
+<div *ngIf="presetTelecommand">
+  <div style="cursor: pointer;" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="presetTelecommandDetailsPane">  
+    <span>
+      {{presetTelecommand.name}}
+    </span>
+  </div>
+  <div id="presetTelecommandDetailsPane" [ngbCollapse]="isCollapsed">
+    <form>
+        <div class="form-check">
+          <input [(ngModel)] = "presetTelecommand.priorityLevel" type="checkbox" class="form-check-input" name="presetTelecommandPriorityLevel">
+          <label>High Priority Command</label>
+        </div>
+        <div class="form-group">
+          <label>Command Parameters JSON</label>
+          <textarea [(ngModel)] = "presetTelecommand.commandParameters"  class="form-control" rows=10 name= "telecommandCommand"></textarea>
+        </div>
+        <label >Relative Execution Time</label>
+        <div class="form-group-inline">
+            <label >Seconds: </label>
+            <input [(ngModel)] = "presetTelecommand.secondDelay" class="form-control" name = "telecommandSecondDelay">
+        </div>
+        <div class="form-group-inline">
+            <label >Minutes: </label>
+            <input [(ngModel)] = "presetTelecommand.minuteDelay" class="form-control" name = "telecommandMinuteDelay">
+        </div>
+        <div class="form-group-inline">
+            <label >Hours: </label>
+            <input [(ngModel)] = "presetTelecommand.hourDelay" class="form-control" name = "telecommandHourDelay">
+        </div>
+        <div class="form-group-inline">
+            <label >Days: </label>
+            <input [(ngModel)] = "presetTelecommand.dayDelay" class="form-control" name = "telecommandDayDelay">
+        </div>
+      </form>
+      <br/>
+      <br/>
+
+      <button (click)="savePresetTelecommand()" type="button" class="btn btn-outline-success">Save Changes</button>
+      <button (click)="discardChanges()" type="button" class="btn btn-outline-warning">Discard Changes</button>
+      <button (click)="deletePresetTelecommand()" type="button" class="btn btn-outline-danger">Delete Preset Telecommand</button>
+    </div>
+</div>

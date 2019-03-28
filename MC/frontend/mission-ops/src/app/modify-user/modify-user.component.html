@@ -1,0 +1,85 @@
+<h2 class="mb-3">Modify User</h2>
+<div class = "mx-3">
+    <form *ngIf="user; else loadingSpinner">
+        <div class="form-group">
+          <label for="nameInput">Name</label>
+          <input [(ngModel)]="user.name" type="text" class="form-control" id="nameInput" placeholder="Name" name="name">
+        </div>
+        <div class="form-group">
+          <label for="emailInput">Email</label>
+          <input [ngModel]="user.email" type="email" class="form-control" id="emailInput" placeholder="Email" name="email" readonly>
+        </div>
+        <div class="form-group">
+          <label for="phoneInput">Phone</label>
+          <input [(ngModel)]="user.phone" type="text" class="form-control" id="phoneInput" placeholder="Phone" name="phone">
+        </div>
+        <div class="form-group">
+          <label for="contactSelect">Preferred Contact Method</label>
+          <select [(ngModel)]="user.preferredContactMethod" class="form-control" id="contactSelect" name="contact">
+            <option value="email">Email</option>
+            <option value="sms">SMS</option>
+          </select>
+        </div>
+        <div class="form-group form-check">
+          <input [(ngModel)]="user.administrator" type="checkbox" class="form-check-input" id="adminInput" name="admin" [attr.disabled]="!auth.isAdministrator() ? '' : null">
+          <label class="form-check-label" for="adminInput">Administrator</label>
+        </div>
+        <div class="form-group">
+          <button *ngIf="user?.id === auth.getCurrentUser()?.id; else resetPasswordButton" (click)="promptChangePassword()" class="btn btn-outline-warning">
+            Change Password
+          </button>
+          <ng-template #resetPasswordButton>
+            <button (click)="resetPassword()" class="btn btn-outline-warning">
+              Reset Password
+            </button>
+          </ng-template>
+        </div>
+        <app-alert [alertStyle]="'danger'" #generalAlert></app-alert>
+        <div class = "btn-group">
+          <button (click)="saveChanges()" class="btn btn-outline-info">
+              Save Changes
+              <span *ngIf="processing" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn-outline-danger" (click)="goBack()">
+              Return Without Saving
+            </button>
+        </div>
+      </form>
+      <ng-template #loadingSpinner>
+        <div class="text-center">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </ng-template>
+</div>
+  
+<app-modal>
+  <ng-container modal-title>
+    Change Password
+  </ng-container>
+  <ng-container modal-body>
+    <form>
+      <div class="form-group">
+        <label for="oldPasswordInput">Current Password</label>
+        <input [(ngModel)]="oldPassword" type="password" class="form-control" id="oldPasswordInput" placeholder="Current Password" name="oldPassword">
+      </div>
+      <div class="form-group">
+        <label for="newPasswordInput">New Password</label>
+        <input [(ngModel)]="newPassword" type="password" class="form-control" id="newPasswordInput" placeholder="New Password" name="newPassword">
+        <small id="newPasswordHelp" class="form-text text-muted">Password must be at least 8 characters long, and contain at least one lowercase letter, one uppercase letter, one number, and one special character.</small>
+      </div>
+      <div class="form-group">
+        <label for="confirmNewPasswordInput">Confirm New Password</label>
+        <input [(ngModel)]="confirmNewPassword" type="password" class="form-control" id="confirmNewPasswordInput" placeholder="Confirm New Password" name="confirmNewPassword">
+      </div>
+      <app-alert [alertStyle]="'danger'" #passwordChangeAlert></app-alert>
+    </form>
+  </ng-container>
+  <ng-container modal-footer>
+    <button (click)="changePassword()" class="btn btn-outline-primary">
+      Change Password
+      <span *ngIf="passwordProcessing" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    </button>
+  </ng-container>
+</app-modal>
