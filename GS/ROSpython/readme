@@ -1,0 +1,11 @@
+1. ROS version: kinetic ros
+2. onboard computer: Raspberry Pi 3B+
+3. system: Linux ubuntu 16.04
+Instruction to use ros package:
+  1)build a ROS workspace, help link: http://wiki.ros.org/catkin/Tutorials/create_a_workspace 
+  http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
+  2)if the workspace name is catkin_ws: use command: cd catkin_ws
+  3)catkin_make
+  4)source ./devel/setup.bash     
+  5)roscore
+  6)open a new terminal: rosrun moontracking_1 pythonfilename.py
