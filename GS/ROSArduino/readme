@@ -1,0 +1,4 @@
+1. Use rosserial-python to get communication with Arduino board
+2. Include example to test stepper motors and GPS module
+3. GPSros and GPS_Stepper_encoder/GPS_Stepper_4 implement ROS
+4. please make sure you have installed ros_lib in Arduino ide
