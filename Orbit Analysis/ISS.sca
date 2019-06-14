@@ -1,0 +1,260 @@
+stk.v.11.0
+WrittenBy    STK_v11.5.0
+BEGIN Access
+    Scenario/ISS/Satellite/ISS_UNITY_25575
+    Scenario/ISS/Facility/Wellington_NZ
+
+    IsComputed		 Yes
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Custom
+    CustomTimeInterval		
+    BEGIN EVENTINTERVAL
+        BEGIN Interval
+            Start		 1 Jul 2021 16:00:00.000000000
+            Stop		 1 Aug 2021 16:00:00.000000000
+        END Interval
+        IntervalState		 Explicit
+    END EVENTINTERVAL
+
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Transmit
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+    BEGINUserList
+        0.000000 2.6784e+06
+    ENDUserList
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/ISS/Satellite/ISS_UNITY_25575
+    Scenario/ISS/Facility/Dublin_IR
+
+    IsComputed		 Yes
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Custom
+    CustomTimeInterval		
+    BEGIN EVENTINTERVAL
+        BEGIN Interval
+            Start		 1 Jul 2021 16:00:00.000000000
+            Stop		 1 Aug 2021 16:00:00.000000000
+        END Interval
+        IntervalState		 Explicit
+    END EVENTINTERVAL
+
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Transmit
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+    BEGINUserList
+        0.000000 2.6784e+06
+    ENDUserList
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/ISS/Satellite/ISS_UNITY_25575
+    Scenario/ISS/Facility/Saskatoon
+
+    IsComputed		 Yes
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Custom
+    CustomTimeInterval		
+    BEGIN EVENTINTERVAL
+        BEGIN Interval
+            Start		 1 Jul 2021 16:00:00.000000000
+            Stop		 1 Aug 2021 16:00:00.000000000
+        END Interval
+        IntervalState		 Explicit
+    END EVENTINTERVAL
+
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Transmit
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+    BEGINUserList
+        0.000000 2.6784e+06
+    ENDUserList
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/ISS/Satellite/ISS_UNITY_25575
+    Scenario/ISS/Facility/London
+
+    IsComputed		 Yes
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Custom
+    CustomTimeInterval		
+    BEGIN EVENTINTERVAL
+        BEGIN Interval
+            Start		 1 Jul 2021 16:00:00.000000000
+            Stop		 1 Aug 2021 16:00:00.000000000
+        END Interval
+        IntervalState		 Explicit
+    END EVENTINTERVAL
+
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Transmit
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+    BEGINUserList
+        0.000000 2.6784e+06
+    ENDUserList
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/ISS/Satellite/ISS_UNITY_25575
+    Scenario/ISS/Facility/Victoria
+
+    IsComputed		 Yes
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Custom
+    CustomTimeInterval		
+    BEGIN EVENTINTERVAL
+        BEGIN Interval
+            Start		 1 Jul 2021 16:00:00.000000000
+            Stop		 1 Aug 2021 16:00:00.000000000
+        END Interval
+        IntervalState		 Explicit
+    END EVENTINTERVAL
+
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Transmit
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+    BEGINUserList
+        0.000000 2.6784e+06
+    ENDUserList
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
+BEGIN Access
+    Scenario/ISS/Satellite/ISS_UNITY_25575
+    Scenario/ISS/Facility/St_Johns
+
+    IsComputed		 Yes
+    UpdateOnReference		 Yes
+    DupIsDifferent		 No
+    UIOrderReversed		 No
+    UITimePeriod		 Custom
+    CustomTimeInterval		
+    BEGIN EVENTINTERVAL
+        BEGIN Interval
+            Start		 1 Jul 2021 16:00:00.000000000
+            Stop		 1 Aug 2021 16:00:00.000000000
+        END Interval
+        IntervalState		 Explicit
+    END EVENTINTERVAL
+
+    UseLightTimeDelay		 Yes
+    ClockHost		 Base
+    TimeSense		 Transmit
+    AberrationType		 Annual
+    TimeDelayConvergence		 5e-05
+    MaxTimeStep		 360
+    MinTimeStep		 0.01
+    TimeConvergence		 0.005
+    AbsValueConvergence		 1e-14
+    RelValueConvergence		 1e-08
+    DetectEventsUsingSamplesOnly		 No
+    BEGINUserList
+        0.000000 2.6784e+06
+    ENDUserList
+    Show		 Yes
+    Inherit		 Yes
+    ShowIV		 Yes
+    ShowLineGfx		 Yes
+    ShowHiliteGfx		 Yes
+    LineWidth		 1
+    BEGIN Crdn
+    END Crdn
+
+END Access
+
