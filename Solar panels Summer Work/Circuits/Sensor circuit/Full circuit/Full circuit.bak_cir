@@ -1,0 +1,1134 @@
+[Main]
+FileType=CIR
+Version=12.00
+Program=Micro-Cap
+Component Version=10.00
+Shape Version=11.00
+Screen=1920,1080
+MCAPVersion=12.2.0.0
+Key ID=Demo
+NLCnt=82
+TXCnt=1
+
+[shapedef]
+Name=MAX1249
+Block=-48,-64,48,64,0,16
+BlockLine="Line",-64,-56
+BlockLine="Line",-64,-40
+BlockLine="Line",-64,-24
+BlockLine="Line",-64,-8
+BlockLine="Line",-64,8
+BlockLine="Line",-64,24
+BlockLine="Line",-64,40
+BlockLine="Line",-64,56
+BlockLine="Line",64,56
+BlockLine="Line",64,40
+BlockLine="Line",64,24
+BlockLine="Line",64,8
+BlockLine="Line",64,-8
+BlockLine="Line",64,-24
+BlockLine="Line",64,-40
+BlockLine="Line",64,-56
+FColor=None
+Text=" MAX1249"
+TextInfo=-26,-4,24,10 , -11,0,"Arial"
+
+[shapedef]
+Name=TEMD6010FX01
+Block=-16,-16,16,16,0,3
+BlockLine="Line",-32,-8
+BlockLine="Line",-32,8
+BlockLine="Line",32,-8
+FColor=None
+
+[shapedef]
+Name=Capacitor
+Line=0,0,22,0
+Line=22,-8,22,8
+Line=26,-8,26,8
+Line=26,0,48,0
+Current=32,12,16,12
+
+[shapedef]
+Name=Ground
+Line=0,0,12,0
+Line=12,-8,12,8
+Line=18,-4,18,4
+Line=24,0,24,0
+
+[shapedef]
+Name=LM70
+Block=-32,-32,32,32,0,8
+BlockLine="Line",-48,-24
+BlockLine="Line",-48,-8
+BlockLine="Line",-48,8
+BlockLine="Line",-48,24
+BlockLine="Line",48,24
+BlockLine="Line",48,8
+BlockLine="Line",48,-8
+BlockLine="Line",48,-24
+FColor=None
+Text=" LM70"
+TextInfo=-18,-5,12,9 , -11,0,"Arial"
+
+[shapedef]
+Name=Input
+PolyClosed=5
+PolyLine=8,0
+PolyLine=16,-8
+PolyLine=48,-8
+PolyLine=48,8
+PolyLine=16,8
+FColor=None
+Line=0,0,8,0
+
+[compdef]
+Name=MAX1249
+Definition=Subckt
+Shape=MAX1249
+Mask=28800
+Used=2
+memo=Maxim Integrated MAX1249 ADC
+Label Offset=44,49,-110,74
+PinCnt=16
+Pin="Vdd",a,-6,-7,5,8
+Pin="CH0",a,-6,-5,7,8
+Pin="CH1",a,-6,-3,6,7
+Pin="CH2",a,-6,-1,6,7
+Pin="CH3",a,-6,1,6,7
+Pin="COM",a,-6,3,5,7
+Pin="SHDN__",a,-6,5,5,8
+Pin="VREF",a,-6,7,4,7
+Pin="DGND",a,6,3,-32,7
+Pin="AGND",a,6,5,-31,8
+Pin="REFADJ",a,6,7,-40,7
+Pin="DOUT",a,6,1,-31,7
+Pin="SSTRB",a,6,-1,-37,7
+Pin="DIN",a,6,-3,-21,7
+Pin="CS__",a,6,-5,-28,5
+Pin="SCLK",a,6,-7,-30,8
+
+[compdef]
+Name=PD-Op-Amp
+Definition=Subckt
+Shape=TEMD6010FX01
+Mask=31744
+Used=11
+memo=Photodiode Op-amp circuit
+Label Offset=13,20,8,8
+PinCnt=3
+Pin="3.3V",d,-4,-1,-5,-2
+Pin="Vout",d,4,-1,-5,-3
+Pin="GND",d,-4,1,-3,20
+
+[compdef]
+Name=Input Port
+Definition=Tie
+Shape=Input
+Mask=4096
+Used=3
+memo=Input Port connector used to tie nodes together
+Label Offset=17,8,10,18
+PinCnt=1
+Pin="PinA",0,0,-13,-1
+
+[compdef]
+Name=LM70
+Definition=Subckt
+Shape=LM70
+Mask=20608
+Used=1
+memo=Texas Instruments LM70 SPI interface temperature sensor
+Label Offset=18,72,-5,16
+PinCnt=8
+Pin="SI/O",d,-6,-3,18,7
+Pin="SC",d,-6,-1,18,7
+Pin="NC",d,-6,1,18,6
+Pin="GND",d,-6,3,17,6
+Pin="NC",d,6,-3,-31,7
+Pin="CS__",d,6,-1,-43,5
+Pin="NC",d,6,1,-31,7
+Pin="V+",d,6,3,-31,7
+
+[compdef]
+Name=Ground
+Definition=Ground
+Shape=Ground
+Mask=513
+Used=307
+memo=Ground
+Label Offset=0,0,0,0
+PinCnt=1
+Pin="PinA",0,0,-3,-7
+
+[compdef]
+Name=Capacitor
+Definition=Capacitor
+Shape=Capacitor
+Mask=6145
+Used=38
+memo=Capacitor
+Label Offset=16,12,12,12
+PinCnt=2
+Pin="Plus",6,0,-3,-5
+Pin="Minus",0,0,-14,-5
+
+[Circuit]
+Window Placement=2,3, -1,-1, -8,-31, 52,52,709,604
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+Default Object GridSnap=No
+NodeVoltageFormat=3
+CurrentFormat=3
+PowerFormat=3
+PathDelayFormat=3
+WarningFormat=3
+GridTextFormulaFormat=3
+SpiceType=AMBIGUOUS
+Title_Block_Border=None
+Title_Block=False
+Show Nodes=False
+Show Voltages=False
+Show Current=False
+Show Power=False
+Show Condition=False
+Show Pin Connections=False
+Show Connection Warnings=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=True
+
+[Comp]
+Name=MAX1249
+Style=ShowPinText
+ShowPackagePins=True
+Px=488,312
+
+[Attr]
+ON=44,49,PART
+V
+Style=8192
+
+[Attr]
+ON=44,63,NAME
+V=MAX1249
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=PD-Op-Amp
+Style=ShowPinText
+ShowPinMarkers=True
+ShowPackagePins=True
+Px=224,224
+Rot=4
+
+[Attr]
+ON=-15,-8,PART
+V=PD-1
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=PD-Op-Amp
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=PD-Op-Amp
+Style=ShowPinText
+ShowPinMarkers=True
+ShowPackagePins=True
+Px=224,280
+Rot=4
+
+[Attr]
+ON=-14,-8,PART
+V=PD-2
+Style=8192
+
+[Attr]
+ON=20,-13,NAME
+V=PD-Op-Amp
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=PD-Op-Amp
+Style=ShowPinText
+ShowPinMarkers=True
+ShowPackagePins=True
+Px=224,336
+Rot=4
+
+[Attr]
+ON=-15,-8,PART
+V=PD-3
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=PD-Op-Amp
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=PD-Op-Amp
+Style=ShowPinText
+ShowPinMarkers=True
+ShowPackagePins=True
+Px=224,392
+Rot=4
+
+[Attr]
+ON=-14,-7,PART
+V=PD-4
+Style=8192
+
+[Attr]
+ON=13,-48,NAME
+V=PD-Op-Amp
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=288,272,424,272
+Color=#009F00
+
+[Wire]
+Pxs=288,232,288,272
+Color=#009F00
+
+[Wire]
+Pxs=256,232,288,232
+Color=#009F00
+
+[Wire]
+Pxs=256,288,424,288
+Color=#009F00
+
+[Wire]
+Pxs=256,304,256,344
+Color=#009F00
+
+[Wire]
+Pxs=256,304,424,304
+Color=#009F00
+
+[Wire]
+Pxs=256,400,272,400
+
+[Wire]
+Pxs=272,320,272,400
+Color=#009F00
+
+[Wire]
+Pxs=272,320,424,320
+Color=#009F00
+
+[Comp]
+Name=Input Port
+Px=720,144
+
+[Attr]
+ON=51,-6,PART
+V=PIN_1 (X)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,176
+
+[Attr]
+ON=51,-6,PART
+V=PIN_2 (X)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,208
+
+[Attr]
+ON=51,-6,PART
+V=PIN_3 (GND)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,240
+
+[Attr]
+ON=51,-6,PART
+V=PIN_4 (Vgyro)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,272
+
+[Attr]
+ON=51,-6,PART
+V=PIN_5 (SPI CS1)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,304
+
+[Attr]
+ON=51,-6,PART
+V=PIN_6 (SPI MOSI)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,336
+
+[Attr]
+ON=51,-6,PART
+V=PIN_7 (AGND)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,368
+
+[Attr]
+ON=51,-6,PART
+V=PIN_8 (Photodiode)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,400
+
+[Attr]
+ON=51,-6,PART
+V=PIN_9 (SPI SCK)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,432
+
+[Attr]
+ON=51,-6,PART
+V=PIN_10 (SPI MISO)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,464
+
+[Attr]
+ON=51,-6,PART
+V=PIN_11 (+3.3V)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=720,496
+
+[Attr]
+ON=51,-6,PART
+V=PIN_12 (SPI CS2)
+Style=8192
+
+[Wire]
+Pxs=168,216,192,216
+Color=#000000
+
+[Wire]
+Pxs=168,216,168,272
+Color=#000000
+
+[Wire]
+Pxs=168,384,192,384
+Color=#000000
+
+[Wire]
+Pxs=168,384,168,688
+Color=#000000
+
+[Wire]
+Pxs=168,328,192,328
+Color=#000000
+
+[Wire]
+Pxs=168,328,168,384
+Color=#000000
+
+[Wire]
+Pxs=168,272,192,272
+Color=#000000
+
+[Wire]
+Pxs=168,272,168,328
+Color=#000000
+
+[Wire]
+Pxs=144,464,376,464
+Color=#FF0000
+
+[Wire]
+Pxs=144,232,144,288
+Color=#FF0000
+
+[Wire]
+Pxs=376,256,376,368
+Color=#FF0000
+
+[Wire]
+Pxs=376,464,576,464
+Color=#FF0000
+
+[Wire]
+Pxs=376,256,424,256
+Color=#FF0000
+
+[Wire]
+Pxs=552,368,576,368
+Color=#FF0000
+
+[Wire]
+Pxs=576,368,576,464
+Color=#FF0000
+
+[Wire]
+Pxs=552,288,640,288
+Color=#009F00
+
+[Wire]
+Pxs=640,304,720,304
+Color=#009F00
+
+[Wire]
+Pxs=640,288,640,304
+Color=#009F00
+
+[Wire]
+Pxs=552,272,720,272
+Color=#009F00
+
+[Wire]
+Pxs=632,400,720,400
+Color=#009F00
+
+[Wire]
+Pxs=632,256,632,400
+Color=#009F00
+
+[Wire]
+Pxs=552,256,632,256
+Color=#009F00
+
+[Wire]
+Pxs=552,320,616,320
+Color=#009F00
+
+[Comp]
+Name=LM70
+Style=ShowPinText
+Px=488,664
+
+[Attr]
+ON=18,72,PART
+V
+Style=8192
+
+[Attr]
+ON=18,86,NAME
+V=LM70
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=712,496,720,496
+
+[Wire]
+Pxs=712,496,712,656
+Color=#009F00
+
+[Wire]
+Pxs=536,656,712,656
+Color=#009F00
+
+[Wire]
+Pxs=576,464,576,688
+Color=#FF0000
+
+[Wire]
+Pxs=536,688,576,688
+Color=#FF0000
+
+[Wire]
+Pxs=168,688,440,688
+Color=#000000
+
+[Wire]
+Pxs=440,576,440,640
+Color=#009F00
+
+[Wire]
+Pxs=616,320,616,432
+
+[Wire]
+Pxs=440,576,616,576
+Color=#009F00
+
+[Wire]
+Pxs=408,592,632,592
+Color=#009F00
+
+[Wire]
+Pxs=408,592,408,656
+Color=#009F00
+
+[Wire]
+Pxs=408,656,440,656
+Color=#009F00
+
+[Wire]
+Pxs=576,464,720,464
+Color=#FF0000
+
+[Wire]
+Pxs=632,400,632,592
+Color=#009F00
+
+[Wire]
+Pxs=616,432,720,432
+Color=#009F00
+
+[Wire]
+Pxs=616,432,616,576
+
+[Wire]
+Pxs=144,232,192,232
+Color=#FF0000
+
+[Wire]
+Pxs=144,288,192,288
+Color=#FF0000
+
+[Wire]
+Pxs=144,288,144,344
+Color=#FF0000
+
+[Wire]
+Pxs=144,344,192,344
+Color=#FF0000
+
+[Wire]
+Pxs=144,344,144,400
+Color=#FF0000
+
+[Wire]
+Pxs=144,400,192,400
+Color=#FF0000
+
+[Wire]
+Pxs=144,400,144,464
+Color=#FF0000
+
+[Wire]
+Pxs=376,368,424,368
+Color=#FF0000
+
+[Wire]
+Pxs=376,368,376,464
+Color=#FF0000
+
+[Wire]
+Pxs=552,336,552,352
+
+[Comp]
+Name=Ground
+Px=552,336
+
+[Comp]
+Name=Ground
+Px=720,208
+Rot=2
+
+[Comp]
+Name=Capacitor
+Px=328,368
+
+[Attr]
+ON=16,12,PART
+V=C1
+Style=8192
+
+[Attr]
+ON=16,26,CAPACITANCE
+V=0.1u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=328,336,424,336
+Color=#000000
+
+[Wire]
+Pxs=328,336,328,368
+Color=#000000
+
+[Comp]
+Name=Ground
+Px=328,368
+Rot=2
+
+[Grid Text]
+Text="MOLEX 53398-1271 connector"
+Px=688,120
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=1
+GridUser=10
+ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+CalcVoltage=True
+DisplayMeasure=Last
+ShareScales=True
+
+[Tools]
+Pos=Top
+FILESAVEASOLD=No
+BOM=No
+FILEPCB=No
+PROBE=Yes
+SELECT=Yes
+PAN=Yes
+COMP=Yes
+TEXT=Yes
+WIRE=Yes
+WIRED=Yes
+BUS=Yes
+GRAPHIC=Yes
+FLOWCHART=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=Yes
+PARALLELOGRAM=No
+FC_PROCESS=No
+FC_ALT_PROCESS=No
+FC_DECISION=No
+FC_DATA=No
+FC_PREDEFPROCESS=No
+FC_INTERNALSTORAGE=No
+FC_DOCUMENT=No
+FC_MULTIDOCUMENT=No
+FC_TERMINATOR=No
+FC_PREPARATION=No
+FC_MANUALINPUT=No
+FC_MANUALOPERATION=No
+FC_CONNECTOR=No
+FC_OFFPAGECONNECTOR=No
+FC_PUNCHCARD=No
+FC_PUNCHEDTAPE=No
+FC_SUMMING_JUNCTION=No
+FC_OR=No
+FC_COLLATE=No
+FC_SORT=No
+FC_EXTRACT=No
+FC_MERGE=No
+FC_STORED_DATA=No
+FC_DELAY=No
+FC_SAS=No
+FC_MAGNETIC_DISK=No
+FC_DAS=No
+FC_DISPLAY=No
+SPREAD_SHEET=Yes
+POLYCLOS=No
+POLYOPEN=No
+FLAG=Yes
+INFO=Yes
+HELP=Yes
+HELP_SPICE=No
+LINK=Yes
+CHECK=Yes
+REGION_ENABLE=Yes
+TITLE_BLOCK=Yes
+DIGTRC=No
+DIGTRC2=No
+BUILD_COMMAND=Yes
+DIGALL=No
+GRIDTEXT=Yes
+COMPTEXT=Yes
+NODE=Yes
+MEASURED=Yes
+NODEV=Yes
+CURRENT=Yes
+POWER=Yes
+CONDITIN=Yes
+PIN=Yes
+CONNWARN=Yes
+CROSS=Yes
+GRID=Yes
+BORDER=Yes
+BORDERONE=Yes
+TITLE=Yes
+RUBBER=Yes
+PROPERTY=Yes
+STEP=Yes
+MIRROR=Yes
+ROTATE=Yes
+FLIPY=Yes
+FLIPX=Yes
+CIR_MAKEMACRO=No
+CLEARCUTWIRE=No
+CLIPBOARDCIRPAGE2BMM=No
+FINDCOMP=Yes
+FIND=Yes
+REPEAT=No
+REPLACE=No
+MODEL=Yes
+CIR2CKT=Yes
+ATTDISP=Yes
+ENABLE=Yes
+DISABLE=Yes
+ENABLE_WITH=Yes
+TOFRONT=Yes
+TOBACK=Yes
+SELNEXT=Yes
+PAGEADD=Yes
+PAGEADDTEXT=No
+ADDSECTION=No
+PAGEDEL=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALECIR=Yes
+GOTOFLAG=Yes
+UPLEVEL=Yes
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+DM_LAST=No
+DM_RMS=No
+DM_AVG=No
+DM_PEAK=No
+GRID_NONE=No
+GRID_NORMAL=No
+GRID_BOLD_5=No
+GRID_BOLD_6=No
+GRID_BOLD_USER=No
+GRAPH_PAPER=No
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+RENAMEDEFINE=No
+RENAMECMP=No
+ATTALIGN=No
+RESETNODEPOS=No
+FIT2STANDARD=No
+NODESNAP=No
+MOVETEXT=No
+TEXTINC=No
+TOGGLETEXT=No
+TOGGLEMODE=No
+TOLERANCE=No
+ALIGNAB=No
+ALIGNLEFT=Yes
+ALIGNCENTER=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNMIDDLES=Yes
+ALIGNBOTTOM=Yes
+
+[Section]
+Index=0
+Name="Full circuit"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=425
+TabSize 1=425
+TabSize 2=425
+TabSize 3=425
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+PrinterScale=1
+Scale 0=1
+Scale 1=1
+Scale 2=1
+SB 3=46,68
+Scale 3=1
+Px=345,561
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
+Grid Text RTF=False
+Grid Text Angle=0
+Grid Text GridSnap=True
+Grid Text PinIt=False
+Grid Text JustifyH=Left
+Grid Text JustifyV=Bottom
+Grid GradientColor2=None
+Grid OutlineThickness=1
+Grid OutlineColor=None
+Component Color=#0000FF
+Attribute Text=Height=-12,FStyle=0,Color=#008000,Name=Verdana
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-10,FStyle=0,Color=#FF0000,Name=Arial
+Pin Marker Color=#008000
+Node Number=Height=-11,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=Height=-11,FStyle=0,Color=#000000,Name=Arial
+Dynamic AC Voltage Color=#E4E4E4
+Text Banner Text=Height=-15,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-11,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-11,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block Border=#000000
+Disabled	Color=#C0C0C0
+Search Color=#FFFF00
+Grid Color=#000000
+Graph Paper=#E4E4E4
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+Block Select Color=#51F998
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Text Area]
+Section=0
+Page=1
+
+[Text Area]
+Section=0
+Page=2
+Text=* Schematic File
+Text=*
+Text=* Syntax:
+Text=* .MODEL <model name> [AKO:<reference model name>] <ModelType>
+Text=* +([<parameter name>=<value>][LOT[/#][/GAUSS|/UNIFORM|/WCASE]=[<tol>[%]] |[-<low>%,<high>%]][DEV[/#][/GAUSS|/UNIFORM|/WCASE]=[<tol>[%]]...)
+Text=* ModelType must be one of OPA,D,NPN,NMOS,NJF,PUL,SIN,TRN,CORE,GASFET,VSWITCH,ISWITCH,CAP,IND,RES,PNP,PMOS,PJF,DOUTPUT,DINPUT,UADC,UDAC,UGATE,UTGATE,UEFF,UGFF,UDLY,UPLD,UROM,URAM,UBGT,UIO,LPNP,NIGBT,I,V
+Text=*
+Text=*Examples:
+Text=* .MODEL 2N2222A NPN(BF=150 IS=1E-14)
+Text=* .model M1 NMOS(KP=2.5E-5 VTO=1.345 CGDO=14.67p CGBO=4.566p)
+Text=* .MODEL DK D(IS=1E-18)
+Text=* .model 2N2222A AKO:2N2222 NPN (BF=55 ISE=10F)
+Text=* .Model BJT1 NPN (RE=12 LOT/1/GAUSS=30% DEV/2/UNIFORM=2%)
+Text=*
+Text=* A .cir file is typically found in the data directory
+Text=*
+
+[InfoPage]
+InfoPage=True
+Warnings=True
+System=True
+Defines=True
+Array=True
+Model=True
+Measure=True
+MacroSubckt=True
+NotUsed=True
+ComponentCounts=True
+VariablizePaths=False
+DontShowPaths=False
+SimulationLog=True
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+PlaceText=True
+
+[Pane]
+Analysis=Transient
+
+[Pane]
+Analysis=AC
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=HmDistortion
+
+[Pane]
+Analysis=ImDistortion
+
+[Pane]
+Analysis=Stability
+
+[WCTolerance]
+Var Width=100
+Nominal Width=72
+Tol Width=152
+Tol Name=Drift
+Col Width Neq=50
+Col Width Pos=50
+Col Width Rnd=50
+
+[WCFiles]
+UseFile=<Library>Standard.tlib
+AVAILABLE_FILE=<Library>Standard.tlib
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=HmDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=ImDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=Stability
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicAC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicDC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0

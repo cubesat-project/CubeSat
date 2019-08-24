@@ -1,0 +1,7 @@
+2 cells in series, and two series in parallel (ask Endurosat about this).
+
+Referring to the terminal diagram, the negative terminals and and the anode may be connected together,
+and connected to the positive terminal (bottom-side) of another cell. The cathode of the bypass diode connects
+to the underside (positive) of the cell.
+
+The circuit connects to a 4-pin MOLEX connector (2 negative, 2 positive for redundancy).

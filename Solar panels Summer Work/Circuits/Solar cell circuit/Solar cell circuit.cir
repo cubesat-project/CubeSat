@@ -1,0 +1,850 @@
+[Main]
+FileType=CIR
+Version=12.00
+Program=Micro-Cap
+Component Version=10.00
+Shape Version=11.00
+Screen=1920,1080
+MCAPVersion=12.2.0.0
+Key ID=Demo
+NLCnt=50
+TXCnt=1
+
+[shapedef]
+Name=3G30A Solar Cell
+Ellipse=-24,-24,24,24
+FColor=None
+Line=-16,-8,16,-8
+Line=0,-8,0,-48
+Line=-8,8,8,8
+Line=0,8,0,48
+Current=40,-48,16,-24
+FColor=None
+Current=48,-40,24,-16
+FColor=None
+Text="+"
+TextInfo=-30,-35,-24,-21 , -11,0,"Arial"
+Text="  -"
+TextInfo=-32,25,-23,39 , -11,0,"Arial"
+
+[shapedef]
+Name=Diode
+Root="Diode.root",0,0,0
+
+[shapedef]
+Name=Diode.root
+Line=0,0,20,0
+Line=28,0,48,0
+Rectangle=18,-8,20,8
+PolyClosed=3
+PolyLine=20,0
+PolyLine=28,-8
+PolyLine=28,8
+Current=32,16,16,16
+
+[shapedef]
+Name=Input
+PolyClosed=5
+PolyLine=8,0
+PolyLine=16,-8
+PolyLine=48,-8
+PolyLine=48,8
+PolyLine=16,8
+FColor=None
+Line=0,0,8,0
+
+[compdef]
+Name=3G30A Solar Cell
+Definition=Subckt
+Shape=3G30A Solar Cell
+Mask=6272
+Used=6
+memo=Does not include the external bypass diode
+Label Offset=0,0,0,0
+PinCnt=2
+Pin="  ",a,0,6,-39,19
+Pin="  ",a,0,-6,-11,18
+
+[compdef]
+Name=Diode1
+Definition=Diode
+Shape=Diode
+Mask=5504
+Used=15
+memo=On Semi
+Label Offset=17,10,12,12
+PinCnt=2
+Pin="Anode",6,0,-9,-8
+Pin="Cathode",0,0,-20,-8
+
+[compdef]
+Name=Input Port
+Definition=Tie
+Shape=Input
+Mask=4096
+Used=7
+memo=Input Port connector used to tie nodes together
+Label Offset=17,8,10,18
+PinCnt=1
+Pin="PinA",0,0,-13,-1
+
+[Circuit]
+Window Placement=2,3, -1,-1, -8,-31, 78,78,1461,581
+Default Object=Color=#000080
+Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
+Default Object Apply Border To Text=No
+Default Object Apply Fill To Text=No
+Default Object GridSnap=No
+NodeVoltageFormat=3
+CurrentFormat=3
+PowerFormat=3
+PathDelayFormat=3
+WarningFormat=3
+GridTextFormulaFormat=3
+SpiceType=AMBIGUOUS
+Title_Block_Border=None
+Title_Block=False
+Show Nodes=False
+Show Voltages=False
+Show Current=False
+Show Power=False
+Show Condition=False
+Show Pin Connections=False
+Show Connection Warnings=False
+Show Cross=False
+Show Attribute Text=True
+Show Grid Text=True
+
+[Comp]
+Name=3G30A Solar Cell
+Px=288,216
+Rot=4
+
+[Attr]
+ON=0,0,PART
+V
+Style=8192
+
+[Attr]
+ON=-112,36,NAME
+V=3G30A Solar Cell
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Diode1
+Px=336,240
+Rot=5
+
+[Attr]
+ON=12,-26,PART
+V=External bypass diode
+Style=8192
+
+[Attr]
+ON=12,-40,MODEL
+V=Diode1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=336,240,336,264
+
+[Wire]
+Pxs=288,264,336,264
+
+[Wire]
+Pxs=336,168,336,192
+
+[Wire]
+Pxs=288,168,336,168
+
+[Comp]
+Name=3G30A Solar Cell
+Px=288,368
+Rot=4
+
+[Attr]
+ON=0,-14,PART
+V
+Style=8192
+
+[Attr]
+ON=-108,36,NAME
+V=3G30A Solar Cell
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Diode1
+Px=336,392
+Rot=5
+
+[Attr]
+ON=12,-26,PART
+V=D2
+Style=8192
+
+[Attr]
+ON=12,-40,MODEL
+V=Diode1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=336,392,336,416
+
+[Wire]
+Pxs=288,416,336,416
+
+[Wire]
+Pxs=336,320,336,344
+
+[Wire]
+Pxs=288,320,336,320
+
+[Wire]
+Pxs=288,264,288,320
+
+[Comp]
+Name=3G30A Solar Cell
+Px=520,216
+Rot=4
+
+[Attr]
+ON=0,-14,PART
+V
+Style=8192
+
+[Attr]
+ON=-112,35,NAME
+V=3G30A Solar Cell
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Diode1
+Px=568,240
+Rot=5
+
+[Attr]
+ON=12,-26,PART
+V=D3
+Style=8192
+
+[Attr]
+ON=12,-40,MODEL
+V=Diode1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=568,240,568,264
+
+[Wire]
+Pxs=520,264,568,264
+
+[Wire]
+Pxs=568,168,568,192
+
+[Wire]
+Pxs=520,168,568,168
+
+[Comp]
+Name=3G30A Solar Cell
+Px=520,368
+Rot=4
+
+[Attr]
+ON=0,-14,PART
+V
+Style=8192
+
+[Attr]
+ON=-112,33,NAME
+V=3G30A Solar Cell
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Diode1
+Px=568,392
+Rot=5
+
+[Attr]
+ON=12,-26,PART
+V=D4
+Style=8192
+
+[Attr]
+ON=12,-40,MODEL
+V=Diode1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=568,392,568,416
+
+[Wire]
+Pxs=520,416,568,416
+
+[Wire]
+Pxs=568,320,568,344
+
+[Wire]
+Pxs=520,320,568,320
+
+[Wire]
+Pxs=520,264,520,320
+
+[Wire]
+Pxs=288,416,288,464
+
+[Wire]
+Pxs=288,464,416,464
+
+[Wire]
+Pxs=520,416,520,464
+
+[Wire]
+Pxs=288,104,288,168
+
+[Wire]
+Pxs=288,104,408,104
+
+[Wire]
+Pxs=520,104,520,168
+
+[Comp]
+Name=Input Port
+Px=712,232
+
+[Attr]
+ON=57,-7,PART
+V=PIN_1 (negative)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=712,272
+
+[Attr]
+ON=57,-7,PART
+V=PIN_2 (negative)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=712,312
+
+[Attr]
+ON=57,-7,PART
+V=PIN_3 (positive)
+Style=8192
+
+[Comp]
+Name=Input Port
+Px=712,352
+
+[Attr]
+ON=57,-7,PART
+V=PIN_4 (positive)
+Style=8192
+
+[Wire]
+Pxs=416,464,416,504
+
+[Wire]
+Pxs=416,504,656,504
+
+[Wire]
+Pxs=416,464,520,464
+
+[Wire]
+Pxs=656,312,656,352
+
+[Wire]
+Pxs=656,312,712,312
+
+[Wire]
+Pxs=656,352,712,352
+
+[Wire]
+Pxs=656,352,656,504
+
+[Wire]
+Pxs=408,64,408,104
+
+[Wire]
+Pxs=408,64,656,64
+
+[Wire]
+Pxs=408,104,520,104
+
+[Wire]
+Pxs=656,64,656,232
+
+[Wire]
+Pxs=656,272,712,272
+
+[Wire]
+Pxs=656,232,712,232
+
+[Wire]
+Pxs=656,232,656,272
+
+[Grid Text]
+Text="MOLEX 53398-0471 connector"
+Px=680,208
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Schematic]
+CurrentSection 0=0
+CurrentSection 1=0
+CurrentSection 2=0
+CurrentSection 3=0
+Splitter.xs=0
+Splitter.ys=0
+TextQuad=4099
+Scale=1
+GridUser=10
+ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
+CalcRMS=False
+CalcAVG=False
+CalcPeak=False
+CalcVoltage=True
+DisplayMeasure=Last
+ShareScales=True
+
+[Tools]
+Pos=Top
+FILESAVEASOLD=No
+BOM=No
+FILEPCB=No
+PROBE=Yes
+SELECT=Yes
+PAN=Yes
+COMP=Yes
+TEXT=Yes
+WIRE=Yes
+WIRED=Yes
+BUS=Yes
+GRAPHIC=Yes
+FLOWCHART=Yes
+LINE=No
+ELLIPSE=No
+RECT=No
+DIAM=No
+ARC=No
+PIE=No
+TRIANGLE=No
+STAR=No
+LEFTBRK=No
+RIGHTBRK=No
+BOTHBRK=No
+META=Yes
+PARALLELOGRAM=No
+FC_PROCESS=No
+FC_ALT_PROCESS=No
+FC_DECISION=No
+FC_DATA=No
+FC_PREDEFPROCESS=No
+FC_INTERNALSTORAGE=No
+FC_DOCUMENT=No
+FC_MULTIDOCUMENT=No
+FC_TERMINATOR=No
+FC_PREPARATION=No
+FC_MANUALINPUT=No
+FC_MANUALOPERATION=No
+FC_CONNECTOR=No
+FC_OFFPAGECONNECTOR=No
+FC_PUNCHCARD=No
+FC_PUNCHEDTAPE=No
+FC_SUMMING_JUNCTION=No
+FC_OR=No
+FC_COLLATE=No
+FC_SORT=No
+FC_EXTRACT=No
+FC_MERGE=No
+FC_STORED_DATA=No
+FC_DELAY=No
+FC_SAS=No
+FC_MAGNETIC_DISK=No
+FC_DAS=No
+FC_DISPLAY=No
+SPREAD_SHEET=Yes
+POLYCLOS=No
+POLYOPEN=No
+FLAG=Yes
+INFO=Yes
+HELP=Yes
+HELP_SPICE=No
+LINK=Yes
+CHECK=Yes
+REGION_ENABLE=Yes
+TITLE_BLOCK=Yes
+DIGTRC=No
+DIGTRC2=No
+BUILD_COMMAND=Yes
+DIGALL=No
+GRIDTEXT=Yes
+COMPTEXT=Yes
+NODE=Yes
+MEASURED=Yes
+NODEV=Yes
+CURRENT=Yes
+POWER=Yes
+CONDITIN=Yes
+PIN=Yes
+CONNWARN=Yes
+CROSS=Yes
+GRID=Yes
+BORDER=Yes
+BORDERONE=Yes
+TITLE=Yes
+RUBBER=Yes
+PROPERTY=Yes
+STEP=Yes
+MIRROR=Yes
+ROTATE=Yes
+FLIPY=Yes
+FLIPX=Yes
+CIR_MAKEMACRO=No
+CLEARCUTWIRE=No
+CLIPBOARDCIRPAGE2BMM=No
+FINDCOMP=Yes
+FIND=Yes
+REPEAT=No
+REPLACE=No
+MODEL=Yes
+CIR2CKT=Yes
+ATTDISP=Yes
+ENABLE=Yes
+DISABLE=Yes
+ENABLE_WITH=Yes
+TOFRONT=Yes
+TOBACK=Yes
+SELNEXT=Yes
+PAGEADD=Yes
+PAGEADDTEXT=No
+ADDSECTION=No
+PAGEDEL=Yes
+ZOOMIN=Yes
+ZOOMOUT=Yes
+AUTOSCALECIR=Yes
+GOTOFLAG=Yes
+UPLEVEL=Yes
+COLOR=Yes
+FONT=Yes
+STYLE=Yes
+DM_LAST=No
+DM_RMS=No
+DM_AVG=No
+DM_PEAK=No
+GRID_NONE=No
+GRID_NORMAL=No
+GRID_BOLD_5=No
+GRID_BOLD_6=No
+GRID_BOLD_USER=No
+GRAPH_PAPER=No
+SPLITCIRTEXTH=No
+SPLITCIRTEXTV=No
+SPACE_SPLITTERS_EVENLY=No
+NORMALCIR=No
+RENAMEDEFINE=No
+RENAMECMP=No
+ATTALIGN=No
+RESETNODEPOS=No
+FIT2STANDARD=No
+NODESNAP=No
+MOVETEXT=No
+TEXTINC=No
+TOGGLETEXT=No
+TOGGLEMODE=No
+TOLERANCE=No
+ALIGNAB=No
+ALIGNLEFT=Yes
+ALIGNCENTER=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNMIDDLES=Yes
+ALIGNBOTTOM=Yes
+
+[Section]
+Index=0
+Name="circuit1"
+Type=Main
+Enable=True
+CurrentPage 0=0
+CurrentPage 1=0
+CurrentPage 2=0
+CurrentPage 3=0
+TabSize 0=425
+TabSize 1=425
+TabSize 2=425
+TabSize 3=425
+
+[Page]
+Index=0
+Section=0
+Print=True
+Enable=True
+Name=Main
+PrinterScale=1
+Scale 0=1
+Scale 1=1
+Scale 2=1
+Scale 3=1
+Px=529,207
+WinBackGround Color=#FFFFFF
+Select Color=#FF0000
+Anchor Color=#000000
+Select Box Color=#000080
+Grid Text Color=Height=-12,FStyle=0,Color=#0000FF,Name=Verdana
+Grid Text RTF=False
+Grid Text Angle=0
+Grid Text GridSnap=True
+Grid Text PinIt=False
+Grid Text JustifyH=Left
+Grid Text JustifyV=Bottom
+Grid GradientColor2=None
+Grid OutlineThickness=1
+Grid OutlineColor=None
+Component Color=#0000FF
+Attribute Text=Height=-12,FStyle=0,Color=#008000,Name=Verdana
+Wire Color=#008000
+Bus Color=#008000
+Pin Connection=Height=-10,FStyle=0,Color=#FF0000,Name=Arial
+Pin Marker Color=#008000
+Node Number=Height=-11,FStyle=0,Color=#FF00FF,Name=Arial
+Node Voltage Color=Height=-11,FStyle=0,Color=#000000,Name=Arial
+Dynamic AC Voltage Color=#E4E4E4
+Text Banner Text=Height=-15,FStyle=0,Color=#800000,Name=Arial
+Title Block Background=#C0C0C0
+Current=Height=-11,FStyle=0,Color=#0000FF,Name=Arial
+Power/Condition=Height=-11,FStyle=0,Color=#FF0000,Name=Arial
+Digital Path Color=#FF0000
+Title Block Border=#000000
+Disabled	Color=#C0C0C0
+Search Color=#FFFF00
+Grid Color=#000000
+Graph Paper=#E4E4E4
+Digital 0 Color=#000000
+Digital R Color=#FFFF00
+Digital F Color=#FFFF00
+Digital 1 Color=#FF0000
+Digital X Color=#C0C0C0
+Digital Z Color=#808080
+Block Select Color=#51F998
+
+[Page]
+Index=1
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Text
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=2
+Section=0
+Type=Text
+Print=False
+Enable=True
+Name=Models
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Page]
+Index=3
+Section=0
+Type=Info
+Print=False
+Enable=True
+Name=Info
+Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
+Comment Color=#008000
+WinBackGround Color=#FFFFFF
+Disabled	Color=#C0C0C0
+KeyWord Color=#0000FF
+Error	Color=#FF0000
+Search Color=#FFFF00
+
+[Text Area]
+Section=0
+Page=1
+
+[Text Area]
+Section=0
+Page=2
+Text=* Schematic File
+Text=*
+Text=* Syntax:
+Text=* .MODEL <model name> [AKO:<reference model name>] <ModelType>
+Text=* +([<parameter name>=<value>][LOT[/#][/GAUSS|/UNIFORM|/WCASE]=[<tol>[%]] |[-<low>%,<high>%]][DEV[/#][/GAUSS|/UNIFORM|/WCASE]=[<tol>[%]]...)
+Text=* ModelType must be one of OPA,D,NPN,NMOS,NJF,PUL,SIN,TRN,CORE,GASFET,VSWITCH,ISWITCH,CAP,IND,RES,PNP,PMOS,PJF,DOUTPUT,DINPUT,UADC,UDAC,UGATE,UTGATE,UEFF,UGFF,UDLY,UPLD,UROM,URAM,UBGT,UIO,LPNP,NIGBT,I,V
+Text=*
+Text=*Examples:
+Text=* .MODEL 2N2222A NPN(BF=150 IS=1E-14)
+Text=* .model M1 NMOS(KP=2.5E-5 VTO=1.345 CGDO=14.67p CGBO=4.566p)
+Text=* .MODEL DK D(IS=1E-18)
+Text=* .model 2N2222A AKO:2N2222 NPN (BF=55 ISE=10F)
+Text=* .Model BJT1 NPN (RE=12 LOT/1/GAUSS=30% DEV/2/UNIFORM=2%)
+Text=*
+Text=* A .cir file is typically found in the data directory
+Text=*
+
+[InfoPage]
+InfoPage=True
+Warnings=True
+System=True
+Defines=True
+Array=True
+Model=True
+Measure=True
+MacroSubckt=True
+NotUsed=True
+ComponentCounts=True
+VariablizePaths=False
+DontShowPaths=False
+SimulationLog=True
+
+[Limits]
+Analysis=DynamicAC
+FirstValueDisplay=Mag
+SecondValueDisplay=PhaseDeg
+PlaceText=True
+
+[Limits]
+Analysis=DynamicDC
+PlaceText=True
+
+[Pane]
+Analysis=Transient
+
+[Pane]
+Analysis=AC
+
+[Pane]
+Analysis=DC
+
+[Pane]
+Analysis=HmDistortion
+
+[Pane]
+Analysis=ImDistortion
+
+[Pane]
+Analysis=Stability
+
+[WCTolerance]
+Var Width=100
+Nominal Width=72
+Tol Width=152
+Tol Name=Drift
+Col Width Neq=50
+Col Width Pos=50
+Col Width Rnd=50
+
+[WCFiles]
+UseFile=<Library>Standard.tlib
+AVAILABLE_FILE=<Library>Standard.tlib
+
+[OPMethods]
+Analysis=Transient
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=AC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=HmDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=ImDistortion
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=Stability
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicAC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
+
+[OPMethods]
+Analysis=DynamicDC
+Standard Newton-Raphson=0,0
+Source Stepping=0,0
+Diagonal Gmin Stepping=0,0
+Junction Gmin Stepping=0,0
+Pseudo Transient=0,0
