@@ -1,0 +1,12 @@
+Name,Parameter,Row,Bits
+core.OBT.time,core.OBT.time,0,32
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[0],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,0,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[1],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,1,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[2],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,2,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[3],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,3,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[4],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,4,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[5],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,5,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[6],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,6,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[7],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,7,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[8],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,8,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents[9],cdh.Telemetry.DataPool.platform.PowerSystem.EPS.switchCurrents,9,10

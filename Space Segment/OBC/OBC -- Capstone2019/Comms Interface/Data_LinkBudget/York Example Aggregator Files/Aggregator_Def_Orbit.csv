@@ -1,0 +1,4 @@
+Name,Parameter,Row,Bits
+core.OBT.time,core.OBT.time,0,32
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.autoResetCount,cdh.Telemetry.DataPool.platform.PowerSystem.EPS.autoResetCount,0,8
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.watchdogResetCount,cdh.Telemetry.DataPool.platform.PowerSystem.EPS.watchdogResetCount,0,8

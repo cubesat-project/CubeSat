@@ -1,0 +1,12 @@
+Ax.25 Protocol
+
+HDLC- High Level Data Link Control 
+http://vkalra.tripod.com/hdlc.html
+-> Thinking that we are operating in normal response mode 
+-> FCS is important for detecting bit errors. This will directly influence transmission.
+https://en.wikipedia.org/wiki/High-Level_Data_Link_Control
+-> Wiki is also good to understand the protocol 
+
+
+**Note**
+-> We are running in half duplex, normal mode, and no network protocol is going to be implemented (also endurosat does not support network layer capabilities) 

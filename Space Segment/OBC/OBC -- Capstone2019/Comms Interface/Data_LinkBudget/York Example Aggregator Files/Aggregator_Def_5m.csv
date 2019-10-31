@@ -1,0 +1,8 @@
+Name,Parameter,Row,Bits
+core.OBT.time,core.OBT.time,0,32
+cdh.Telemetry.DataPool.platform.PowerSystem.Battery.batteryVoltage[0],cdh.Telemetry.DataPool.platform.PowerSystem.Battery.batteryVoltage,0,10
+cdh.Telemetry.DataPool.platform.PowerSystem.Battery.batteryVoltage[1],cdh.Telemetry.DataPool.platform.PowerSystem.Battery.batteryVoltage,1,10
+cdh.Telemetry.DataPool.platform.PowerSystem.Battery.boardTemperature,cdh.Telemetry.DataPool.platform.PowerSystem.Battery.boardTemperature,0,10
+cdh.Telemetry.DataPool.platform.PowerSystem.Battery.batteryTemperature[0],cdh.Telemetry.DataPool.platform.PowerSystem.Battery.batteryTemperature,0,10
+cdh.Telemetry.DataPool.platform.PowerSystem.Battery.batteryTemperature[1],cdh.Telemetry.DataPool.platform.PowerSystem.Battery.batteryTemperature,1,10
+cdh.Telemetry.DataPool.platform.PowerSystem.EPS.boardTemperature,cdh.Telemetry.DataPool.platform.PowerSystem.EPS.boardTemperature,0,10
