@@ -1,0 +1,5 @@
+Timer Circuits: Complete circuit, including internal parts of 555 timer IC
+Timer Circuits External: Complete circuit, only including parts external to 555 timer IC
+
+Rev1: Astable mode, upon discussion, decided not suitable for application
+Rev2: bistable mode
