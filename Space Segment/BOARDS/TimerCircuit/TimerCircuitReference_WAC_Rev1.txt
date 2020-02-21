@@ -3,3 +3,4 @@ Timer Circuits External: Complete circuit, only including parts external to 555 
 
 Rev1: Astable mode, upon discussion, decided not suitable for application
 Rev2: bistable mode
+Rev4: Additional information on timer circuit from CSA update 
