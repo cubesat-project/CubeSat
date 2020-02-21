@@ -928,7 +928,7 @@ ALIGNBOTTOM=No
 
 [Section]
 Index=0
-Name="InhibSwitchTimerCircuitExternal_WAC_Rev5"
+Name="TimerCircuitExternal_WAC_Rev4"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -951,7 +951,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=1
-Px=897,187
+Px=46,53
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
