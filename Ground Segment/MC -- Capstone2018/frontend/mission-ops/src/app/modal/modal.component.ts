@@ -34,7 +34,7 @@ import { IObservable } from 'src/interfaces/iObservable';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-  @ViewChild('modalContent')
+  @ViewChild('modalContent', {static: false})
   private modalContent: ElementRef;
 
   private modalRef: NgbModalRef;

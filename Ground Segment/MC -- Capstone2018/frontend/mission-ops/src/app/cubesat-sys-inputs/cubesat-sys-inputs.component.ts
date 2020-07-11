@@ -25,13 +25,13 @@ import { CreateTelemetryTypeComponent } from '../create-telemetry-type/create-te
   styleUrls: ['./cubesat-sys-inputs.component.scss']
 })
 export class CubesatSysInputsComponent implements OnInit {
-  @ViewChild('deleteSystemModal')
+  @ViewChild('deleteSystemModal', {static: false})
   private deleteSystemModal: ModalComponent;
-  @ViewChild('deleteComponentModal')
+  @ViewChild('deleteComponentModal', {static: false})
   private deleteComponentModal: ModalComponent;
-  @ViewChild('deleteCompTelemModal')
+  @ViewChild('deleteCompTelemModal', {static: false})
   private deleteCompTelemModal: ModalComponent;
-  @ViewChild('deleteTelemetryTypeModal')
+  @ViewChild('deleteTelemetryTypeModal', {static: false})
   private deleteTelemetryTypeModal: ModalComponent;
 
   systems: System[];

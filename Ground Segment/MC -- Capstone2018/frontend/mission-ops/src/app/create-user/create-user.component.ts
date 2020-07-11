@@ -18,7 +18,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class CreateUserComponent implements OnInit {
 
-  @ViewChild(AlertComponent)
+  @ViewChild(AlertComponent, {static: false})
   private alert: AlertComponent;
 
   private name: string;

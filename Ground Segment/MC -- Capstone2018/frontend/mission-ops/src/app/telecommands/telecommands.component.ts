@@ -13,7 +13,7 @@ export class TelecommandsComponent implements OnInit {
   telecommands: Telecommand[];
   selectedTelecommand: Telecommand;
   viewingExistingTelecommand: boolean;
-  @ViewChild(AlertComponent)
+  @ViewChild(AlertComponent, {static: false})
   private alert: AlertComponent;
   
   constructor(private telecommandService: TelecommandService) { }

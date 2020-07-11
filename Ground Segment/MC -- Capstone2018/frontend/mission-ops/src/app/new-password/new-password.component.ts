@@ -15,7 +15,7 @@ export class NewPasswordComponent implements OnInit, IObservable<string> {
   private confirmNewPassword: string;
   private processing: boolean = false;
   private passwordSubject: Subject<string>;
-  @ViewChild(AlertComponent)
+  @ViewChild(AlertComponent, {static: false})
   private alert: AlertComponent;
 
   constructor() { 

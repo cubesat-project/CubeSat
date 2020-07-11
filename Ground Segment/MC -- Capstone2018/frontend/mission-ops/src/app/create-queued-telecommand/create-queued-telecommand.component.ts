@@ -20,7 +20,7 @@ export class CreateQueuedTelecommandComponent implements OnInit {
   modalTitle: string;
   modalSubmit: string;
   isBatch: boolean;
-  @ViewChild(AlertComponent)
+  @ViewChild(AlertComponent, {static: false})
   private alert: AlertComponent;
 
   public telecommands: Telecommand[];

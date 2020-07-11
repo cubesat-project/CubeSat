@@ -20,7 +20,7 @@ export class CreateComponentComponent implements OnInit {
   selectedComponent: CubeSatComp;
   modalTitle: string;
   modalSubmit: string;
-  @ViewChild(AlertComponent)
+  @ViewChild(AlertComponent, {static: false})
   private alert: AlertComponent;
 
   constructor(public activeModal: NgbActiveModal,

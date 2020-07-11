@@ -10,7 +10,7 @@ import { PanoramicMedia } from 'src/classes/panoramic-media';
 })
 export class PanoramaViewerComponent implements OnInit, OnDestroy {
 
-  @ViewChild('viewer')
+  @ViewChild('viewer', {static: false})
   private viewerElement: ElementRef;
 
   private _inputData: PanoramicMedia;

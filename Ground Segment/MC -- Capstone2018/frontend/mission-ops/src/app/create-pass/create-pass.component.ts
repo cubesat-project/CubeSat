@@ -15,7 +15,7 @@ export class CreatePassComponent implements OnInit {
 
   @Input() 
   private createPassForm: FormGroup;
-  @ViewChild(AlertComponent)
+  @ViewChild(AlertComponent, {static: false})
   private alert: AlertComponent;
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder) { }

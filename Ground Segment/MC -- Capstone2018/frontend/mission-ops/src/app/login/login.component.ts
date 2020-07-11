@@ -21,13 +21,13 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class LoginComponent implements OnInit {
 
-  @ViewChild('loginAlert')
+  @ViewChild('loginAlert', {static: false})
   private loginAlert: AlertComponent;
-  @ViewChild('newPwdModal')
+  @ViewChild('newPwdModal', {static: false})
   private newPwdModal: ModalComponent;
-  @ViewChild('resetPwdAlert')
+  @ViewChild('resetPwdAlert', {static: false})
   private resetPwdAlert: AlertComponent;
-  @ViewChild('resetPwdModal')
+  @ViewChild('resetPwdModal', {static: false})
   private resetPwdModal: ModalComponent;
 
   private email: string;

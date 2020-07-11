@@ -23,11 +23,11 @@ import { PageChangeEvent, PaginationComponent } from '../pagination/pagination.c
 })
 export class UsersComponent implements OnInit {
 
-  @ViewChild('deleteUserModal')
+  @ViewChild('deleteUserModal', {static: false})
   private deleteUserModal: ModalComponent;
-  @ViewChild('deleteUserAlert')
+  @ViewChild('deleteUserAlert', {static: false})
   private deleteUserAlert: AlertComponent;
-  @ViewChild(PaginationComponent)
+  @ViewChild(PaginationComponent, {static: false})
   private pagination: PaginationComponent
 
   private _userLimit: number = 10;
