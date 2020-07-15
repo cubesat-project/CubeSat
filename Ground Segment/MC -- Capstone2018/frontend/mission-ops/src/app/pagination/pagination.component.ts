@@ -30,10 +30,10 @@ export class PaginationComponent implements OnInit {
    * @memberof PaginationComponent
    */
   @Input()
-  private get page() {
+  public get page() {
     return this._page;
   }
-  private set page(val: number) {
+  public set page(val: number) {
     this._page = val;
     this.updateDisplayPages();
   }
@@ -47,10 +47,10 @@ export class PaginationComponent implements OnInit {
    * @memberof PaginationComponent
    */
   @Input()
-  private get maxPage() {
+  public get maxPage() {
     return this._maxPage;
   }
-  private set maxPage(val: number) {
+  public set maxPage(val: number) {
     this._maxPage = val;
     this.page = this.minPage;
     this.updateDisplayPages();
@@ -94,10 +94,10 @@ export class PaginationComponent implements OnInit {
    * @type {number}
    * @memberof PaginationComponent
    */
-  private get minPage() {
+  public get minPage() {
     return this._minPage;
   };
-  private set minPage(val: number) {
+  public set minPage(val: number) {
     this._minPage = val;
     this.updateDisplayPages();
   }
@@ -109,7 +109,7 @@ export class PaginationComponent implements OnInit {
    * @type {Array<number>}
    * @memberof PaginationComponent
    */
-  private displayPages: Array<number>;
+  public displayPages: Array<number>;
 
   constructor() { }
 

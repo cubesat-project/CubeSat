@@ -20,10 +20,10 @@ export class TelemetryDataComponent implements OnInit {
   private endDate: Date;
 
   @Input()
-  private get componentTelemetry() {
+  public get componentTelemetry() {
     return this._componentTelemetry;
   }
-  private set componentTelemetry(val: ComponentTelemetry) {
+  public set componentTelemetry(val: ComponentTelemetry) {
     this._componentTelemetry = val;
     this.getTelemetryData(this._componentTelemetry.componentTelemetryID);
   }

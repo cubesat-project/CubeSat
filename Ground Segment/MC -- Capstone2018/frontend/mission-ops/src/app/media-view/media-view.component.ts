@@ -12,7 +12,7 @@ import { PanoramicMedia } from 'src/classes/panoramic-media';
 export class MediaViewComponent implements OnInit {
 
   private media: PanoramicMedia;
-  private errorMsg: string;
+  public errorMsg: string;
 
   constructor(private route: ActivatedRoute, private mediaService: PanoramicMediaService) { 
     const mediaId = this.route.snapshot.queryParamMap.get('id');

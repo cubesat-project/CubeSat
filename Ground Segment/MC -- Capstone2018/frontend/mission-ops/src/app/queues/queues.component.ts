@@ -66,7 +66,7 @@ export class QueuesComponent implements OnInit {
 
   private tabSet: NgbTabset;
 
-  @ViewChild(NgbTabset, {static: false}) set content(content: NgbTabset) {
+  @ViewChild(NgbTabset) set content(content: NgbTabset) {
     this.tabSet = content;
   };
 

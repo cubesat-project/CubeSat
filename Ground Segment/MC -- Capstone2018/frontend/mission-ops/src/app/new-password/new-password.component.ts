@@ -11,11 +11,11 @@ import { AlertComponent } from '../alert/alert.component';
 })
 export class NewPasswordComponent implements OnInit, IObservable<string> {
 
-  private newPassword: string;
-  private confirmNewPassword: string;
+  public newPassword: string;
+  public confirmNewPassword: string;
   private processing: boolean = false;
   private passwordSubject: Subject<string>;
-  @ViewChild(AlertComponent, {static: false})
+  @ViewChild(AlertComponent)
   private alert: AlertComponent;
 
   constructor() { 

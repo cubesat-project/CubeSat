@@ -17,10 +17,10 @@ export class ComponentTelemetryComponent implements OnInit {
   @Input() telemetryTypes : TelemetryType[];
 
   @Input() 
-  private get component() {
+  public get component() {
     return this._component;
   }
-  private set component(val: CubeSatComp) {
+  public set component(val: CubeSatComp) {
     this._component = val;
     this.getComponentTelemetries(this._component.componentID);
   }

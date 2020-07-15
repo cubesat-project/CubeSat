@@ -21,24 +21,24 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class LoginComponent implements OnInit {
 
-  @ViewChild('loginAlert', {static: false})
+  @ViewChild('loginAlert')
   private loginAlert: AlertComponent;
-  @ViewChild('newPwdModal', {static: false})
+  @ViewChild('newPwdModal')
   private newPwdModal: ModalComponent;
-  @ViewChild('resetPwdAlert', {static: false})
+  @ViewChild('resetPwdAlert')
   private resetPwdAlert: AlertComponent;
-  @ViewChild('resetPwdModal', {static: false})
+  @ViewChild('resetPwdModal')
   private resetPwdModal: ModalComponent;
 
-  private email: string;
-  private password: string;
+  public email: string;
+  public password: string;
 
-  private processing: boolean = false;
+  public processing: boolean = false;
 
-  private verificationCode: string;
-  private newPassword: string;
-  private confirmNewPassword: string;
-  private processingNewPassword: boolean;
+  public verificationCode: string;
+  public newPassword: string;
+  public confirmNewPassword: string;
+  public processingNewPassword: boolean;
 
   constructor(private auth: AuthService, private router: Router) { }
 

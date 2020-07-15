@@ -18,16 +18,16 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class CreateUserComponent implements OnInit {
 
-  @ViewChild(AlertComponent, {static: false})
+  @ViewChild(AlertComponent)
   private alert: AlertComponent;
 
-  private name: string;
-  private email: string;
-  private admin: boolean;
-  private phone: string;
-  private prefContact: string = 'email';
+  public name: string;
+  public email: string;
+  public admin: boolean;
+  public phone: string;
+  public prefContact: string = 'email';
 
-  private processing: boolean = false;
+  public processing: boolean = false;
 
   constructor(private users: UsersService, private auth: AuthService) { }
 

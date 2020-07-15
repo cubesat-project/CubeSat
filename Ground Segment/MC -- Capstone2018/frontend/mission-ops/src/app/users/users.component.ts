@@ -23,11 +23,11 @@ import { PageChangeEvent, PaginationComponent } from '../pagination/pagination.c
 })
 export class UsersComponent implements OnInit {
 
-  @ViewChild('deleteUserModal', {static: false})
+  @ViewChild('deleteUserModal')
   private deleteUserModal: ModalComponent;
-  @ViewChild('deleteUserAlert', {static: false})
+  @ViewChild('deleteUserAlert')
   private deleteUserAlert: AlertComponent;
-  @ViewChild(PaginationComponent, {static: false})
+  @ViewChild(PaginationComponent)
   private pagination: PaginationComponent
 
   private _userLimit: number = 10;
@@ -37,15 +37,15 @@ export class UsersComponent implements OnInit {
    * @private
    * @memberof UsersComponent
    */
-  private get userLimit() {
+  public get userLimit() {
     return this._userLimit;
   }
-  private set userLimit(val: number) {
+  public set userLimit(val: number) {
     this._userLimit = val;
     this.pagination.goToPage(1);
   }
 
-  private userList: PagedList<User>;
+  public userList: PagedList<User>;
   /**
    * The number of pages of users to be displayed.
    *
@@ -53,7 +53,7 @@ export class UsersComponent implements OnInit {
    * @type {number}
    * @memberof UsersComponent
    */
-  private pages: number = 1;
+  public pages: number = 1;
 
   /**
    * The user that is being deleted right now.
@@ -62,7 +62,7 @@ export class UsersComponent implements OnInit {
    * @type {User}
    * @memberof UsersComponent
    */
-  private deletingUser: User;
+  public deletingUser: User;
   /**
    * The confirmation message the user must enter
    * before being allowed to delete a user.
@@ -71,7 +71,7 @@ export class UsersComponent implements OnInit {
    * @type {string}
    * @memberof UsersComponent
    */
-  private deleteConfirm: string;
+  public deleteConfirm: string;
 
   /**
    * Indicates whether or not processing is currently going
@@ -81,7 +81,7 @@ export class UsersComponent implements OnInit {
    * @type {boolean}
    * @memberof UsersComponent
    */
-  private processing: boolean;
+  public processing: boolean;
 
   constructor(private users: UsersService, private auth: AuthService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -146,7 +146,7 @@ export class UsersComponent implements OnInit {
    * @param {PageChangeEvent} pageData An object containing the previous page and the current page.
    * @memberof UsersComponent
    */
-  private pageChanged(pageData: PageChangeEvent): void {
+  public pageChanged(pageData: PageChangeEvent): void {
     this.getUsers(pageData.page);
   }
 

@@ -18,7 +18,7 @@ export class CreateSystemComponent implements OnInit {
   selectedSystem: System;
   modalTitle: string;
   modalSubmit: string;
-  @ViewChild(AlertComponent, {static: false})
+  @ViewChild(AlertComponent)
   private alert: AlertComponent;
 
   constructor(public activeModal: NgbActiveModal, 

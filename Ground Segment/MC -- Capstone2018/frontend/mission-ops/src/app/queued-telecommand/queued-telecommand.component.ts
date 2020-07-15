@@ -22,7 +22,7 @@ export class QueuedTelecommandComponent implements OnInit {
   @Input() isInPast: boolean;
 
   @Output() reloadQueuedTelecommands = new EventEmitter<number>();
-  private telecommandDetails: Telecommand; 
+  public telecommandDetails: Telecommand; 
   user : User;
   isCollapsed: boolean = true;
 

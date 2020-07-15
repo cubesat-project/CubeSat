@@ -11,7 +11,7 @@ import { PanoramicMedia } from 'src/classes/panoramic-media';
 })
 export class MediaLibraryComponent implements OnInit {
 
-  private mediaList: PagedList<PanoramicMedia>;
+  public mediaList: PagedList<PanoramicMedia>;
   private loading: Array<boolean>;
 
   constructor(private media: PanoramicMediaService) { }

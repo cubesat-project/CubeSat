@@ -15,20 +15,20 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class ModifyUserComponent implements OnInit {
 
-  @ViewChild('generalAlert', {static: false})
+  @ViewChild('generalAlert')
   private generalAlert: AlertComponent;
-  @ViewChild('passwordChangeAlert', {static: false})
+  @ViewChild('passwordChangeAlert')
   private passwordChangeAlert: AlertComponent;
 
-  private oldPassword: string;
-  private newPassword: string;
-  private confirmNewPassword: string;
-  private passwordProcessing: boolean = false;
+  public oldPassword: string;
+  public newPassword: string;
+  public confirmNewPassword: string;
+  public passwordProcessing: boolean = false;
 
-  @ViewChild(ModalComponent, {static: false})
+  @ViewChild(ModalComponent)
   private modal: ModalComponent;
 
-  private user: User;
+  public user: User;
 
   private processing: boolean = false;
 

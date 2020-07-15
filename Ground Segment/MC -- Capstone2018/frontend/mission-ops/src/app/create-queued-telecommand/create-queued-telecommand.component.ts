@@ -20,7 +20,7 @@ export class CreateQueuedTelecommandComponent implements OnInit {
   modalTitle: string;
   modalSubmit: string;
   isBatch: boolean;
-  @ViewChild(AlertComponent, {static: false})
+  @ViewChild(AlertComponent)
   private alert: AlertComponent;
 
   public telecommands: Telecommand[];
@@ -29,7 +29,7 @@ export class CreateQueuedTelecommandComponent implements OnInit {
   selectedTelecommand: Telecommand;
   selectedTelecommandBatch: TelecommandBatch;
 
-  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, private auth: AuthService)
+  constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder, public auth: AuthService)
   { }
 
   ngOnInit() {

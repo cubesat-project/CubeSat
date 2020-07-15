@@ -28,7 +28,7 @@ export class AlertComponent implements OnInit {
     }
   }
 
-  private showAlert: boolean = false;
+  public showAlert: boolean = false;
   private heading: string;
 
   private listBody: boolean;

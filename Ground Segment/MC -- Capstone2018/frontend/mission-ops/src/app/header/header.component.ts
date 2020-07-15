@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
 
   isCollapsed = true;
 
-  constructor(private router: Router, private auth: AuthService) {  
+  constructor(private router: Router, public auth: AuthService) {  
 
     // This allows the active header to be selected even when the page is refreshed
     this.router.events.subscribe(val => {

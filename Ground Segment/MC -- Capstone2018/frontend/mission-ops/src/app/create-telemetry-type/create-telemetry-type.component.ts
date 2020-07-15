@@ -17,7 +17,7 @@ export class CreateTelemetryTypeComponent implements OnInit {
   selectedTelemetryType: TelemetryType;
   modalTitle: string;
   modalSubmit: string;
-  @ViewChild(AlertComponent, {static: false})
+  @ViewChild(AlertComponent)
   private alert: AlertComponent;
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder) { }

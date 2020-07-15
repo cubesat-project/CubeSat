@@ -14,8 +14,8 @@ import { AlertComponent } from 'src/app/alert/alert.component';
 export class CreatePassComponent implements OnInit {
 
   @Input() 
-  private createPassForm: FormGroup;
-  @ViewChild(AlertComponent, {static: false})
+  public createPassForm: FormGroup;
+  @ViewChild(AlertComponent)
   private alert: AlertComponent;
 
   constructor(public activeModal: NgbActiveModal, private formBuilder: FormBuilder) { }
