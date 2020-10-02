@@ -292,7 +292,7 @@ Line=-24,56,232,56
 Line=-24,36,232,36
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 150,150,1136,500
+Window Placement=2,3, -1,-1, -8,-31, 0,0,1076,468
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -1420,7 +1420,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=1
-Px=321,464
+Px=793,149
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
