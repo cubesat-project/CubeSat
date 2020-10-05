@@ -1,0 +1,822 @@
+********************************************************************************
+***                       Micro-Cap 12.2.0.3 (64 bit)                        ***
+***                                                                          ***
+***                                                                          ***
+***                   Transient Analysis of timerwithlatch                   ***
+***                          2020-10-05 5:12:08 PM                           ***
+********************************************************************************
+Limits
+======
+Maximum Run Time           3000s
+Output Start Time (tstart) 0
+Maximum Time Step          0
+Number of Points           10000
+Temperature                Linear 27
+Retrace Runs               1
+Run Options                Normal
+State Variables            Zero
+Operating Point            On
+Operating Point Only       Off
+Auto Scale Ranges          On
+Accumulate Plots           Off
+Fixed Time Step            Off
+Periodic Steady State      Off
+Ignore Expression Errors   Off
+
+
+*****************************************************
+***                Temperature=27                 ***
+*****************************************************
+
+Temperature=27
+
+DC Operating Point Voltages
+===========================
+Node              Voltage  Node              Voltage 
+1                  5.000   2               -750.792m 
+3               -750.792m  4               -213.269m 
+5               -403.624m  6              1.000E-100 
+7                 -1.061m  8                -89.709m 
+9                -89.710m  10              -107.165m 
+X1.XOPAMP.A11   -750.792m  X1.XOPAMP.A12   -232.730m 
+X1.XOPAMP.A13   -197.234m  X1.XOPAMP.A16   -751.292m 
+X1.XOPAMP.A14   -197.234m  X1.XOPAMP.A15   -346.704m 
+X1.XOPAMP.A17   -750.792m  X1.XOPAMP.A20    192.820n 
+X1.XOPAMP.A21      1.000   X1.XOPAMP.B12   -232.730m 
+X1.XOPAMP.B13   -197.234m  X1.XOPAMP.B16   -404.124m 
+X1.XOPAMP.B14   -197.234m  X1.XOPAMP.B15   -750.792m 
+X1.XOPAMP.B17   -403.624m  X1.XOPAMP.B20    192.816n 
+X1.XOPAMP.B21      1.000   X1.XOPAMP.B22   -403.624m 
+X1.XOPAMP.B23   -346.704m  X1.XOPAMP.A25   -750.792m 
+X1.XOPAMP.A26   -537.638m  X1.XOPAMP.A27   -528.264m 
+X1.XOPAMP.A28   -144.769n  X1.XOPAMP.B26   -528.264m 
+X1.XOPAMP.B27   -537.638m  X1.XOPAMP.B28   -144.764n 
+X1.XOPAMP.B29   -537.638m  X1.XOPAMP.B33   -528.264m 
+X1.XOPAMP.B34   -528.264m  X1.XOPAMP.B30   -375.396m 
+X1.XOPAMP.B31   -213.269m  X1.XOPAMP.A36     -5.375m 
+X1.XOPAMP.A37    -15.375f 
+
+
+Operating Point for Devices of Type Diode
+=========================================
+Instance:         X1.XOPAMP.DAC3      X1.XOPAMP.DAC4      X1.XOPAMP.DCA1
+Using model:        X1.XOPAMP.DA        X1.XOPAMP.DA        X1.XOPAMP.DY
+
+Capacitance Terms:
+CAP                       0.000               0.000               0.000 
+
+Current Terms:
+ID                        5.485u            654.828n             -2.000p
+
+Resistance Terms:
+REQ                       4.716K             39.498K              1.000T
+
+Voltage Terms:
+VD                      404.088m            346.704m             -1.000 
+
+Power DC Terms:
+PD                        2.216u            227.031n              2.000p
+PS                        0.000               0.000               0.000 
+
+DC Pin Currents:
+Id                        5.485u            654.828n             -2.000p
+
+Condition:
+State                        OFF                 OFF                 OFF
+
+Device Variables:
+area                      1.000               1.000               1.000 
+ic                        0.000               0.000               0.000 
+
+
+Instance:         X1.XOPAMP.DCA2      X1.XOPAMP.DBC1      X1.XOPAMP.DBC2
+Using model:        X1.XOPAMP.DY        X1.XOPAMP.DA        X1.XOPAMP.DA
+
+Capacitance Terms:
+CAP                       0.000               0.000               0.000 
+
+Current Terms:
+ID                      -71.840f            653.936n              5.491u
+
+Resistance Terms:
+REQ                     2.787MEG             39.552K              4.710K
+
+Voltage Terms:
+VD                     -192.820n            346.668m            404.124m
+
+Power DC Terms:
+PD                    1.385E-020            226.699n              2.219u
+PS                        0.000               0.000               0.000 
+
+DC Pin Currents:
+Id                      -71.840f            653.936n              5.491u
+
+Condition:
+State                        OFF                 OFF                 OFF
+
+Device Variables:
+area                      1.000               1.000               1.000 
+ic                        0.000               0.000               0.000 
+
+
+Instance:         X1.XOPAMP.DCB1      X1.XOPAMP.DCB2     X1.XOPAMP.DSUP1
+Using model:        X1.XOPAMP.DY        X1.XOPAMP.DY        X1.XOPAMP.DZ
+
+Capacitance Terms:
+CAP                       0.000               0.000               0.000 
+
+Current Terms:
+ID                       -2.000p            -71.838f             10.610u
+
+Resistance Terms:
+REQ                       1.000T            2.787MEG             24.376 
+
+Voltage Terms:
+VD                       -1.000            -192.816n              5.375m
+
+Power DC Terms:
+PD                        2.000p          1.385E-020             57.033n
+PS                        0.000               0.000               0.000 
+
+DC Pin Currents:
+Id                       -2.000p            -71.838f             10.610u
+
+Condition:
+State                        OFF                 OFF                 OFF
+
+Device Variables:
+area                      1.000               1.000               1.000 
+ic                        0.000               0.000               0.000 
+
+
+Instance:        X1.XOPAMP.DSUP2
+Using model:        X1.XOPAMP.DZ
+
+Capacitance Terms:
+CAP                       0.000 
+
+Current Terms:
+ID                      -15.375f
+
+Resistance Terms:
+REQ                       1.000T
+
+Voltage Terms:
+VD                       -5.375m
+
+Power DC Terms:
+PD                        0.083f
+PS                        0.000 
+
+DC Pin Currents:
+Id                      -15.375f
+
+Condition:
+State                        OFF
+
+Device Variables:
+area                      1.000 
+ic                        0.000 
+
+
+
+Operating Point for Devices of Type Bipolar Junction Transistors NPN
+====================================================================
+Instance:                     Q2
+Using model:              2N3904
+
+Beta Terms:
+BETADC                 -966.052m
+BETAAC                  -93.541m
+
+Capacitance Terms:
+CPI                       4.235p
+CMU                       3.637p
+CBX                       0.000 
+CJS                       0.000 
+
+Conductance Terms:
+GM                     -189.853f
+
+Current Terms:
+IB                      -29.593p
+IC                       28.589p
+
+Resistance Terms:
+RPI                     492.704G
+RX                        0.000 
+RO                      835.759G
+
+Voltage Terms:
+VBE                    -107.165m
+VBC                     -17.455m
+VCE                     -89.710m
+
+Frequency Terms:
+FT                       -3.838m
+
+Power DC Terms:
+PD                      606.685f
+PS                        0.000 
+
+DC Pin Currents:
+Ib                      -29.593p
+Ic                       28.589p
+Ie                        1.005p
+Is                        0.000 
+
+Condition:
+State                        OFF
+
+Device Variables:
+area                      1.000 
+vbe                       0.000 
+vce                       0.000 
+
+
+
+Operating Point for Devices of Type Bipolar Junction Transistors PNP
+====================================================================
+Instance:                     Q1
+Using model:              2N3906
+
+Beta Terms:
+BETADC                   -1.072 
+BETAAC                   -2.400K
+
+Capacitance Terms:
+CPI                       4.913p
+CMU                       6.509p
+CBX                       0.000 
+CJS                       0.000 
+
+Conductance Terms:
+GM                      -11.793p
+
+Current Terms:
+IB                       28.589p
+IC                      -30.646p
+
+Resistance Terms:
+RPI                     203.551T
+RX                        0.000 
+RO                       78.177G
+
+Voltage Terms:
+VBE                     661.083m
+VBC                     -88.648m
+VCE                     749.731m
+
+Frequency Terms:
+FT                     -164.322m
+
+Power DC Terms:
+PD                        4.077p
+PS                        0.000 
+
+DC Pin Currents:
+Ib                      -28.589p
+Ic                       30.646p
+Ie                       -2.058p
+Is                        0.000 
+
+Condition:
+State                        OFF
+
+Device Variables:
+area                      1.000 
+vbe                       0.000 
+vce                       0.000 
+
+
+
+Operating Point for Devices of Type Mosfet NMOS
+===============================================
+Instance:         X1.XOPAMP.MLA1      X1.XOPAMP.MLA2      X1.XOPAMP.MLB1
+Using model:      X1.XOPAMP.MOSN      X1.XOPAMP.MOSN      X1.XOPAMP.MOSN
+
+Capacitance Terms:
+CBD                       0.000               0.000               0.000 
+CBS                       0.000               0.000               0.000 
+CGSOVL                    0.000               0.000               0.000 
+CGDOVL                    0.000               0.000               0.000 
+CGBOVL                    0.000               0.000               0.000 
+CGS                       0.000               0.000               0.000 
+CGD                       0.000               0.000               0.000 
+CGB                       0.000               0.000               0.000 
+
+Conductance Terms:
+GM                        0.000               0.000               0.000 
+GDS                       0.000               0.000               0.000 
+GMBS                      0.000               0.000               0.000 
+
+Current Terms:
+ID                      -10.658u            -10.658u             -7.418u
+
+Voltage Terms:
+VGS                    -528.264m           -144.769n           -537.638m
+VDS                    -537.638m           -537.638m           -528.264m
+VBS                       0.000               0.000               0.000 
+VGB                    -528.264m           -144.769n           -537.638m
+VGD                       9.374m            537.638m             -9.374m
+VDB                    -537.638m           -537.638m           -528.264m
+VTH                     700.000m            700.000m            700.000m
+VDSAT                     0.000               0.000               0.000 
+
+Power DC Terms:
+PD                        5.730u              5.730u              3.918u
+PS                        0.000               0.000               0.000 
+
+DC Pin Currents:
+Ig                        0.000               0.000               0.000 
+Id                      -10.658u            -10.658u             -7.418u
+Is                        0.000               0.000               0.000 
+Ib                       10.658u             10.658u              7.418u
+
+Condition:
+State                        OFF                 OFF                 OFF
+
+Device Variables:
+m                         1.000               1.000               1.000 
+l                         0.000               0.000               0.000 
+w                         0.000               0.000               0.000 
+ad                        0.000               0.000               0.000 
+as                        0.000               0.000               0.000 
+pd                        0.000               0.000               0.000 
+ps                        0.000               0.000               0.000 
+nrd                       0.000               0.000               0.000 
+nrs                       0.000               0.000               0.000 
+nrb                       0.000               0.000               0.000 
+nrg                       0.000               0.000               0.000 
+vds                       0.000               0.000               0.000 
+vgs                       0.000               0.000               0.000 
+vbs                       0.000               0.000               0.000 
+
+
+Instance:         X1.XOPAMP.MLB2      X1.XOPAMP.MLB3       X1.XOPAMP.MO2
+Using model:      X1.XOPAMP.MOSN      X1.XOPAMP.MOSN     X1.XOPAMP.MOSNA
+
+Capacitance Terms:
+CBD                       0.000               0.000               0.000 
+CBS                       0.000               0.000               0.000 
+CGSOVL                    0.000               0.000               0.000 
+CGDOVL                    0.000               0.000               0.000 
+CGBOVL                    0.000               0.000               0.000 
+CGS                       0.000               0.000               0.000 
+CGD                       0.000               0.000               0.000 
+CGB                       0.000               0.000               0.000 
+
+Conductance Terms:
+GM                        0.000               0.000               0.000 
+GDS                       0.000               0.000               0.000 
+GMBS                      0.000               0.000               0.000 
+
+Current Terms:
+ID                       -7.418u             -7.418u            -20.110n
+
+Voltage Terms:
+VGS                    -144.764n           -537.638m           -528.264m
+VDS                    -528.264m           -528.264m           -375.396m
+VBS                       0.000               0.000               0.000 
+VGB                    -144.764n           -537.638m           -528.264m
+VGD                     528.264m             -9.374m           -152.868m
+VDB                    -528.264m           -528.264m           -375.396m
+VTH                     700.000m            700.000m              2.000 
+VDSAT                     0.000               0.000               0.000 
+
+Power DC Terms:
+PD                        3.918u              3.918u              7.549n
+PS                        0.000               0.000               0.000 
+
+DC Pin Currents:
+Ig                        0.000               0.000               0.000 
+Id                       -7.418u             -7.418u            -20.110n
+Is                        0.000               0.000               0.000 
+Ib                        7.418u              7.418u             20.110n
+
+Condition:
+State                        OFF                 OFF                 OFF
+
+Device Variables:
+m                         1.000               1.000               1.000 
+l                         0.000               0.000               0.000 
+w                         0.000               0.000               0.000 
+ad                        0.000               0.000               0.000 
+as                        0.000               0.000               0.000 
+pd                        0.000               0.000               0.000 
+ps                        0.000               0.000               0.000 
+nrd                       0.000               0.000               0.000 
+nrs                       0.000               0.000               0.000 
+nrb                       0.000               0.000               0.000 
+nrg                       0.000               0.000               0.000 
+vds                       0.000               0.000               0.000 
+vgs                       0.000               0.000               0.000 
+vbs                       0.000               0.000               0.000 
+
+
+Instance:          X1.XOPAMP.MO4       X1.XOPAMP.MD1      X1.XOPAMP.MRST
+Using model:     X1.XOPAMP.MOSNA     X1.XOPAMP.MOSNA      X1.XOPAMP.MOSN
+
+Capacitance Terms:
+CBD                       0.000               0.000               0.000 
+CBS                       0.000               0.000               0.000 
+CGSOVL                    0.000               0.000               0.000 
+CGDOVL                    0.000               0.000               0.000 
+CGBOVL                    0.000               0.000               0.000 
+CGS                       0.000               0.000               0.000 
+CGD                       0.000               0.000               0.000 
+CGB                       0.000               0.000               0.000 
+
+Conductance Terms:
+GM                        0.000               0.000               0.000 
+GDS                       0.000               0.000               0.000 
+GMBS                      0.000               0.000               0.000 
+
+Current Terms:
+ID                      -38.317p         -1.000E-100            -10.658u
+
+Voltage Terms:
+VGS                    -375.396m           -375.396m           -750.792m
+VDS                    -213.269m          1.000E-100           -537.638m
+VBS                       0.000               0.000               0.000 
+VGB                    -375.396m           -375.396m           -750.792m
+VGD                    -162.127m           -375.396m           -213.154m
+VDB                    -213.269m          1.000E-100           -537.638m
+VTH                       2.000               2.000             700.000m
+VDSAT                     0.000               0.000               0.000 
+
+Power DC Terms:
+PD                        8.172p              0.000               5.730u
+PS                        0.000               0.000               0.000 
+
+DC Pin Currents:
+Ig                        0.000               0.000               0.000 
+Id                      -38.317p         -1.000E-100            -10.658u
+Is                        0.000          -1.000E-100              0.000 
+Ib                       38.317p          2.000E-100             10.658u
+
+Condition:
+State                        OFF                 OFF                 OFF
+
+Device Variables:
+m                         1.000               1.000               1.000 
+l                         0.000               0.000               0.000 
+w                         0.000               0.000               0.000 
+ad                        0.000               0.000               0.000 
+as                        0.000               0.000               0.000 
+pd                        0.000               0.000               0.000 
+ps                        0.000               0.000               0.000 
+nrd                       0.000               0.000               0.000 
+nrs                       0.000               0.000               0.000 
+nrb                       0.000               0.000               0.000 
+nrg                       0.000               0.000               0.000 
+vds                       0.000               0.000               0.000 
+vgs                       0.000               0.000               0.000 
+vbs                       0.000               0.000               0.000 
+
+
+
+Operating Point for Devices of Type Mosfet PMOS
+===============================================
+Instance:          X1.XOPAMP.MA1       X1.XOPAMP.MA2       X1.XOPAMP.MB1
+Using model:      X1.XOPAMP.MOSP      X1.XOPAMP.MOSP      X1.XOPAMP.MOSP
+
+Capacitance Terms:
+CBD                       0.000               0.000               0.000 
+CBS                       0.000               0.000               0.000 
+CGSOVL                    0.000               0.000               0.000 
+CGDOVL                    0.000               0.000               0.000 
+CGBOVL                    0.000               0.000               0.000 
+CGS                       0.000               0.000               0.000 
+CGD                       0.000               0.000               0.000 
+CGB                       0.000               0.000               0.000 
+
+Conductance Terms:
+GM                        0.000               0.000               0.000 
+GDS                       0.000               0.000               0.000 
+GMBS                      0.000               0.000               0.000 
+
+Current Terms:
+ID                       19.723u             19.723u             19.723u
+
+Voltage Terms:
+VGS                    -518.563m           -113.974m           -171.394m
+VDS                      35.495m             35.495m             35.495m
+VBS                    -518.063m           -518.063m           -518.063m
+VGB                    -500.000u            404.088m            346.668m
+VGD                    -554.058m           -149.470m           -206.890m
+VDB                     553.558m            553.558m            553.558m
+VTH                    -700.000m           -700.000m           -700.000m
+VDSAT                     0.000               0.000               0.000 
+
+Power DC Terms:
+PD                       13.508u             13.508u             13.508u
+PS                        0.000               0.000               0.000 
+
+DC Pin Currents:
+Ig                        0.000               0.000               0.000 
+Id                       19.723u             19.723u             19.723u
+Is                        5.000u              5.000u              5.000u
+Ib                      -24.723u            -24.723u            -24.723u
+
+Condition:
+State                        OFF                 OFF                 OFF
+
+Device Variables:
+m                         1.000               1.000               1.000 
+l                         0.000               0.000               0.000 
+w                         0.000               0.000               0.000 
+ad                        0.000               0.000               0.000 
+as                        0.000               0.000               0.000 
+pd                        0.000               0.000               0.000 
+ps                        0.000               0.000               0.000 
+nrd                       0.000               0.000               0.000 
+nrs                       0.000               0.000               0.000 
+nrb                       0.000               0.000               0.000 
+nrg                       0.000               0.000               0.000 
+vds                       0.000               0.000               0.000 
+vgs                       0.000               0.000               0.000 
+vbs                       0.000               0.000               0.000 
+
+
+Instance:          X1.XOPAMP.MB2       X1.XOPAMP.MO1       X1.XOPAMP.MO3
+Using model:      X1.XOPAMP.MOSP     X1.XOPAMP.MOSPA     X1.XOPAMP.MOSPA
+
+Capacitance Terms:
+CBD                       0.000               0.000               0.000 
+CBS                       0.000               0.000               0.000 
+CGSOVL                    0.000               0.000               0.000 
+CGDOVL                    0.000               0.000               0.000 
+CGBOVL                    0.000               0.000               0.000 
+CGS                       0.000               0.000               0.000 
+CGD                       0.000               0.000               0.000 
+CGB                       0.000               0.000               0.000 
+
+Conductance Terms:
+GM                        0.000               0.000               0.000 
+GDS                       0.000               0.000               0.000 
+GMBS                      0.000               0.000               0.000 
+
+Current Terms:
+ID                       19.723u             20.110n             10.610u
+
+Voltage Terms:
+VGS                    -518.063m            222.528m            375.396m
+VDS                      35.495m            375.396m            537.523m
+VBS                    -518.063m              0.000               0.000 
+VGB                       7.157p            222.528m            375.396m
+VGD                    -553.558m           -152.868m           -162.127m
+VDB                     553.558m            375.396m            537.523m
+VTH                    -700.000m             -2.000              -2.000 
+VDSAT                     0.000               0.000               0.000 
+
+Power DC Terms:
+PD                       13.508u              7.549n              5.703u
+PS                        0.000               0.000               0.000 
+
+DC Pin Currents:
+Ig                        0.000               0.000               0.000 
+Id                       19.723u             20.110n             10.610u
+Is                        5.000u              0.000               0.000 
+Ib                      -24.723u            -20.110n            -10.610u
+
+Condition:
+State                        OFF                 OFF                 OFF
+
+Device Variables:
+m                         1.000               1.000               1.000 
+l                         0.000               0.000               0.000 
+w                         0.000               0.000               0.000 
+ad                        0.000               0.000               0.000 
+as                        0.000               0.000               0.000 
+pd                        0.000               0.000               0.000 
+ps                        0.000               0.000               0.000 
+nrd                       0.000               0.000               0.000 
+nrs                       0.000               0.000               0.000 
+nrb                       0.000               0.000               0.000 
+nrg                       0.000               0.000               0.000 
+vds                       0.000               0.000               0.000 
+vgs                       0.000               0.000               0.000 
+vbs                       0.000               0.000               0.000 
+
+
+
+Operating Point for Devices of Type Resistor
+============================================
+Instance:                      R1                  R2                  R3
+V                       -750.792m            106.104m            285.885n
+Power DC Terms:
+PD                       281.845n              1.126u              0.008f
+
+DC Pin Currents:
+Ir                      -375.396n             10.610u             28.589p
+
+Device Variables:
+tc1                        0.000               0.000               0.000 
+tc2                        0.000               0.000               0.000 
+
+
+Instance:                      R4               RLOAD      X1.XOPAMP.RAD1
+V                        106.104m             -1.061m           -197.234m
+Power DC Terms:
+PD                         1.126u             11.258n              3.890u
+
+DC Pin Currents:
+Ir                        10.610u            -10.610u            -19.723u
+
+Device Variables:
+tc1                        0.000               0.000               0.000 
+tc2                        0.000               0.000               0.000 
+
+
+Instance:          X1.XOPAMP.RAD2      X1.XOPAMP.RCA1      X1.XOPAMP.RBD1
+V                       -197.234m            192.820n           -197.234m
+Power DC Terms:
+PD                         3.890u          3.718E-019              3.890u
+
+DC Pin Currents:
+Ir                       -19.723u              1.928p            -19.723u
+
+Device Variables:
+tc1                        0.000               0.000               0.000 
+tc2                        0.000               0.000               0.000 
+
+
+Instance:          X1.XOPAMP.RBD2      X1.XOPAMP.RCB1       X1.XOPAMP.RB1
+V                       -197.234m            192.816n           -347.168m
+Power DC Terms:
+PD                         3.890u          3.718E-019              2.009u
+
+DC Pin Currents:
+Ir                       -19.723u              1.928p             -5.786u
+
+Device Variables:
+tc1                        0.000               0.000               0.000 
+tc2                        0.000               0.000               0.000 
+
+
+Instance:           X1.XOPAMP.RB2       X1.XOPAMP.RB3       X1.XOPAMP.RLA
+V                        -56.920m           -346.704m           -213.154m
+Power DC Terms:
+PD                        53.998n              2.003u              4.543u
+
+DC Pin Currents:
+Ir                      -948.670n             -5.778u            -21.315u
+
+Device Variables:
+tc1                        0.000               0.000               0.000 
+tc2                        0.000               0.000               0.000 
+
+
+Instance:           X1.XOPAMP.RLB      X1.XOPAMP.RPD1      X1.XOPAMP.RRST
+V                       -222.528m              0.000             213.154m
+Power DC Terms:
+PD                         4.952u              0.000               2.272u
+
+DC Pin Currents:
+Ir                       -22.253u              0.000              10.658u
+
+Device Variables:
+tc1                        0.000               0.000               0.000 
+tc2                        0.000               0.000               0.000 
+
+
+Instance:         X1.XOPAMP.RRSTB      X1.XOPAMP.RSUP
+V                       -750.792m            -15.375f
+Power DC Terms:
+PD                        11.274p          2.364E-028
+
+DC Pin Currents:
+Ir                       -15.016p            -15.375f
+
+Device Variables:
+tc1                        0.000               0.000 
+tc2                        0.000               0.000 
+
+
+
+Operating Point for Devices of Type Capacitor
+=============================================
+Instance:                      C1                  C3       X1.XOPAMP.CLA
+V                       -375.477f            403.624m           -537.638m
+Power DC Terms:
+PS                         0.000               0.000               0.000 
+
+DC Pin Currents:
+Ic                         0.000               0.000               0.000 
+
+Device Variables:
+ic                         0.000               0.000               0.000 
+
+
+Instance:           X1.XOPAMP.CLB      X1.XOPAMP.CPD1       X1.XOPAMP.CO1
+V                       -528.264m           -528.264m           -213.269m
+Power DC Terms:
+PS                         0.000               0.000               0.000 
+
+DC Pin Currents:
+Ic                         0.000               0.000               0.000 
+
+Device Variables:
+ic                         0.000               0.000               0.000 
+
+
+Instance:           X1.XOPAMP.CO2
+V                       -375.396m
+Power DC Terms:
+PS                         0.000 
+
+DC Pin Currents:
+Ic                         0.000 
+
+Device Variables:
+ic                         0.000 
+
+
+
+Operating Point for Devices of Type SPICE Poly
+==============================================
+Instance:          X1.XOPAMP.ES1      X1.XOPAMP.GCA1      X1.XOPAMP.GCB1
+V                      -750.792m           -192.820n           -192.816n
+Power DC Terms:
+PG                       59.233u          1.070E-023         -1.070E-024
+
+DC Pin Currents:
+ISource                  78.894u              0.056f             -0.006f
+
+
+Instance:          X1.XOPAMP.EL1      X1.XOPAMP.EFB1      X1.XOPAMP.EFB2
+V                      -750.792m           -144.769n           -144.764n
+Power DC Terms:
+PG                       48.694u              0.000               0.000 
+
+DC Pin Currents:
+ISource                  64.857u              0.000               0.000 
+
+
+Instance:         X1.XOPAMP.EPD1      X1.XOPAMP.FSUP      X1.XOPAMP.GSUP
+V                      -528.264m              5.375m           -750.792m
+Power DC Terms:
+PG                        0.000              57.033n            -11.544f
+
+DC Pin Currents:
+ISource                   0.000             -10.610u            -15.375f
+
+
+
+Operating Point for Devices of Type SPICE Source
+================================================
+Instance:                     V1    X1.XOPAMP.IABIAS      X1.XOPAMP.VAOS
+V                         5.000            -518.063m            500.000u
+Power DC Terms:
+PG                        0.000               5.181u              0.000 
+
+DC Pin Currents:
+ISource                   0.000              10.000u              0.000 
+
+
+Instance:         X1.XOPAMP.VCA1    X1.XOPAMP.IBBIAS      X1.XOPAMP.VBOS
+V                         1.000            -518.063m            500.000u
+Power DC Terms:
+PG                        2.000p              5.181u              2.419n
+
+DC Pin Currents:
+ISource                  -2.000p             10.000u             -4.837u
+
+
+Instance:         X1.XOPAMP.VCB1       X1.XOPAMP.VR1       X1.XOPAMP.VR2
+V                         1.000               0.000               0.000 
+Power DC Terms:
+PG                        2.000p              0.000               0.000 
+
+DC Pin Currents:
+ISource                  -2.000p              4.830u             -4.837u
+
+
+Instance:         X1.XOPAMP.VIN1      X1.XOPAMP.VIN2      X1.XOPAMP.VIN3
+V                         0.000               0.000               0.000 
+Power DC Terms:
+PG                        0.000               0.000               0.000 
+
+DC Pin Currents:
+ISource                   0.000               0.000          -6.776E-021
+
+
+Instance:         X1.XOPAMP.VFB1      X1.XOPAMP.VFB2       X1.XOPAMP.VO1
+V                         0.000               0.000               0.000 
+Power DC Terms:
+PG                        0.000               0.000               0.000 
+
+DC Pin Currents:
+ISource              -2.711E-020          8.132E-020            -10.610u
+
+
+Instance:         X1.XOPAMP.ISUP
+V                      -750.792m
+Power DC Terms:
+PG                        9.235u
+
+DC Pin Currents:
+ISource                  12.300u
+
+

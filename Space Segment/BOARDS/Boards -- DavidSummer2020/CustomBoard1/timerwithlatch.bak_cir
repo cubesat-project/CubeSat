@@ -4,38 +4,64 @@ Version=12.00
 Program=Micro-Cap
 Component Version=10.00
 Shape Version=11.00
-Screen=1536,864
+Screen=2560,1440
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=117
-TXCnt=2
+NLCnt=45
+TXCnt=0
 
 [shapedef]
-Name=555
+Name=555Timer
 Rectangle=0,8,80,88
 FColor=None
 Line=0,32,-16,32
 Line=0,64,-16,64
 Line=40,88,40,104
-Line=32,8,32,-8
+Line=40,8,40,-8
 Line=64,8,64,-8
 Line=80,32,96,32
 Line=16,8,16,-8
 Line=80,64,96,64
+Text="Rst"
+TextInfo=8,10,24,23 , -9,0,"Arial"
+Text="Vcc"
+TextInfo=32,10,49,23 , -9,0,"Arial"
+Text="Ctl"
+TextInfo=58,10,71,23 , -9,0,"Arial"
+Text="Out"
+TextInfo=62,27,78,40 , -9,0,"Arial"
+Text="Dis"
+TextInfo=64,59,79,72 , -9,0,"Arial"
+Text="Gnd"
+TextInfo=31,76,50,89 , -9,0,"Arial"
+Text="Trig"
+TextInfo=4,59,21,72 , -9,0,"Arial"
+Text="Thresh"
+TextInfo=4,27,33,40 , -9,0,"Arial"
 
 [shapedef]
-Name=And2
-Root="And.root",0,0,0
+Name=Battery
+Line=0,0,22,0
+Line=22,-3,22,3
+Line=26,-7,26,7
+Line=26,0,48,0
+Current=32,8,16,8
 
 [shapedef]
-Name=And.root
-Line=0,0,9,0
-Line=0,16,9,16
-Line=9,20,9,-4
-Line=27,20,9,20
-Line=9,-4,27,-4
-Line=40,8,48,8
-Arc=12,-4,40,20 , 28,32,28,-16
+Name=Bjt.root
+Line=0,0,13,0
+Rectangle=13,-12,15,12
+Current=32,-24,32,-16
+Current=32,24,32,16
+Current=0,-8,8,-8
+PolyOpen=3
+PolyLine=24,-24
+PolyLine=24,-12
+PolyLine=14,-2
+PolyOpen=3
+PolyLine=24,24
+PolyLine=24,12
+PolyLine=14,2
 
 [shapedef]
 Name=Capacitor
@@ -53,52 +79,22 @@ Line=18,-4,18,4
 Line=24,0,24,0
 
 [shapedef]
-Name=Inv
-Root="Inv.root",0,0,0
+Name=NPN
+Root="Bjt.root",0,0,0
+PolyClosed=3
+PolyLine=20,12
+PolyLine=24,12
+PolyLine=24,8
 
 [shapedef]
-Name=Inv.root
-Line=8,-16,8,16
-Line=8,-16,40,0
-Line=8,16,40,0
-Line=0,0,8,0
-Ellipse=40,-2,44,2
-FColor=None
-Line=44,0,47,0
-Line=46,0,48,0
-
-[shapedef]
-Name=Minus.root
-Line=-2,0,2,0
-
-[shapedef]
-Name=Nor2
-Root="Nor.root",0,0,0
-
-[shapedef]
-Name=Nor.root
-Arc=5,-18,43,20 , 24,20,42,8
-Line=0,0,10,0
-Line=0,16,10,16
-Line=24,-4,6,-4
-Line=6,20,24,20
-Arc=5,-4,43,34 , 42,8,24,-4
-Ellipse=42,6,46,10
-FColor=None
-Line=46,8,48,8
-Arc=0,-4,12,20 , 6,20,6,-4
-
-[shapedef]
-Name=Plus.root
-Line=-2,0,2,0
-Line=0,-2,0,2
-
-[shapedef]
-Name=Pulse_Source
-Root="Vsource.root",0,0,0
-Line=20,-4,20,0
-Line=20,0,26,0
-Line=26,0,26,4
+Name=PNP
+Root="Bjt.root",0,0,0
+PolyClosed=3
+PolyLine=17,-5
+PolyLine=21,-5
+PolyLine=17,-9
+Line=16,-4,14,-2
+Line=16,4,14,2
 
 [shapedef]
 Name=Resistor
@@ -117,52 +113,35 @@ PolyLine=48,0
 PolyLine=48,0
 Current=32,8,16,8
 
-[shapedef]
-Name=SPICE_V
-Root="Vsource.root",0,0,0
-
-[shapedef]
-Name=Switch
-Line=0,0,0,0
-Line=0,48,0,48
-Line=48,0,48,16
-Line=48,48,48,24
-Line=48,16,52,20
-Root="Plus.root",8,8,0
-Root="Minus.root",8,40,0
-Ellipse=-2,-2,2,2
-FColor=None
-Ellipse=-2,46,2,50
-FColor=None
-
-[shapedef]
-Name=Vsource.root
-Line=0,0,12,0
-Line=36,0,48,0
-Ellipse=12,-12,36,12
-FColor=None
-Line=7,5,7,9
-Root="Plus.root",41,7,0
-Current=32,16,16,16
+[compdef]
+Name=Battery
+Definition=Battery
+Shape=Battery
+Mask=6145
+Used=56
+memo=Battery
+Label Offset=19,7,10,13
+PinCnt=2
+Pin="Plus",6,0,-4,-5
+Pin="Minus",0,0,-10,-5
 
 [compdef]
-Name=Resistor
-Definition=Resistor
-Shape=Resistor
-Mask=6913
-Used=150
-memo=Resistor
-Label Offset=18,6,8,11
-PinCnt=2
-Pin="Plus",6,0,-10,-4
-Pin="Minus",0,0,-14,-4
+Name=Ground
+Definition=Ground
+Shape=Ground
+Mask=1793
+Used=283
+memo=Ground
+Label Offset=0,0,0,0
+PinCnt=1
+Pin="PinA",0,0,-3,-7
 
 [compdef]
 Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
-Mask=7937
-Used=22
+Mask=7425
+Used=28
 memo=Capacitor
 Label Offset=16,12,12,12
 PinCnt=2
@@ -170,129 +149,63 @@ Pin="Plus",6,0,-3,-5
 Pin="Minus",0,0,-14,-5
 
 [compdef]
-Name=Switch
-Definition=Switch
-Shape=Switch
-Mask=4352
-Used=13
-memo=Voltage/Current/Time Controlled Switch
-Label Offset=56,10,-28,52
-PinCnt=4
-Pin="Plus Output",6,0,-13,-3
-Pin="Minus Output",6,6,-18,18
-Pin="Plus Input",0,0,-28,-3
-Pin="Minus Input",0,6,-39,18
-
-[compdef]
-Name=Ground
-Definition=Ground
-Shape=Ground
-Mask=1793
-Used=260
-memo=Ground
-Label Offset=0,0,0,0
-PinCnt=1
-Pin="PinA",0,0,-3,-7
-
-[compdef]
-Name=Pulse Source
-Definition=Pulse source
-Shape=Pulse_Source
-Mask=4864
-Used=7
-memo=Pulse Source
-Label Offset=18,13,15,9
+Name=Resistor
+Definition=Resistor
+Shape=Resistor
+Mask=6913
+Used=167
+memo=Resistor
+Label Offset=18,6,8,11
 PinCnt=2
-Pin="Plus",6,0,-5,-4
-Pin="Minus",0,0,-19,-4
+Pin="Plus",6,0,-10,-4
+Pin="Minus",0,0,-14,-4
 
 [compdef]
-Name=Inverter
-Definition=INV
-Shape=Inv
-Mask=4611
-Data1=1
-memo=Generic Inverter Gate
-Label Offset=12,-6,11,21
-PinCnt=2
-Pin="In",0,0,-4,-2
-Pin="Out",6,0,-10,-2
-
-[compdef]
-Name=555
-Definition=Macro
-Shape=555
-Mask=20480
-memo=555 Timer Macro
-Label Offset=87,72,-20,88
+Name=ICM7555
+Definition=Subckt
+Shape=555Timer
+Mask=4224
+Used=2
+memo=General Purpose Timer
+Label Offset=84,76,-4,68
 PinCnt=8
-Pin="RESET",d,2,-1,-33,17
-Pin="DISCH",a,12,8,-49,8
-Pin="THRES",a,-2,4,20,7
-Pin="TRIG",a,-2,8,20,8
-Pin="OUT",d,12,4,-39,7
-Pin="CONT",a,8,-1,5,17
-Pin="VCC",a,4,-1,5,17
-Pin="GND",a,5,13,3,-3
+Pin="1",a,5,13,4,7
+Pin="2",a,-2,8,-3,-2
+Pin="3",a,12,4,-2,-2
+Pin="4",a,2,-1,5,7
+Pin="5",a,8,-1,5,7
+Pin="6",a,-2,4,-2,-2
+Pin="7",a,12,8,-2,-2
+Pin="8",a,5,-1,5,7
 
 [compdef]
-Name=Voltage Source
-Definition=VSpice
-Shape=SPICE_V
+Name=PNP
+Definition=PNP
+Shape=PNP
 Mask=4609
-Used=39
-memo=Voltage Source
-Label Offset=19,13,15,13
-PinCnt=2
-Pin="Plus",6,0,-5,-6
-Pin="Minus",0,0,-20,-6
+Used=1
+memo=PNP Transistor
+Label Offset=37,-13,-8,35
+PinCnt=3
+Pin="Collector",3,3,6,3
+Pin="Base",0,0,-19,-3
+Pin="Emitter",3,-3,6,15
 
 [compdef]
-Name=Nor2
-Definition=NOR
-Shape=Nor2
-Mask=4096
-Data1=2
-memo=2 Input Generic NOR Gate
-Label Offset=16,4,8,10
+Name=NPN
+Definition=NPN
+Shape=NPN
+Mask=5633
+Used=12
+memo=NPN Transistor
+Label Offset=37,-17,-14,33
 PinCnt=3
-Pin="In0",0,0,-9,-1
-Pin="In1",0,2,-9,-1
-Pin="Out",6,1,-7,-3
-
-[compdef]
-Name=And2
-Definition=AND
-Shape=And2
-Mask=4867
-Data1=2
-memo=2 Input Generic AND Gate
-Label Offset=12,21,8,8
-PinCnt=3
-Pin="In0",0,0,-6,-1
-Pin="In1",0,2,-6,-1
-Pin="Out",6,1,-7,-1
-
-[TitleBlockDef]
-Name=DefaultOld
-Rectangle=-24,-25,232,76
-FColor=None
-Text="#Field1"
-TextInfo=-20,-21,28,-3 , -15,0,"Arial"
-Text="#Field2"
-TextInfo=-20,2,9,13 , -8,0,"Arial"
-Text="#Field3"
-TextInfo=-20,20,7,31 , -8,0,"Arial"
-Text="#Field4"
-TextInfo=-20,41,9,52 , -8,0,"Arial"
-Text="#Field5"
-TextInfo=-20,60,7,71 , -8,0,"Arial"
-Line=-24,16,232,16
-Line=-24,56,232,56
-Line=-24,36,232,36
+Pin="Collector",3,-3,4,14
+Pin="Base",0,0,-18,-3
+Pin="Emitter",3,3,5,1
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 78,78,1122,530
+Window Placement=2,3, -1,-1, -8,-31, 0,0,947,490
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -304,11 +217,11 @@ PowerFormat=3
 PathDelayFormat=3
 WarningFormat=3
 GridTextFormulaFormat=3
-Window Placement in Transient Analysis=2,3, -1,-1, -8,-31, 0,0,846,300
+Window Placement in Transient Analysis=2,3, -1,-1, -8,-31, 26,26,1284,501
 SpiceType=AMBIGUOUS
 Title_Block_Border=None
 Title_Block=False
-Show Nodes=False
+Show Nodes=True
 Show Voltages=False
 Show Current=False
 Show Power=False
@@ -319,67 +232,51 @@ Show Cross=False
 Show Attribute Text=True
 Show Grid Text=True
 
-[Object]
-Object=Rectangle
-CBorder=#000080
-Px=1053,149,1161,419
-
-[Object]
-Object=Rectangle
-CBorder=#000080
-Px=942,231,1044,521
-
-[Object]
-Object=TitleBlock
-CBorder=#000000
-Px=80,112,560,240
-Rot=0
-KeepAspectRatio=True
-OneTitle=False
-Placement=BottomRight
+[Comp]
+Name=Battery
+Px=384,32
 
 [Attr]
-ON=0,0,NAME
-V=DefaultOld
+ON=19,7,PART
+V=V1
+Style=8192
 
 [Attr]
-ON=0,11,#Field1
-V=$name
+ON=19,21,VALUE
+V=5v
+Style=8192
 
 [Attr]
-ON=0,22,#Field2
-V=$user $company
-
-[Attr]
-ON=0,33,#Field3
+ON=0,0,PACKAGE
 V
 
-[Attr]
-ON=0,44,#Field4
-V=$date
+[Comp]
+Name=Ground
+Px=384,32
+Rot=7
+
+[Comp]
+Name=Capacitor
+Px=312,168
+Rot=5
 
 [Attr]
-ON=0,55,#Field5
-V=Page $page of $maxpage
+ON=12,-26,PART
+V=C1
+Style=8192
 
-[Wire]
-Pxs=136,336,136,600
+[Attr]
+ON=12,-40,CAPACITANCE
+V=1000uF IC=0V
+Style=8192
 
-[Wire]
-Pxs=136,336,144,336
-
-[Wire]
-Pxs=136,600,200,600
-
-[Wire]
-Pxs=144,72,344,72
-
-[Wire]
-Pxs=144,72,144,104
+[Attr]
+ON=0,0,PACKAGE
+V
 
 [Comp]
 Name=Resistor
-Px=144,152
+Px=312,288
 Rot=3
 
 [Attr]
@@ -388,42 +285,193 @@ V=R1
 Style=8192
 
 [Attr]
-ON=0,0,RESISTANCE
-V=132k
+ON=-39,-42,RESISTANCE
+V=2MEG
 Style=8192
 
 [Attr]
 ON=0,0,PACKAGE
 V
 
+[Comp]
+Name=Ground
+Px=312,344
+Rot=7
+
 [Wire]
-Pxs=144,152,144,176
+Pxs=312,168,312,192
+
+[Comp]
+Name=ICM7555
+Px=456,144
+
+[Attr]
+ON=84,76,PART
+V=X1
+Style=8192
+
+[Attr]
+ON=84,90,NAME
+V=ICM7555
+
+[Attr]
+ON=84,118,PACKAGE
+V=DIP8
+
+[Wire]
+Pxs=312,80,312,120
+
+[Wire]
+Pxs=312,80,496,80
+
+[Wire]
+Pxs=496,80,496,120
+
+[Wire]
+Pxs=432,32,496,32
+
+[Wire]
+Pxs=496,32,496,80
+
+[Wire]
+Pxs=472,120,496,120
+
+[Wire]
+Pxs=472,120,472,136
+
+[Wire]
+Pxs=496,120,496,136
+
+[Wire]
+Pxs=552,176,632,176
+
+[Comp]
+Name=Ground
+Px=496,248
+Rot=7
+
+[Wire]
+Pxs=312,192,440,192
+
+[Wire]
+Pxs=440,176,440,192
+
+[Wire]
+Pxs=312,192,312,240
+
+[Wire]
+Pxs=440,192,440,208
+
+[Wire]
+Pxs=312,288,312,344
+
+[Comp]
+Name=Capacitor
+Px=520,136
+Rot=5
+
+[Attr]
+ON=12,-26,PART
+V=C3
+Style=8192
+
+[Attr]
+ON=12,-40,CAPACITANCE
+V=0.1u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=560,72
+Rot=7
+
+[Wire]
+Pxs=520,72,560,72
+
+[Wire]
+Pxs=520,72,520,88
+
+[Comp]
+Name=PNP
+Px=760,96
+
+[Attr]
+ON=-11,-19,PART
+V=Q1
+Style=8192
+
+[Attr]
+ON=0,0,VALUE
+V=IC=0,0
+
+[Attr]
+ON=-86,-15,MODEL
+V=2N3906
+
+[Attr]
+ON=-75,-43,PACKAGE
+V=TO-92
+
+[Comp]
+Name=NPN
+Px=704,232
+
+[Attr]
+ON=-9,-27,PART
+V=Q2
+Style=8192
+
+[Attr]
+ON=0,0,VALUE
+V=IC=0,0
+
+[Attr]
+ON=-86,-3,MODEL
+V=2N3904
+
+[Attr]
+ON=-75,25,PACKAGE
+V=TO-92
+
+[Wire]
+Pxs=496,32,784,32
+
+[Wire]
+Pxs=784,32,784,72
 
 [Comp]
 Name=Resistor
-Px=144,224
-Rot=3
+Px=632,176
 
 [Attr]
-ON=-24,-25,PART
+ON=-7,-26,PART
 V=R2
 Style=8192
 
 [Attr]
-ON=0,0,RESISTANCE
-V=132k
+ON=-7,-40,RESISTANCE
+V=10K
 Style=8192
 
 [Attr]
 ON=0,0,PACKAGE
 V
 
+[Comp]
+Name=Ground
+Px=728,256
+Rot=7
+
 [Wire]
-Pxs=144,224,144,248
+Pxs=728,96,760,96
 
 [Comp]
 Name=Resistor
-Px=144,296
+Px=728,152
 Rot=3
 
 [Attr]
@@ -432,8 +480,8 @@ V=R3
 Style=8192
 
 [Attr]
-ON=0,0,RESISTANCE
-V=73k
+ON=-33,-39,RESISTANCE
+V=10K
 Style=8192
 
 [Attr]
@@ -441,281 +489,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=144,296,144,336
+Pxs=728,96,728,104
 
 [Wire]
-Pxs=144,336,192,336
-
-[Comp]
-Name=Capacitor
-Px=144,672
-Rot=3
-
-[Attr]
-ON=-29,-26,PART
-V=C1
-Style=8192
-
-[Attr]
-ON=0,0,CAPACITANCE
-V=1800u
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
+Pxs=680,176,680,184
 
 [Wire]
-Pxs=144,624,200,624
+Pxs=680,232,704,232
 
 [Wire]
-Pxs=144,672,144,696
-
-[Wire]
-Pxs=144,696,200,696
-
-[Comp]
-Name=Switch
-Px=168,392
-
-[Attr]
-ON=56,10,PART
-V=D1 roller
-Style=8192
-
-[Attr]
-ON=56,24,VALUE
-V=s
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Switch
-Px=168,504
-Rot=4
-
-[Attr]
-ON=56,-24,PART
-V=D2 plunger
-Style=8192
-
-[Attr]
-ON=56,-38,VALUE
-V=s
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=192,176,320,176
-
-[Wire]
-Pxs=192,176,192,336
-
-[Wire]
-Pxs=200,600,200,624
-
-[Wire]
-Pxs=200,600,520,600
-
-[Comp]
-Name=Capacitor
-Px=200,672
-Rot=3
-
-[Attr]
-ON=-29,-26,PART
-V=C2
-Style=8192
-
-[Attr]
-ON=0,0,CAPACITANCE
-V=1800u
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=200,624,208,624
-
-[Wire]
-Pxs=200,672,200,696
-
-[Wire]
-Pxs=200,696,256,696
-
-[Wire]
-Pxs=200,696,200,720
-
-[Comp]
-Name=Ground
-Px=208,624
-Rot=7
-
-[Wire]
-Pxs=208,624,256,624
-
-[Wire]
-Pxs=216,392,224,392
-
-[Wire]
-Pxs=216,440,216,456
-
-[Wire]
-Pxs=216,504,216,520
-
-[Comp]
-Name=Pulse Source
-Px=216,568
-Rot=3
-
-[Attr]
-ON=-31,-23,PART
-V=V1
-Style=8192
-
-[Attr]
-ON=-66,-37,MODEL
-V=SQUARE
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Ground
-Px=216,568
-Rot=7
-
-[Wire]
-Pxs=224,344,248,344
-
-[Wire]
-Pxs=224,344,224,392
-
-[Wire]
-Pxs=248,136,248,216
-
-[Wire]
-Pxs=248,136,408,136
-
-[Comp]
-Name=Inverter
-Px=248,264
-Rot=5
-
-[Attr]
-ON=-29,-8,PART
-V=U1
-Style=8192
-
-[Attr]
-ON=-69,-22,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=-59,-36,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-20,-50,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-20,-64,IO_LEVEL
-V=0
-
-[Attr]
-ON=-76,-78,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-73,-92,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=248,264,248,344
-
-[Wire]
-Pxs=248,344,280,344
-
-[Comp]
-Name=Capacitor
-Px=256,672
-Rot=3
-
-[Attr]
-ON=-29,-26,PART
-V=C3
-Style=8192
-
-[Attr]
-ON=0,0,CAPACITANCE
-V=1800u
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=256,672,256,696
-
-[Wire]
-Pxs=280,296,344,296
-
-[Comp]
-Name=Capacitor
-Px=280,296
-Rot=7
-
-[Attr]
-ON=-29,12,PART
-V=C4
-Style=8192
-
-[Attr]
-ON=16,20,CAPACITANCE
-V=10u
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=280,344,320,344
-
-[Wire]
-Pxs=320,176,320,264
-
-[Wire]
-Pxs=320,264,392,264
-
-[Wire]
-Pxs=320,344,320,416
-
-[Wire]
-Pxs=320,416,800,416
-
-[Wire]
-Pxs=344,72,344,152
-
-[Wire]
-Pxs=344,72,440,72
+Pxs=728,152,728,208
 
 [Comp]
 Name=Resistor
-Px=344,200
+Px=784,184
 Rot=3
 
 [Attr]
@@ -724,8 +511,8 @@ V=R4
 Style=8192
 
 [Attr]
-ON=10,-30,RESISTANCE
-V=100k
+ON=-35,-40,RESISTANCE
+V=10K
 Style=8192
 
 [Attr]
@@ -733,433 +520,30 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=344,192,344,200
+Pxs=680,184,784,184
 
 [Wire]
-Pxs=344,200,344,296
+Pxs=680,184,680,232
 
 [Wire]
-Pxs=344,296,392,296
+Pxs=784,120,784,136
 
 [Wire]
-Pxs=408,136,408,224
-
-[Wire]
-Pxs=408,224,424,224
-
-[Comp]
-Name=555
-Style=ShowPinText
-Px=408,232
-
-[Attr]
-ON=87,72,PART
-V=X1
-Style=8192
-
-[Attr]
-ON=87,86,FILE
-V=555
-
-[Attr]
-ON=87,114,PACKAGE
-V=DIP8
-
-[Wire]
-Pxs=440,72,440,224
-
-[Wire]
-Pxs=440,72,464,72
-
-[Comp]
-Name=Ground
-Px=448,336
-Rot=7
-
-[Comp]
-Name=Switch
-Px=512,24
-Rot=1
-
-[Attr]
-ON=-28,52,PART
-V=Roller
-Style=8192
-
-[Attr]
-ON=-28,66,VALUE
-V=d
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=472,128,912,128
-
-[Wire]
-Pxs=472,128,472,160
-
-[Comp]
-Name=Capacitor
-Px=472,160
-Rot=7
-
-[Attr]
-ON=-29,12,PART
-V=C5
-Style=8192
-
-[Attr]
-ON=-36,26,CAPACITANCE
-V=10n
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=472,208,472,224
-
-[Wire]
-Pxs=504,264,528,264
-
-[Wire]
-Pxs=504,296,528,296
-
-[Wire]
-Pxs=512,72,568,72
-
-[Wire]
-Pxs=520,320,520,600
-
-[Wire]
-Pxs=520,320,528,320
-
-[Wire]
-Pxs=528,264,528,288
-
-[Wire]
-Pxs=528,264,544,264
-
-[Wire]
-Pxs=528,288,720,288
-
-[Wire]
-Pxs=528,296,528,320
-
-[Comp]
-Name=Inverter
-Px=544,264
-
-[Attr]
-ON=-29,-8,PART
-V=U2
-Style=8192
-
-[Attr]
-ON=-69,-22,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=-59,-36,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-20,-50,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-20,-64,IO_LEVEL
-V=0
-
-[Attr]
-ON=-76,-78,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-73,-92,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Voltage Source
-Px=632,72
-Rot=2
-
-[Attr]
-ON=-35,-32,PART
-V=EPS
-Style=8192
-
-[Attr]
-ON=-304,-41,VALUE
-V=DC 0 AC 1 0 Pulse 0 5 100n 10n 10n 400n 1u
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Attr]
-ON=0,0,SMOOTHING
-V=N
-Style=256
-
-[Attr]
-ON=0,0,Saved_PulseS
-V=N
-Style=256
-
-[Attr]
-ON=0,0,FRACTION
-V=.2
-Style=256
-
-[Attr]
-ON=0,0,Saved_PulseF
-V=.2
-Style=256
-
-[Attr]
-ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 5 100n 10n 10n 400n 1u
-Style=256
-
-[Wire]
-Pxs=592,264,664,264
-
-[Wire]
-Pxs=912,72,912,128
-
-[Wire]
-Pxs=632,72,728,72
-
-[Wire]
-Pxs=664,248,888,248
-
-[Wire]
-Pxs=664,248,664,264
-
-[Wire]
-Pxs=720,264,720,288
-
-[Wire]
-Pxs=720,264,800,264
-
-[Comp]
-Name=Switch
-Px=728,120
-Rot=3
-
-[Attr]
-ON=-1,-66,PART
-V=D4 Plunger
-Style=8192
-
-[Attr]
-ON=-41,-80,VALUE
-V=SW4
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=768,280,768,304
-
-[Wire]
-Pxs=768,280,800,280
-
-[Wire]
-Pxs=768,304,848,304
-
-[Wire]
-Pxs=776,72,816,72
-
-[Wire]
-Pxs=792,296,848,296
-
-[Wire]
-Pxs=792,296,792,312
-
-[Wire]
-Pxs=792,312,800,312
-
-[Comp]
-Name=Nor2
-Px=800,264
-
-[Attr]
-ON=16,4,PART
-V=U3
-Style=8192
-
-[Attr]
-ON=16,18,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=16,32,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=16,46,MNTYMXDLY
-V=0
-
-[Attr]
-ON=16,60,IO_LEVEL
-V=0
-
-[Attr]
-ON=16,74,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=16,88,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Nor2
-Px=800,312
-
-[Attr]
-ON=16,4,PART
-V=U4
-Style=8192
-
-[Attr]
-ON=16,18,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=16,32,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=16,46,MNTYMXDLY
-V=0
-
-[Attr]
-ON=16,60,IO_LEVEL
-V=0
-
-[Attr]
-ON=16,74,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=16,88,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=800,328,800,416
-
-[Comp]
-Name=Switch
-Px=816,120
-Rot=3
-
-[Attr]
-ON=-1,-66,PART
-V=RBF
-Style=8192
-
-[Attr]
-ON=5,-80,VALUE
-V=SW5
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=848,272,848,296
-
-[Wire]
-Pxs=848,304,872,320
-
-[Wire]
-Pxs=848,320,872,320
-
-[Wire]
-Pxs=864,72,912,72
-
-[Wire]
-Pxs=872,320,888,320
-
-[Comp]
-Name=And2
-Px=888,248
-
-[Attr]
-ON=-25,-22,PART
-V=U5
-Style=8192
-
-[Attr]
-ON=-65,-36,TIMING MODEL
-V=D0_GATE
-
-[Attr]
-ON=-55,-50,I/O MODEL
-V=IO_STD
-
-[Attr]
-ON=-16,-64,MNTYMXDLY
-V=0
-
-[Attr]
-ON=-16,-78,IO_LEVEL
-V=0
-
-[Attr]
-ON=-72,-92,POWER NODE
-V=$G_DPWR
-
-[Attr]
-ON=-69,-106,GROUND NODE
-V=$G_DGND
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Wire]
-Pxs=888,264,888,320
-
-[Wire]
-Pxs=936,256,976,256
-
-[Comp]
-Name=Ground
-Px=952,72
-Rot=7
+Pxs=784,136,872,136
 
 [Comp]
 Name=Resistor
-Px=976,304
+Px=872,184
 Rot=3
 
 [Attr]
-ON=13,-38,PART
-V=Load1
+ON=-37,-25,PART
+V=Rload
 Style=8192
 
 [Attr]
-ON=-31,-39,RESISTANCE
-V=10k
+ON=-32,-39,RESISTANCE
+V=100
 Style=8192
 
 [Attr]
@@ -1168,60 +552,8 @@ V
 
 [Comp]
 Name=Ground
-Px=976,304
+Px=872,184
 Rot=7
-
-[Wire]
-Pxs=912,72,952,72
-
-[Wire]
-Pxs=568,72,568,184
-
-[Wire]
-Pxs=568,184,1096,184
-
-[Comp]
-Name=Resistor
-Px=1096,232
-Rot=3
-
-[Attr]
-ON=18,-38,PART
-V=Load2
-Style=8192
-
-[Attr]
-ON=-31,-39,RESISTANCE
-V=10k
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Ground
-Px=1096,232
-Rot=7
-
-[Wire]
-Pxs=568,72,584,72
-
-[Grid Text]
-Text="Cameras + OBC"
-Px=1056,296
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
-
-[Grid Text]
-Text="ADCS + COMMS"
-Px=944,360
-GridSnap=True
-JustifyH=Left
-JustifyV=Bottom
-CBorder=None
 
 [Schematic]
 CurrentSection 0=0
@@ -1231,9 +563,9 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=0.66666666666666663
 GridUser=10
-ShapeGroups="Main","Euro","Polarity","Electrolytic","GroundArrow","DeMorgan","Main1","Main11"
+ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
 CalcRMS=False
 CalcAVG=False
 CalcPeak=False
@@ -1267,7 +599,7 @@ STAR=No
 LEFTBRK=No
 RIGHTBRK=No
 BOTHBRK=No
-META=No
+META=Yes
 PARALLELOGRAM=No
 FC_PROCESS=No
 FC_ALT_PROCESS=No
@@ -1322,9 +654,9 @@ POWER=Yes
 CONDITIN=Yes
 PIN=Yes
 CONNWARN=Yes
-CROSS=No
+CROSS=Yes
 GRID=Yes
-BORDER=No
+BORDER=Yes
 BORDERONE=Yes
 TITLE=Yes
 RUBBER=Yes
@@ -1342,22 +674,22 @@ FIND=Yes
 REPEAT=No
 REPLACE=No
 MODEL=Yes
-CIR2CKT=No
-ATTDISP=No
+CIR2CKT=Yes
+ATTDISP=Yes
 ENABLE=Yes
 DISABLE=Yes
 ENABLE_WITH=Yes
 TOFRONT=Yes
 TOBACK=Yes
-SELNEXT=No
-PAGEADD=No
+SELNEXT=Yes
+PAGEADD=Yes
 PAGEADDTEXT=No
 ADDSECTION=No
-PAGEDEL=No
+PAGEDEL=Yes
 ZOOMIN=Yes
 ZOOMOUT=Yes
 AUTOSCALECIR=Yes
-GOTOFLAG=No
+GOTOFLAG=Yes
 UPLEVEL=Yes
 COLOR=Yes
 FONT=Yes
@@ -1388,16 +720,16 @@ TOGGLETEXT=No
 TOGGLEMODE=No
 TOLERANCE=No
 ALIGNAB=No
-ALIGNLEFT=No
-ALIGNCENTER=No
-ALIGNRIGHT=No
-ALIGNTOP=No
-ALIGNMIDDLES=No
-ALIGNBOTTOM=No
+ALIGNLEFT=Yes
+ALIGNCENTER=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNMIDDLES=Yes
+ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="TimerCircuitExternalForViewing_WAC_Rev11"
+Name="circuit1"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -1419,8 +751,9 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-Scale 3=1
-Px=676,360
+SB 3=133,0
+Scale 3=0.66666666666666663
+Px=837,242
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1484,6 +817,7 @@ Type=Text
 Print=False
 Enable=True
 Name=Models
+SB 0=72,16
 Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
 Comment Color=#008000
 WinBackGround Color=#FFFFFF
@@ -1500,7 +834,7 @@ Print=False
 Enable=True
 Name=Info
 Font=Height=-15,FStyle=0,Color=#000000,Name=Courier New
-Comment Color=#000000
+Comment Color=#008000
 WinBackGround Color=#FFFFFF
 Disabled	Color=#C0C0C0
 KeyWord Color=#0000FF
@@ -1514,10 +848,23 @@ Page=1
 [Text Area]
 Section=0
 Page=2
-Text=*** From file D:\library\UTILITY.LBR
-Text=*** 5V Square Wave
-Text=.MODEL SQUARE PUL (P1=100 P2=100.00001 P3=6000 P4=6000.0000000000001
-Text=+ P5=20000000 VONE=0 VZERO=5)
+Text=*** From file C:\Users\Cheng\Desktop\mc12cd\library\UTILITY.LBR
+Text=*** PNP Generic
+Text=.MODEL $GENERIC_P PNP (BF=190 BR=2 CJC=7p CJE=6p IKF=30m IKR=10K IS=20f
+Text=+ ISC=500p ISE=25f ITF=10m MJC=350m MJE=300m NE=1.3 RC=1 RE=700m TF=1n TR=200n
+Text=+ VAF=90 VJC=690m VJE=690m VTF=10 XTF=500m)
+Text=*** From file C:\Users\Cheng\Desktop\mc12cd\library\MSBJT.LBR
+Text=*** PNP General purpose transistor
+Text=.MODEL 2N4402 PNP (BF=153.649 BR=2.44183 CJC=18.7578p CJE=26.7118p IKF=236.084m
+Text=+ IKR=999.881 IS=10.0148f ISC=100p ISE=963.727f ITF=10.1393m MJC=521.281m
+Text=+ MJE=379.685m NE=1.64374 NF=979.328m RE=726.765m TF=832.259p TR=160.642n
+Text=+ VAF=990.7 VJC=753.282m VJE=700m VTF=10 XTF=500.012m)
+Text=*** From file C:\Users\Cheng\Desktop\mc12cd\library\MSBJT.LBR
+Text=*** PNP General purpose transistor
+Text=.MODEL 2N3906 PNP (BF=205.681 BR=1.81984 CJC=6.23478p CJE=5.991p FC=500.001m
+Text=+ IKF=90.7007m IKR=619.972 IS=9.93455f ISC=6.45794p ISE=1.00065p ITF=9.95321m
+Text=+ MJC=318.069m MJE=300m NE=1.98839 NF=1.0517 RE=855.895m TF=566.528p
+Text=+ TR=194.557n VAF=57.3667 VJC=700.104m VJE=705.438m VTF=10 XTF=500.002m)
 
 [InfoPage]
 InfoPage=True
@@ -1536,7 +883,7 @@ SimulationLog=True
 
 [Transient]
 WinID=1
-Window Placement=2,3, -1,-1, -8,-31, 0,0,846,300
+Window Placement=2,3, -1,-1, -8,-31, 26,26,1284,501
 Font=Height=-19,FStyle=0,Color=#0000FF,Name=Arial
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
@@ -1580,7 +927,7 @@ Horizontal Cursor=False
 Same Y Scales=Yes
 Enable X Scaling=True
 Enable Y Scaling=True
-Keep X Scales The Same=False
+Keep X Scales The Same=True
 Number of Grids X=5
 Number of Grids Y=5
 Cursor Select Color Primary=#C0C0C0
@@ -1589,7 +936,7 @@ Data Point Labels Color Fore=Height=-15,FStyle=0,Color=#000000,Name=Arial
 Data Point Labels Color Back=#FFFF00
 OperPoint=True
 OperPointOnly=False
-AutoScaleRanges=False
+AutoScaleRanges=True
 FixedTimeStep=False
 DoPSS=False
 PSS_Periods="1"
@@ -1601,7 +948,7 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=6
+MonMaxShow=3
 MonPageWidth=66
 MonPlotWidth=21
 MonExprXWidth=142
@@ -1659,7 +1006,7 @@ STAR=No
 LEFTBRK=No
 RIGHTBRK=No
 BOTHBRK=No
-META=No
+META=Yes
 PARALLELOGRAM=No
 POLYCLOS=No
 POLYOPEN=No
@@ -1714,7 +1061,7 @@ RESTORESCALE=No
 COLOR=Yes
 FONT=Yes
 STYLE=Yes
-SELNEXT=No
+SELNEXT=Yes
 NORMALIZE=No
 NORMALIZE_MIN=No
 NORMALIZE_MAX=No
@@ -1749,12 +1096,12 @@ TOGGLEMODE=No
 REMOVEALLTEXT=No
 AUTOSCALEX=No
 LABELALLMINOR=No
-ALIGNLEFT=No
-ALIGNCENTER=No
-ALIGNRIGHT=No
-ALIGNTOP=No
-ALIGNMIDDLES=No
-ALIGNBOTTOM=No
+ALIGNLEFT=Yes
+ALIGNCENTER=Yes
+ALIGNRIGHT=Yes
+ALIGNTOP=Yes
+ALIGNMIDDLES=Yes
+ALIGNBOTTOM=Yes
 
 [APage]
 Analysis=Transient
@@ -1771,10 +1118,10 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TMax=3600
+TMax=3000s
 TStart=0
 TStep=0
-NPts=51
+NPts=10000
 Temp=27
 RetraceRuns=1
 StateVar=Zero
@@ -1788,10 +1135,12 @@ Analysis=Transient
 Plt=1
 AliasID=1
 XExp=T
-YExp=v(V1)
-XRng=AutoAlways
-YRng=AutoAlways
+YExp=v(3)
+XRng=3000
+YRng=6.75,-0.75
 Options=LINEARX,LINEARY
+Range Grid X=600
+Range Grid Y=1.5
 Enable=Enable
 Line Color=#0000FF
 Text Color=#0000FF
@@ -1804,18 +1153,20 @@ ScaleUnitsX="Auto"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
-NOFmtX=3
-NOFmtY=3
+NOFmtX=3E
+NOFmtY=3E
 
 [WaveForm]
 Analysis=Transient
-Plt=2
+Plt=1
 AliasID=2
 XExp=T
-YExp=v(x1.out)
-XRng=AutoAlways
-YRng=AutoAlways
+YExp=v(6)
+XRng=3000
+YRng=6.75,-0.75
 Options=LINEARX,LINEARY
+Range Grid X=600
+Range Grid Y=1.5
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -1828,41 +1179,12 @@ ScaleUnitsX="Auto"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
-NOFmtX=3
-NOFmtY=3
+NOFmtX=3E
+NOFmtY=3E
 
 [WaveForm]
 Analysis=Transient
-Plt=3
-AliasID=4
-XExp=T
-YExp=v(2)
-XRng=AutoAlways
-YRng=AutoAlways
-Options=LINEARX,LINEARY
-Enable=Enable
-Line Color=#FF00FF
-Text Color=#FF00FF
-Rainbow=False
-VFmtX=3
-VFmtY=3
-ScaleFactorX="None"
-ScaleFactorY="None"
-ScaleUnitsX="Auto"
-ScaleUnitsY="Auto"
-SFmtX=2
-SFmtY=2
-NOFmtX=3
-NOFmtY=3
-
-[WaveForm]
-Analysis=Transient
-Plt=4
-AliasID=3
-XExp=T
-YExp=v(R5)
-XRng=AutoAlways
-YRng=AutoAlways
+AliasID=-1
 Options=LINEARX,LINEARY
 Enable=Enable
 Line Color=#008000
@@ -1876,56 +1198,8 @@ ScaleUnitsX="Auto"
 ScaleUnitsY="Auto"
 SFmtX=2
 SFmtY=2
-NOFmtX=3
-NOFmtY=3
-
-[WaveForm]
-Analysis=Transient
-Plt=5
-AliasID=5
-XExp=T
-YExp=v(x1.trig)
-XRng=AutoAlways
-YRng=AutoAlways
-Options=LINEARX,LINEARY
-Enable=Enable
-Line Color=#000000
-Text Color=#000000
-Rainbow=False
-VFmtX=3
-VFmtY=3
-ScaleFactorX="None"
-ScaleFactorY="None"
-ScaleUnitsX="Auto"
-ScaleUnitsY="Auto"
-SFmtX=2
-SFmtY=2
-NOFmtX=3
-NOFmtY=3
-
-[WaveForm]
-Analysis=Transient
-Plt=6
-AliasID=6
-XExp=T
-YExp=v(x1.reset)
-XRng=AutoAlways
-YRng=AutoAlways
-Options=LINEARX,LINEARY
-Enable=Enable
-Line Color=#800080
-Text Color=#800080
-Rainbow=False
-VFmtX=3
-VFmtY=3
-ScaleFactorX="None"
-ScaleFactorY="None"
-ScaleUnitsX="Auto"
-ScaleUnitsY="Auto"
-SFmtX=2
-SFmtY=2
-NOFmtX=3
-NOFmtY=3
+NOFmtX=3E
+NOFmtY=3E
 
 [Limits]
 Analysis=DynamicAC
