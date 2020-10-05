@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1536,864
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=44
+NLCnt=46
 TXCnt=0
 
 [shapedef]
@@ -38,14 +38,6 @@ Text="Trig"
 TextInfo=4,59,21,72 , -9,0,"Arial"
 Text="Thresh"
 TextInfo=4,27,33,40 , -9,0,"Arial"
-
-[shapedef]
-Name=Battery
-Line=0,0,22,0
-Line=22,-3,22,3
-Line=26,-7,26,7
-Line=26,0,48,0
-Current=32,8,16,8
 
 [shapedef]
 Name=Bjt.root
@@ -87,6 +79,11 @@ PolyLine=24,12
 PolyLine=24,8
 
 [shapedef]
+Name=Plus.root
+Line=-2,0,2,0
+Line=0,-2,0,2
+
+[shapedef]
 Name=PNP
 Root="Bjt.root",0,0,0
 PolyClosed=3
@@ -113,17 +110,19 @@ PolyLine=48,0
 PolyLine=48,0
 Current=32,8,16,8
 
-[compdef]
-Name=Battery
-Definition=Battery
-Shape=Battery
-Mask=7937
-Used=51
-memo=Battery
-Label Offset=19,7,10,13
-PinCnt=2
-Pin="Plus",6,0,-4,-5
-Pin="Minus",0,0,-10,-5
+[shapedef]
+Name=SPICE_V
+Root="Vsource.root",0,0,0
+
+[shapedef]
+Name=Vsource.root
+Line=0,0,12,0
+Line=36,0,48,0
+Ellipse=12,-12,36,12
+FColor=None
+Line=7,5,7,9
+Root="Plus.root",41,7,0
+Current=32,16,16,16
 
 [compdef]
 Name=Ground
@@ -202,8 +201,20 @@ Pin="Collector",3,-3,4,14
 Pin="Base",0,0,-18,-3
 Pin="Emitter",3,3,5,1
 
+[compdef]
+Name=Voltage Source
+Definition=VSpice
+Shape=SPICE_V
+Mask=4097
+Used=43
+memo=Voltage Source
+Label Offset=19,13,15,13
+PinCnt=2
+Pin="Plus",6,0,-5,-6
+Pin="Minus",0,0,-20,-6
+
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 182,182,1226,634
+Window Placement=2,3, -1,-1, -8,-31, 78,78,1122,530
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -230,24 +241,6 @@ Show Connection Warnings=False
 Show Cross=False
 Show Attribute Text=True
 Show Grid Text=True
-
-[Comp]
-Name=Battery
-Px=384,32
-
-[Attr]
-ON=19,7,PART
-V=V1
-Style=8192
-
-[Attr]
-ON=19,21,VALUE
-V=5v
-Style=8192
-
-[Attr]
-ON=0,0,PACKAGE
-V
 
 [Comp]
 Name=Ground
@@ -551,6 +544,59 @@ Pxs=312,192,312,240
 [Wire]
 Pxs=440,192,440,208
 
+[Wire]
+Pxs=384,32,408,32
+
+[Wire]
+Pxs=456,32,496,32
+
+[Comp]
+Name=Voltage Source
+Px=408,32
+
+[Attr]
+ON=19,13,PART
+V=V4
+Style=8192
+
+[Attr]
+ON=19,27,VALUE
+V=DC 0 AC 1 0 Pulse 0 5 100n 500n 10n 5000 1u
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Attr]
+ON=0,0,SMOOTHING
+V=N
+Style=256
+
+[Attr]
+ON=0,0,Saved_PulseS
+V=N
+Style=256
+
+[Attr]
+ON=0,0,FRACTION
+V=.2
+Style=256
+
+[Attr]
+ON=0,0,Saved_PulseF
+V=.2
+Style=256
+
+[Attr]
+ON=0,0,Saved_Pulse
+V=DC 0 AC 1 0 Pulse 0 5 100n 500n 10n 5000 1u
+Style=256
+
+[Node Offsets]
+Section=0
+;Node,Page,GridX,GridY,OffsetX,OffsetY
+Offset=6,0,784,120,16,1
+
 [Schematic]
 CurrentSection 0=0
 CurrentSection 1=0
@@ -749,7 +795,7 @@ Scale 1=1
 Scale 2=1
 SB 3=133,0
 Scale 3=0.66666666666666663
-Px=542,355
+Px=486,307
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1357,10 +1403,10 @@ AliasID=1
 XExp=T
 YExp=v(3)
 XRng=3000
-YRng=0.6,-0.9
+YRng=6.75,-0.75
 Options=LINEARX,LINEARY
 Range Grid X=600
-Range Grid Y=0.3
+Range Grid Y=1.5
 Enable=Enable
 Line Color=#0000FF
 Text Color=#0000FF
@@ -1383,10 +1429,10 @@ AliasID=2
 XExp=T
 YExp=v(6)
 XRng=3000
-YRng=0.6,-0.9
+YRng=6.75,-0.75
 Options=LINEARX,LINEARY
 Range Grid X=600
-Range Grid Y=0.3
+Range Grid Y=1.5
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
