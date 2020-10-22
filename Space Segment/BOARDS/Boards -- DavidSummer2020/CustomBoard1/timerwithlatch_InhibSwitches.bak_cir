@@ -7,8 +7,8 @@ Shape Version=11.00
 Screen=1536,864
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=63
-TXCnt=0
+NLCnt=65
+TXCnt=2
 
 [shapedef]
 Name=555Timer
@@ -140,8 +140,8 @@ FColor=None
 Name=Battery
 Definition=Battery
 Shape=Battery
-Mask=7937
-Used=51
+Mask=6145
+Used=52
 memo=Battery
 Label Offset=19,7,10,13
 PinCnt=2
@@ -230,7 +230,7 @@ Name=Switch
 Definition=Switch
 Shape=Switch
 Mask=4352
-Used=13
+Used=17
 memo=Voltage/Current/Time Controlled Switch
 Label Offset=56,10,-28,52
 PinCnt=4
@@ -268,9 +268,19 @@ Show Cross=False
 Show Attribute Text=True
 Show Grid Text=True
 
+[Object]
+Object=Rectangle
+CBorder=#000080
+Px=981,214,1109,459
+
+[Object]
+Object=Rectangle
+CBorder=#000080
+Px=169,185,398,332
+
 [Comp]
 Name=Battery
-Px=200,72
+Px=304,72
 
 [Attr]
 ON=19,7,PART
@@ -288,12 +298,12 @@ V
 
 [Comp]
 Name=Ground
-Px=48,72
+Px=24,72
 Rot=7
 
 [Comp]
 Name=Capacitor
-Px=360,208
+Px=464,376
 Rot=5
 
 [Attr]
@@ -312,7 +322,7 @@ V
 
 [Comp]
 Name=Resistor
-Px=360,328
+Px=464,496
 Rot=3
 
 [Attr]
@@ -331,15 +341,15 @@ V
 
 [Comp]
 Name=Ground
-Px=360,384
+Px=464,552
 Rot=7
 
 [Wire]
-Pxs=360,208,360,232
+Pxs=464,376,464,400
 
 [Comp]
 Name=ICM7555
-Px=504,184
+Px=608,352
 
 [Attr]
 ON=84,76,PART
@@ -355,43 +365,43 @@ ON=84,118,PACKAGE
 V=DIP8
 
 [Wire]
-Pxs=360,120,360,160
+Pxs=464,288,464,328
 
 [Wire]
-Pxs=360,120,544,120
+Pxs=464,288,648,288
 
 [Wire]
-Pxs=544,120,544,160
+Pxs=648,288,648,328
 
 [Wire]
-Pxs=544,72,544,120
+Pxs=648,232,648,288
 
 [Wire]
-Pxs=520,160,544,160
+Pxs=624,328,648,328
 
 [Wire]
-Pxs=520,160,520,176
+Pxs=624,328,624,344
 
 [Wire]
-Pxs=544,160,544,176
+Pxs=648,328,648,344
 
 [Wire]
-Pxs=600,216,680,216
+Pxs=704,384,784,384
 
 [Comp]
 Name=Ground
-Px=544,288
+Px=648,456
 Rot=7
 
 [Wire]
-Pxs=488,216,488,232
+Pxs=592,384,592,400
 
 [Wire]
-Pxs=360,328,360,384
+Pxs=464,496,464,552
 
 [Comp]
 Name=Capacitor
-Px=568,176
+Px=672,344
 Rot=5
 
 [Attr]
@@ -410,18 +420,18 @@ V
 
 [Comp]
 Name=Ground
-Px=608,112
+Px=712,280
 Rot=7
 
 [Wire]
-Pxs=568,112,608,112
+Pxs=672,280,704,280
 
 [Wire]
-Pxs=568,112,568,128
+Pxs=672,280,672,296
 
 [Comp]
 Name=PNP
-Px=808,136
+Px=912,304
 
 [Attr]
 ON=-11,-19,PART
@@ -442,7 +452,7 @@ V=TO-92
 
 [Comp]
 Name=NPN
-Px=752,272
+Px=856,440
 
 [Attr]
 ON=-9,-27,PART
@@ -462,14 +472,11 @@ ON=-75,25,PACKAGE
 V=TO-92
 
 [Wire]
-Pxs=544,72,832,72
-
-[Wire]
-Pxs=832,72,832,112
+Pxs=936,72,936,280
 
 [Comp]
 Name=Resistor
-Px=680,216
+Px=784,384
 
 [Attr]
 ON=-7,-26,PART
@@ -487,15 +494,15 @@ V
 
 [Comp]
 Name=Ground
-Px=776,296
+Px=880,464
 Rot=7
 
 [Wire]
-Pxs=776,136,808,136
+Pxs=880,304,912,304
 
 [Comp]
 Name=Resistor
-Px=776,192
+Px=880,360
 Rot=3
 
 [Attr]
@@ -513,20 +520,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=776,136,776,144
+Pxs=880,304,880,312
 
 [Wire]
-Pxs=728,216,728,224
+Pxs=832,384,832,392
 
 [Wire]
-Pxs=728,272,752,272
+Pxs=832,440,856,440
 
 [Wire]
-Pxs=776,192,776,248
+Pxs=880,360,880,416
 
 [Comp]
 Name=Resistor
-Px=832,224
+Px=936,392
 Rot=3
 
 [Attr]
@@ -544,24 +551,24 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=728,224,832,224
+Pxs=832,392,936,392
 
 [Wire]
-Pxs=728,224,728,272
+Pxs=832,392,832,440
 
 [Wire]
-Pxs=832,160,832,176
+Pxs=936,328,936,344
 
 [Wire]
-Pxs=832,176,920,176
+Pxs=936,344,1024,344
 
 [Comp]
 Name=Resistor
-Px=920,224
+Px=1024,392
 Rot=3
 
 [Attr]
-ON=15,-30,PART
+ON=16,-30,PART
 V=Rload
 Style=8192
 
@@ -576,12 +583,12 @@ V
 
 [Comp]
 Name=Ground
-Px=920,224
+Px=1024,392
 Rot=7
 
 [Comp]
 Name=Switch
-Px=528,24
+Px=264,24
 Rot=1
 
 [Attr]
@@ -599,7 +606,7 @@ V
 
 [Comp]
 Name=Switch
-Px=184,24
+Px=160,24
 Rot=1
 
 [Attr]
@@ -617,7 +624,7 @@ V
 
 [Comp]
 Name=Switch
-Px=120,24
+Px=96,24
 Rot=1
 
 [Attr]
@@ -634,89 +641,38 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=48,72,72,72
+Pxs=24,72,48,72
 
 [Wire]
-Pxs=120,72,136,72
+Pxs=96,72,112,72
 
 [Wire]
-Pxs=184,72,200,72
+Pxs=160,72,216,72
 
 [Wire]
-Pxs=528,72,544,72
+Pxs=464,400,592,400
 
 [Wire]
-Pxs=360,232,488,232
+Pxs=464,400,464,448
 
 [Wire]
-Pxs=360,232,360,280
+Pxs=592,400,592,416
 
 [Wire]
-Pxs=488,232,488,248
-
-[Comp]
-Name=Switch
-Px=448,24
-Rot=1
-
-[Attr]
-ON=-46,55,PART
-V=Roller2
-Style=8192
-
-[Attr]
-ON=0,0,VALUE
-V=1
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Comp]
-Name=Switch
-Px=376,24
-Rot=1
-
-[Attr]
-ON=-46,55,PART
-V=Roller1
-Style=8192
-
-[Attr]
-ON=0,0,VALUE
-V=1
-
-[Attr]
-ON=0,0,PACKAGE
-V
+Pxs=352,72,376,72
 
 [Wire]
-Pxs=328,72,344,72
+Pxs=376,72,376,200
 
 [Wire]
-Pxs=248,72,272,72
+Pxs=248,200,376,200
 
 [Wire]
-Pxs=376,72,400,72
-
-[Wire]
-Pxs=448,72,480,72
-
-[Wire]
-Pxs=272,72,272,200
-
-[Wire]
-Pxs=272,72,328,72
-
-[Wire]
-Pxs=144,200,272,200
-
-[Wire]
-Pxs=144,200,144,248
+Pxs=248,200,248,248
 
 [Comp]
 Name=Resistor
-Px=144,296
+Px=248,296
 Rot=3
 
 [Attr]
@@ -735,8 +691,76 @@ V
 
 [Comp]
 Name=Ground
-Px=144,296
+Px=248,296
 Rot=7
+
+[Wire]
+Pxs=264,72,304,72
+
+[Comp]
+Name=Switch
+Px=600,104
+
+[Attr]
+ON=-46,55,PART
+V=Roller2
+Style=8192
+
+[Attr]
+ON=0,0,VALUE
+V=1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Switch
+Px=600,176
+
+[Attr]
+ON=-46,55,PART
+V=Roller1
+Style=8192
+
+[Attr]
+ON=0,0,VALUE
+V=1
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Wire]
+Pxs=648,208,648,224
+
+[Wire]
+Pxs=648,152,648,176
+
+[Wire]
+Pxs=376,72,648,72
+
+[Wire]
+Pxs=648,72,648,104
+
+[Wire]
+Pxs=648,72,936,72
+
+[Grid Text]
+Text="OBC, Comms, ADCS"
+Px=984,208
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
+
+[Grid Text]
+Text="Camera x2 "
+Px=248,176
+GridSnap=True
+JustifyH=Left
+JustifyV=Bottom
+CBorder=None
 
 [Schematic]
 CurrentSection 0=0
@@ -935,7 +959,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=1
-Px=210,458
+Px=972,132
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
