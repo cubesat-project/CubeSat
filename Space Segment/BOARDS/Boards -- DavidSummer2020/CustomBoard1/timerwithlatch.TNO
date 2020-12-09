@@ -3,11 +3,11 @@
 ***                                                                          ***
 ***                                                                          ***
 ***                   Transient Analysis of timerwithlatch                   ***
-***                          2020-10-05 6:01:50 PM                           ***
+***                          2020-12-08 9:42:27 AM                           ***
 ********************************************************************************
 Limits
 ======
-Maximum Run Time           3000s
+Maximum Run Time           4000s
 Output Start Time (tstart) 0
 Maximum Time Step          0
 Number of Points           10000
@@ -33,27 +33,28 @@ Temperature=27
 DC Operating Point Voltages
 ===========================
 Node              Voltage  Node              Voltage 
-1                  0.000   2                  0.000  
-3              4.378E-024  4                  1.587n 
-5                  0.001f  6              2.759E-026 
-7                 -0.201f  8                 -0.201f 
-9              4.409E-024  X1.XOPAMP.A11      0.000  
-X1.XOPAMP.A12    518.063m  X1.XOPAMP.A13 -1.000E-100 
-X1.XOPAMP.A16   -500.000u  X1.XOPAMP.A14 -1.000E-100 
-X1.XOPAMP.A15    793.313p  X1.XOPAMP.A17      0.000  
-X1.XOPAMP.A20    192.816n  X1.XOPAMP.A21      1.000  
-X1.XOPAMP.B12    518.063m  X1.XOPAMP.B13 -1.587E-055 
-X1.XOPAMP.B16   -499.998u  X1.XOPAMP.B14 -1.000E-100 
-X1.XOPAMP.B15      0.000   X1.XOPAMP.B17      1.587n 
-X1.XOPAMP.B20    192.816n  X1.XOPAMP.B21      1.000  
-X1.XOPAMP.B22      1.587n  X1.XOPAMP.B23    793.313p 
-X1.XOPAMP.A25      0.000   X1.XOPAMP.A26 -3.401E-026 
-X1.XOPAMP.A27 -2.184E-026  X1.XOPAMP.A28      0.000  
-X1.XOPAMP.B26 -2.184E-026  X1.XOPAMP.B27 -3.401E-026 
-X1.XOPAMP.B28  1.532E-101  X1.XOPAMP.B29 -3.398E-026 
-X1.XOPAMP.B33 -2.184E-026  X1.XOPAMP.B34 -2.184E-026 
-X1.XOPAMP.B30 -1.571E-062  X1.XOPAMP.B31  4.378E-024 
-X1.XOPAMP.A36    591.662u  X1.XOPAMP.A37     -9.845f 
+1               -750.790m  2               -750.790m 
+3               -213.268m  4               -403.624m 
+5              1.000E-100  6                 -1.061m 
+7                -87.029m  8                  0.000  
+9                -87.029m  10              -107.164m 
+X1.XOPAMP.A11   -750.790m  X1.XOPAMP.A12   -232.728m 
+X1.XOPAMP.A13   -197.233m  X1.XOPAMP.A16   -751.290m 
+X1.XOPAMP.A14   -197.233m  X1.XOPAMP.A15   -346.702m 
+X1.XOPAMP.A17   -750.790m  X1.XOPAMP.A20    192.817n 
+X1.XOPAMP.A21      1.000   X1.XOPAMP.B12   -232.728m 
+X1.XOPAMP.B13   -197.233m  X1.XOPAMP.B16   -404.124m 
+X1.XOPAMP.B14   -197.233m  X1.XOPAMP.B15   -750.790m 
+X1.XOPAMP.B17   -403.624m  X1.XOPAMP.B20    192.816n 
+X1.XOPAMP.B21      1.000   X1.XOPAMP.B22   -403.624m 
+X1.XOPAMP.B23   -346.702m  X1.XOPAMP.A25   -750.790m 
+X1.XOPAMP.A26   -537.638m  X1.XOPAMP.A27   -528.264m 
+X1.XOPAMP.A28   -144.764n  X1.XOPAMP.B26   -528.264m 
+X1.XOPAMP.B27   -537.638m  X1.XOPAMP.B28   -144.765n 
+X1.XOPAMP.B29   -537.638m  X1.XOPAMP.B33   -528.264m 
+X1.XOPAMP.B34   -528.264m  X1.XOPAMP.B30   -375.395m 
+X1.XOPAMP.B31   -213.268m  X1.XOPAMP.A36     -5.375m 
+X1.XOPAMP.A37    -15.375f 
 
 
 Operating Point for Devices of Type Diode
@@ -65,20 +66,20 @@ Capacitance Terms:
 CAP                       0.000               0.000               0.000 
 
 Current Terms:
-ID                    3.147E-020         -3.147E-020             -2.000p
+ID                        5.484u            654.791n             -2.000p
 
 Resistance Terms:
-REQ                      25.212G             25.212G              1.000T
+REQ                       4.716K             39.500K              1.000T
 
 Voltage Terms:
-VD                      793.313p           -793.313p             -1.000 
+VD                      404.088m            346.702m             -1.000 
 
 Power DC Terms:
-PD                    2.496E-029          2.496E-029              2.000p
+PD                        2.216u            227.018n              2.000p
 PS                        0.000               0.000               0.000 
 
 DC Pin Currents:
-Id                    3.147E-020         -3.147E-020             -2.000p
+Id                        5.484u            654.791n             -2.000p
 
 Condition:
 State                        OFF                 OFF                 OFF
@@ -95,20 +96,20 @@ Capacitance Terms:
 CAP                       0.000               0.000               0.000 
 
 Current Terms:
-ID                      -71.839f            -19.646f             20.020f
+ID                      -71.839f            653.899n              5.491u
 
 Resistance Terms:
-REQ                     2.787MEG             25.692G             24.741G
+REQ                     2.787MEG             39.554K              4.710K
 
 Voltage Terms:
-VD                     -192.816n           -499.998u            499.998u
+VD                     -192.817n            346.667m            404.124m
 
 Power DC Terms:
-PD                    1.385E-020              0.010f              0.010f
+PD                    1.385E-020            226.685n              2.219u
 PS                        0.000               0.000               0.000 
 
 DC Pin Currents:
-Id                      -71.839f            -19.646f             20.020f
+Id                      -71.839f            653.899n              5.491u
 
 Condition:
 State                        OFF                 OFF                 OFF
@@ -125,20 +126,20 @@ Capacitance Terms:
 CAP                       0.000               0.000               0.000 
 
 Current Terms:
-ID                       -2.000p            -71.839f             -9.577f
+ID                       -2.000p            -71.839f             10.610u
 
 Resistance Terms:
-REQ                       1.000T            2.787MEG            203.053G
+REQ                       1.000T            2.787MEG             24.376 
 
 Voltage Terms:
-VD                       -1.000            -192.816n           -591.662u
+VD                       -1.000            -192.816n              5.375m
 
 Power DC Terms:
-PD                        2.000p          1.385E-020              0.006f
+PD                        2.000p          1.385E-020             57.033n
 PS                        0.000               0.000               0.000 
 
 DC Pin Currents:
-Id                       -2.000p            -71.839f             -9.577f
+Id                       -2.000p            -71.839f             10.610u
 
 Condition:
 State                        OFF                 OFF                 OFF
@@ -155,20 +156,20 @@ Capacitance Terms:
 CAP                       0.000 
 
 Current Terms:
-ID                       89.102f
+ID                      -15.375f
 
 Resistance Terms:
-REQ                       2.619G
+REQ                       1.000T
 
 Voltage Terms:
-VD                      591.662u
+VD                       -5.375m
 
 Power DC Terms:
-PD                        0.053f
+PD                        0.083f
 PS                        0.000 
 
 DC Pin Currents:
-Id                       89.102f
+Id                      -15.375f
 
 Condition:
 State                        OFF
@@ -185,43 +186,43 @@ Instance:                     Q2
 Using model:              2N3904
 
 Beta Terms:
-BETADC                   -1.001 
-BETAAC                 -300.581u
+BETADC                 -969.838m
+BETAAC                  -83.990m
 
 Capacitance Terms:
-CPI                       4.421p
-CMU                       3.664p
+CPI                       4.235p
+CMU                       3.633p
 CBX                       0.000 
 CJS                       0.000 
 
 Conductance Terms:
-GM                       -6.744f
+GM                     -170.472f
 
 Current Terms:
-IB                    4.002E-025
-IC                   -4.005E-025
+IB                      -33.202p
+IC                       32.200p
 
 Resistance Terms:
-RPI                      44.568G
+RPI                     492.694G
 RX                        0.000 
-RO                      720.801G
+RO                      849.500G
 
 Voltage Terms:
-VBE                   4.409E-024
-VBC                       0.201f
-VCE                      -0.201f
+VBE                    -107.164m
+VBC                     -20.135m
+VCE                     -87.029m
 
 Frequency Terms:
-FT                     -132.756u
+FT                       -3.448m
 
 Power DC Terms:
-PD                    8.068E-041
+PD                      755.684f
 PS                        0.000 
 
 DC Pin Currents:
-Ib                    4.002E-025
-Ic                   -4.005E-025
-Ie                    2.793E-028
+Ib                      -33.202p
+Ic                       32.200p
+Ie                        1.001p
 Is                        0.000 
 
 Condition:
@@ -240,43 +241,43 @@ Instance:                     Q1
 Using model:              2N3906
 
 Beta Terms:
-BETADC                 -866.634m
-BETAAC                 -970.104u
+BETADC                 -863.204m
+BETAAC                  -16.147m
 
 Capacitance Terms:
-CPI                       5.991p
-CMU                       6.235p
+CPI                       6.232p
+CMU                       6.500p
 CBX                       0.000 
 CJS                       0.000 
 
 Conductance Terms:
-GM                      -18.882f
+GM                       -1.707p
 
 Current Terms:
-IB                    2.996E-026
-IC                   -2.597E-026
+IB                       32.200p
+IC                      -27.796p
 
 Resistance Terms:
-RPI                      51.377G
+RPI                       9.458G
 RX                        0.000 
-RO                      722.489G
+RO                       85.860G
 
 Voltage Terms:
-VBE                      -0.201f
-VBC                      -0.201f
-VCE                   2.759E-026
+VBE                     -87.029m
+VBC                     -85.967m
+VCE                      -1.061m
 
 Frequency Terms:
-FT                     -245.805u
+FT                      -21.340m
 
 Power DC Terms:
-PD                    6.037E-042
+PD                        2.773p
 PS                        0.000 
 
 DC Pin Currents:
-Ib                   -2.996E-026
-Ic                    2.597E-026
-Ie                    3.996E-027
+Ib                      -32.200p
+Ic                       27.796p
+Ie                        4.405p
 Is                        0.000 
 
 Condition:
@@ -310,27 +311,27 @@ GDS                       0.000               0.000               0.000
 GMBS                      0.000               0.000               0.000 
 
 Current Terms:
-ID                   -2.763E-022         -2.763E-022         -4.144E-022
+ID                      -10.658u            -10.658u             -7.418u
 
 Voltage Terms:
-VGS                  -2.184E-026              0.000          -3.401E-026
-VDS                  -3.401E-026         -3.401E-026         -2.184E-026
+VGS                    -528.264m           -144.764n           -537.638m
+VDS                    -537.638m           -537.638m           -528.264m
 VBS                       0.000               0.000               0.000 
-VGB                  -2.184E-026              0.000          -3.401E-026
-VGD                   1.217E-026          3.401E-026         -1.217E-026
-VDB                  -3.401E-026         -3.401E-026         -2.184E-026
+VGB                    -528.264m           -144.764n           -537.638m
+VGD                       9.374m            537.638m             -9.374m
+VDB                    -537.638m           -537.638m           -528.264m
 VTH                     700.000m            700.000m            700.000m
 VDSAT                     0.000               0.000               0.000 
 
 Power DC Terms:
-PD                    5.504E-032          5.504E-032          1.238E-031
+PD                        5.730u              5.730u              3.918u
 PS                        0.000               0.000               0.000 
 
 DC Pin Currents:
 Ig                        0.000               0.000               0.000 
-Id                   -2.763E-022         -2.763E-022         -4.144E-022
+Id                      -10.658u            -10.658u             -7.418u
 Is                        0.000               0.000               0.000 
-Ib                    2.763E-022          2.763E-022          4.144E-022
+Ib                       10.658u             10.658u              7.418u
 
 Condition:
 State                        OFF                 OFF                 OFF
@@ -371,27 +372,27 @@ GDS                       0.000               0.000               0.000
 GMBS                      0.000               0.000               0.000 
 
 Current Terms:
-ID                   -4.144E-022         -4.144E-022         -1.000E-100
+ID                       -7.418u             -7.418u            -20.109n
 
 Voltage Terms:
-VGS                   1.532E-101         -3.398E-026         -2.184E-026
-VDS                  -2.184E-026         -2.184E-026         -1.571E-062
+VGS                    -144.765n           -537.638m           -528.264m
+VDS                    -528.264m           -528.264m           -375.395m
 VBS                       0.000               0.000               0.000 
-VGB                   1.532E-101         -3.398E-026         -2.184E-026
-VGD                   2.184E-026         -1.214E-026         -2.184E-026
-VDB                  -2.184E-026         -2.184E-026         -1.571E-062
+VGB                    -144.765n           -537.638m           -528.264m
+VGD                     528.264m             -9.374m           -152.869m
+VDB                    -528.264m           -528.264m           -375.395m
 VTH                     700.000m            700.000m              2.000 
 VDSAT                     0.000               0.000               0.000 
 
 Power DC Terms:
-PD                    1.238E-031          1.238E-031              0.000 
+PD                        3.918u              3.918u              7.549n
 PS                        0.000               0.000               0.000 
 
 DC Pin Currents:
 Ig                        0.000               0.000               0.000 
-Id                   -4.144E-022         -4.144E-022         -1.000E-100
-Is                        0.000               0.000          -1.000E-100
-Ib                    4.144E-022          4.144E-022          2.000E-100
+Id                       -7.418u             -7.418u            -20.109n
+Is                        0.000               0.000               0.000 
+Ib                        7.418u              7.418u             20.109n
 
 Condition:
 State                        OFF                 OFF                 OFF
@@ -432,27 +433,27 @@ GDS                       0.000               0.000               0.000
 GMBS                      0.000               0.000               0.000 
 
 Current Terms:
-ID                   -2.498E-019         -3.246E-023         -2.763E-022
+ID                      -38.314p         -1.000E-100            -10.658u
 
 Voltage Terms:
-VGS                  -1.571E-062         -1.571E-062              0.000 
-VDS                   4.378E-024              0.001f         -3.398E-026
+VGS                    -375.395m           -375.395m           -750.790m
+VDS                    -213.268m          1.000E-100           -537.638m
 VBS                       0.000               0.000               0.000 
-VGB                  -1.571E-062         -1.571E-062              0.000 
-VGD                  -4.378E-024             -0.001f          3.398E-026
-VDB                   4.378E-024              0.001f         -3.398E-026
+VGB                    -375.395m           -375.395m           -750.790m
+VGD                    -162.128m           -375.395m           -213.153m
+VDB                    -213.268m          1.000E-100           -537.638m
 VTH                       2.000               2.000             700.000m
 VDSAT                     0.000               0.000               0.000 
 
 Power DC Terms:
-PD                    4.499E-026          7.598E-034          5.504E-032
+PD                        8.171p              0.000               5.730u
 PS                        0.000               0.000               0.000 
 
 DC Pin Currents:
 Ig                        0.000               0.000               0.000 
-Id                   -2.498E-019         -3.246E-023         -2.763E-022
-Is                        0.000               0.000               0.000 
-Ib                    2.498E-019          3.246E-023          2.763E-022
+Id                      -38.314p         -1.000E-100            -10.658u
+Is                        0.000          -1.000E-100              0.000 
+Ib                       38.314p          2.000E-100             10.658u
 
 Condition:
 State                        OFF                 OFF                 OFF
@@ -496,27 +497,27 @@ GDS                       0.000               0.000               0.000
 GMBS                      0.000               0.000               0.000 
 
 Current Terms:
-ID                    1.000E-100          1.000E-100          1.000E-100
+ID                       19.723u             19.723u             19.723u
 
 Voltage Terms:
-VGS                    -518.563m           -518.063m           -518.563m
-VDS                    -518.063m           -518.063m           -518.063m
+VGS                    -518.563m           -113.975m           -171.396m
+VDS                      35.495m             35.495m             35.495m
 VBS                    -518.063m           -518.063m           -518.063m
-VGB                    -500.000u            793.313p           -499.998u
-VGD                    -500.000u            793.313p           -499.998u
-VDB                  -1.000E-100         -1.000E-100         -1.587E-055
+VGB                    -500.000u            404.088m            346.667m
+VGD                    -554.058m           -149.470m           -206.891m
+VDB                     553.558m            553.558m            553.558m
 VTH                    -700.000m           -700.000m           -700.000m
 VDSAT                     0.000               0.000               0.000 
 
 Power DC Terms:
-PD                        2.590u              2.590u              2.590u
+PD                       13.508u             13.508u             13.508u
 PS                        0.000               0.000               0.000 
 
 DC Pin Currents:
 Ig                        0.000               0.000               0.000 
-Id                    1.000E-100          1.000E-100          1.000E-100
+Id                       19.723u             19.723u             19.723u
 Is                        5.000u              5.000u              5.000u
-Ib                       -5.000u             -5.000u             -5.000u
+Ib                      -24.723u            -24.723u            -24.723u
 
 Condition:
 State                        OFF                 OFF                 OFF
@@ -557,27 +558,27 @@ GDS                       0.000               0.000               0.000
 GMBS                      0.000               0.000               0.000 
 
 Current Terms:
-ID                    1.000E-100          1.000E-100         -2.498E-019
+ID                       19.723u             20.109n             10.610u
 
 Voltage Terms:
-VGS                    -518.063m         -2.184E-026         -1.571E-062
-VDS                    -518.063m         -1.571E-062          4.378E-024
+VGS                    -518.063m            222.527m            375.395m
+VDS                      35.495m            375.395m            537.523m
 VBS                    -518.063m              0.000               0.000 
-VGB                       0.000          -2.184E-026         -1.571E-062
-VGD                   1.000E-100         -2.184E-026         -4.378E-024
-VDB                  -1.000E-100         -1.571E-062          4.378E-024
+VGB                      16.274p            222.527m            375.395m
+VGD                    -553.558m           -152.869m           -162.128m
+VDB                     553.558m            375.395m            537.523m
 VTH                    -700.000m             -2.000              -2.000 
 VDSAT                     0.000               0.000               0.000 
 
 Power DC Terms:
-PD                        2.590u              0.000           4.499E-026
+PD                       13.508u              7.549n              5.703u
 PS                        0.000               0.000               0.000 
 
 DC Pin Currents:
 Ig                        0.000               0.000               0.000 
-Id                    1.000E-100          1.000E-100         -2.498E-019
-Is                        5.000u          1.000E-100              0.000 
-Ib                       -5.000u         -2.000E-100          2.498E-019
+Id                       19.723u             20.109n             10.610u
+Is                        5.000u              0.000               0.000 
+Ib                      -24.723u            -20.109n            -10.610u
 
 Condition:
 State                        OFF                 OFF                 OFF
@@ -603,12 +604,12 @@ vbs                       0.000               0.000               0.000
 Operating Point for Devices of Type Resistor
 ============================================
 Instance:                      R1                  R2                  R3
-V                          0.000           3.077E-026          2.641E-024
+V                       -750.790m            106.103m            322.004n
 Power DC Terms:
-PD                         0.000           9.467E-056          6.975E-052
+PD                       281.843n              1.126u              0.010f
 
 DC Pin Currents:
-Ir                         0.000           3.077E-030          2.641E-028
+Ir                      -375.395n             10.610u             32.200p
 
 Device Variables:
 tc1                        0.000               0.000               0.000 
@@ -616,12 +617,12 @@ tc2                        0.000               0.000               0.000
 
 
 Instance:                      R4               RLOAD      X1.XOPAMP.RAD1
-V                     -4.381E-024          2.759E-026         -1.000E-100
+V                        106.103m             -1.061m           -197.233m
 Power DC Terms:
-PD                     1.919E-051          7.613E-054          1.000E-104
+PD                         1.126u             11.258n              3.890u
 
 DC Pin Currents:
-Ir                    -4.381E-028          2.759E-028         -1.000E-054
+Ir                        10.610u            -10.610u            -19.723u
 
 Device Variables:
 tc1                        0.000               0.000               0.000 
@@ -629,12 +630,12 @@ tc2                        0.000               0.000               0.000
 
 
 Instance:          X1.XOPAMP.RAD2      X1.XOPAMP.RCA1      X1.XOPAMP.RBD1
-V                     -1.000E-100            192.816n         -1.587E-055
+V                       -197.233m            192.817n           -197.233m
 Power DC Terms:
-PD                     1.000E-104          3.718E-019          1.000E-104
+PD                         3.890u          3.718E-019              3.890u
 
 DC Pin Currents:
-Ir                    -1.000E-054              1.928p         -1.000E-054
+Ir                       -19.723u              1.928p            -19.723u
 
 Device Variables:
 tc1                        0.000               0.000               0.000 
@@ -642,12 +643,12 @@ tc2                        0.000               0.000               0.000
 
 
 Instance:          X1.XOPAMP.RBD2      X1.XOPAMP.RCB1       X1.XOPAMP.RB1
-V                     -1.000E-100            192.816n             -1.587n
+V                       -197.233m            192.816n           -347.167m
 Power DC Terms:
-PD                     1.000E-104          3.718E-019          4.196E-023
+PD                         3.890u          3.718E-019              2.009u
 
 DC Pin Currents:
-Ir                    -1.000E-054              1.928p            -26.444f
+Ir                       -19.723u              1.928p             -5.786u
 
 Device Variables:
 tc1                        0.000               0.000               0.000 
@@ -655,12 +656,12 @@ tc2                        0.000               0.000               0.000
 
 
 Instance:           X1.XOPAMP.RB2       X1.XOPAMP.RB3       X1.XOPAMP.RLA
-V                        793.317p            793.313p          3.401E-026
+V                        -56.921m           -346.702m           -213.153m
 Power DC Terms:
-PD                     1.049E-023          1.049E-023          1.157E-055
+PD                        54.000n              2.003u              4.543u
 
 DC Pin Currents:
-Ir                        13.222f             13.222f          3.401E-030
+Ir                      -948.688n             -5.778u            -21.315u
 
 Device Variables:
 tc1                        0.000               0.000               0.000 
@@ -668,12 +669,12 @@ tc2                        0.000               0.000               0.000
 
 
 Instance:           X1.XOPAMP.RLB      X1.XOPAMP.RPD1      X1.XOPAMP.RRST
-V                      2.184E-026              0.000          -3.398E-026
+V                       -222.527m              0.000             213.153m
 Power DC Terms:
-PD                     4.769E-056              0.000           5.772E-056
+PD                         4.952u              0.000               2.272u
 
 DC Pin Currents:
-Ir                     2.184E-030              0.000          -1.699E-030
+Ir                       -22.253u              0.000              10.658u
 
 Device Variables:
 tc1                        0.000               0.000               0.000 
@@ -681,12 +682,12 @@ tc2                        0.000               0.000               0.000
 
 
 Instance:         X1.XOPAMP.RRSTB      X1.XOPAMP.RSUP
-V                          0.000              -9.845f
+V                       -750.790m            -15.375f
 Power DC Terms:
-PD                         0.000           9.693E-029
+PD                        11.274p          2.364E-028
 
 DC Pin Currents:
-Ir                         0.000              -9.845f
+Ir                       -15.016p            -15.375f
 
 Device Variables:
 tc1                        0.000               0.000 
@@ -696,8 +697,8 @@ tc2                        0.000               0.000
 
 Operating Point for Devices of Type Capacitor
 =============================================
-Instance:                      C1                  C3       X1.XOPAMP.CLA
-V                          0.000              -1.587n         -3.401E-026
+Instance:                      C1                  C3                  C4
+V                       -375.366f            403.624m         -1.000E-100
 Power DC Terms:
 PS                         0.000               0.000               0.000 
 
@@ -708,8 +709,8 @@ Device Variables:
 ic                         0.000               0.000               0.000 
 
 
-Instance:           X1.XOPAMP.CLB      X1.XOPAMP.CPD1       X1.XOPAMP.CO1
-V                     -2.184E-026         -2.184E-026          4.378E-024
+Instance:           X1.XOPAMP.CLA       X1.XOPAMP.CLB      X1.XOPAMP.CPD1
+V                       -537.638m           -528.264m           -528.264m
 Power DC Terms:
 PS                         0.000               0.000               0.000 
 
@@ -720,46 +721,46 @@ Device Variables:
 ic                         0.000               0.000               0.000 
 
 
-Instance:           X1.XOPAMP.CO2
-V                     -1.571E-062
+Instance:           X1.XOPAMP.CO1       X1.XOPAMP.CO2
+V                       -213.268m           -375.395m
 Power DC Terms:
-PS                         0.000 
+PS                         0.000               0.000 
 
 DC Pin Currents:
-Ic                         0.000 
+Ic                         0.000               0.000 
 
 Device Variables:
-ic                         0.000 
+ic                         0.000               0.000 
 
 
 
 Operating Point for Devices of Type SPICE Poly
 ==============================================
 Instance:          X1.XOPAMP.ES1      X1.XOPAMP.GCA1      X1.XOPAMP.GCB1
-V                         0.000            -192.816n           -192.816n
+V                      -750.790m           -192.817n           -192.816n
 Power DC Terms:
-PG                        0.000               0.000          -1.928E-037
+PG                       59.232u              0.000               0.000 
 
 DC Pin Currents:
-ISource              -5.421E-020              0.000          -1.000E-030
+ISource                  78.893u              0.000               0.000 
 
 
 Instance:          X1.XOPAMP.EL1      X1.XOPAMP.EFB1      X1.XOPAMP.EFB2
-V                         0.000               0.000           1.532E-101
+V                      -750.790m           -144.764n           -144.765n
 Power DC Terms:
-PG                        0.000               0.000               0.000 
+PG                       48.693u              0.000               0.000 
 
 DC Pin Currents:
-ISource              -2.425E-025              0.000               0.000 
+ISource                  64.856u              0.000               0.000 
 
 
 Instance:         X1.XOPAMP.EPD1      X1.XOPAMP.FSUP      X1.XOPAMP.GSUP
-V                    -2.184E-026           -591.662u              0.000 
+V                      -528.264m              5.375m           -750.790m
 Power DC Terms:
-PG                        0.000          -1.821E-033              0.000 
+PG                        0.000              57.033n            -11.544f
 
 DC Pin Currents:
-ISource                   0.000          -3.077E-030             -9.845f
+ISource                   0.000             -10.610u            -15.375f
 
 
 
@@ -771,16 +772,16 @@ Power DC Terms:
 PG                        0.000               5.181u              0.000 
 
 DC Pin Currents:
-ISource                 -12.300u             10.000u              0.000 
+ISource                  -4.405p             10.000u              0.000 
 
 
 Instance:         X1.XOPAMP.VCA1    X1.XOPAMP.IBBIAS      X1.XOPAMP.VBOS
 V                         1.000            -518.063m            500.000u
 Power DC Terms:
-PG                        2.000p              5.181u              0.020f
+PG                        2.000p              5.181u              2.419n
 
 DC Pin Currents:
-ISource                  -2.000p             10.000u            -39.666f
+ISource                  -2.000p             10.000u             -4.837u
 
 
 Instance:         X1.XOPAMP.VCB1       X1.XOPAMP.VR1       X1.XOPAMP.VR2
@@ -789,7 +790,7 @@ Power DC Terms:
 PG                        2.000p              0.000               0.000 
 
 DC Pin Currents:
-ISource                  -2.000p          6.293E-020            -39.666f
+ISource                  -2.000p              4.830u             -4.837u
 
 
 Instance:         X1.XOPAMP.VIN1      X1.XOPAMP.VIN2      X1.XOPAMP.VIN3
@@ -798,7 +799,7 @@ Power DC Terms:
 PG                        0.000               0.000               0.000 
 
 DC Pin Currents:
-ISource                   0.000               0.000          -1.578E-030
+ISource                   0.000               0.000          -8.470E-021
 
 
 Instance:         X1.XOPAMP.VFB1      X1.XOPAMP.VFB2       X1.XOPAMP.VO1
@@ -807,13 +808,13 @@ Power DC Terms:
 PG                        0.000               0.000               0.000 
 
 DC Pin Currents:
-ISource                   0.000           1.532E-151         -3.077E-030
+ISource              -8.132E-020          8.132E-020            -10.610u
 
 
 Instance:         X1.XOPAMP.ISUP
-V                         0.000 
+V                      -750.790m
 Power DC Terms:
-PG                        0.000 
+PG                        9.235u
 
 DC Pin Currents:
 ISource                  12.300u

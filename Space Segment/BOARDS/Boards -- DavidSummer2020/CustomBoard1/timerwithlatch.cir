@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1536,864
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=46
+NLCnt=50
 TXCnt=0
 
 [shapedef]
@@ -129,7 +129,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=260
+Used=264
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -140,7 +140,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7937
-Used=22
+Used=24
 memo=Capacitor
 Label Offset=16,12,12,12
 PinCnt=2
@@ -206,7 +206,7 @@ Name=Voltage Source
 Definition=VSpice
 Shape=SPICE_V
 Mask=4097
-Used=43
+Used=44
 memo=Voltage Source
 Label Offset=19,13,15,13
 PinCnt=2
@@ -320,9 +320,6 @@ Pxs=312,80,496,80
 Pxs=496,80,496,120
 
 [Wire]
-Pxs=496,32,496,80
-
-[Wire]
 Pxs=472,120,496,120
 
 [Wire]
@@ -330,9 +327,6 @@ Pxs=472,120,472,136
 
 [Wire]
 Pxs=496,120,496,136
-
-[Wire]
-Pxs=552,176,632,176
 
 [Comp]
 Name=Ground
@@ -377,7 +371,7 @@ Pxs=520,72,520,88
 
 [Comp]
 Name=PNP
-Px=760,96
+Px=832,96
 
 [Attr]
 ON=-11,-19,PART
@@ -398,7 +392,7 @@ V=TO-92
 
 [Comp]
 Name=NPN
-Px=704,232
+Px=776,232
 
 [Attr]
 ON=-9,-27,PART
@@ -418,14 +412,14 @@ ON=-75,25,PACKAGE
 V=TO-92
 
 [Wire]
-Pxs=496,32,784,32
+Pxs=456,32,496,32
 
 [Wire]
-Pxs=784,32,784,72
+Pxs=856,32,856,72
 
 [Comp]
 Name=Resistor
-Px=632,176
+Px=704,176
 
 [Attr]
 ON=-7,-26,PART
@@ -443,15 +437,15 @@ V
 
 [Comp]
 Name=Ground
-Px=728,256
+Px=800,256
 Rot=7
 
 [Wire]
-Pxs=728,96,760,96
+Pxs=800,96,832,96
 
 [Comp]
 Name=Resistor
-Px=728,152
+Px=800,152
 Rot=3
 
 [Attr]
@@ -469,20 +463,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=728,96,728,104
+Pxs=800,96,800,104
 
 [Wire]
-Pxs=680,176,680,184
+Pxs=752,176,752,184
 
 [Wire]
-Pxs=680,232,704,232
+Pxs=752,232,776,232
 
 [Wire]
-Pxs=728,152,728,208
+Pxs=800,152,800,208
 
 [Comp]
 Name=Resistor
-Px=784,184
+Px=856,184
 Rot=3
 
 [Attr]
@@ -500,20 +494,20 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=680,184,784,184
+Pxs=752,184,856,184
 
 [Wire]
-Pxs=680,184,680,232
+Pxs=752,184,752,232
 
 [Wire]
-Pxs=784,120,784,136
+Pxs=856,120,856,136
 
 [Wire]
-Pxs=784,136,872,136
+Pxs=856,136,944,136
 
 [Comp]
 Name=Resistor
-Px=872,184
+Px=944,184
 Rot=3
 
 [Attr]
@@ -532,7 +526,7 @@ V
 
 [Comp]
 Name=Ground
-Px=872,184
+Px=944,184
 Rot=7
 
 [Wire]
@@ -547,9 +541,6 @@ Pxs=440,192,440,208
 [Wire]
 Pxs=384,32,408,32
 
-[Wire]
-Pxs=456,32,496,32
-
 [Comp]
 Name=Voltage Source
 Px=408,32
@@ -561,7 +552,7 @@ Style=8192
 
 [Attr]
 ON=19,27,VALUE
-V=DC 0 AC 1 0 Pulse 0 5 100n 500n 10n 5000 1u
+V=DC 0 AC 0 0 Pulse 0 5 100n 500n 10n 2500 2000
 
 [Attr]
 ON=0,0,PACKAGE
@@ -589,13 +580,47 @@ Style=256
 
 [Attr]
 ON=0,0,Saved_Pulse
-V=DC 0 AC 1 0 Pulse 0 5 100n 500n 10n 5000 1u
+V=DC 0 AC 0 0 Pulse 0 5 100n 500n 10n 2500 2000
 Style=256
 
-[Node Offsets]
-Section=0
-;Node,Page,GridX,GridY,OffsetX,OffsetY
-Offset=6,0,784,120,16,1
+[Comp]
+Name=Capacitor
+Px=584,216
+Rot=7
+
+[Attr]
+ON=-29,12,PART
+V=C4
+Style=8192
+
+[Attr]
+ON=-48,26,CAPACITANCE
+V=0.01u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=584,264
+Rot=7
+
+[Wire]
+Pxs=552,208,584,208
+
+[Wire]
+Pxs=584,208,584,216
+
+[Wire]
+Pxs=552,176,704,176
+
+[Wire]
+Pxs=496,32,496,56
+
+[Wire]
+Pxs=496,32,856,32
 
 [Schematic]
 CurrentSection 0=0
@@ -795,7 +820,7 @@ Scale 1=1
 Scale 2=1
 SB 3=133,0
 Scale 3=0.66666666666666663
-Px=486,307
+Px=1305,199
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -989,7 +1014,7 @@ FFT_IncludeDCHarmonic=False
 FFT_AutoScale_Harmonics="10"
 PrinterAutoTile=No
 PrinterBlackBorder=No
-MonMaxShow=3
+MonMaxShow=4
 MonPageWidth=66
 MonPlotWidth=21
 MonExprXWidth=142
@@ -1384,7 +1409,7 @@ Seed=0
 
 [Limits]
 Analysis=Transient
-TMax=3000s
+TMax=4000s
 TStart=0
 TStep=0
 NPts=10000
@@ -1401,11 +1426,10 @@ Analysis=Transient
 Plt=1
 AliasID=1
 XExp=T
-YExp=v(3)
-XRng=3000
-YRng=6.75,-0.75
+YExp=v(8)
+XRng=AutoAlways
+YRng=7.5
 Options=LINEARX,LINEARY
-Range Grid X=600
 Range Grid Y=1.5
 Enable=Enable
 Line Color=#0000FF
@@ -1424,15 +1448,14 @@ NOFmtY=3E
 
 [WaveForm]
 Analysis=Transient
-Plt=1
+Plt=2
 AliasID=2
 XExp=T
 YExp=v(6)
-XRng=3000
-YRng=6.75,-0.75
+XRng=AutoAlways
+YRng=-0.001055,-0.00108
 Options=LINEARX,LINEARY
-Range Grid X=600
-Range Grid Y=1.5
+Range Grid Y=5e-6
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -1450,11 +1473,38 @@ NOFmtY=3E
 
 [WaveForm]
 Analysis=Transient
-AliasID=-1
+AliasID=3
+XExp=T
+XRng=AutoAlways
+YRng=-0.001055,-0.00108
 Options=LINEARX,LINEARY
+Range Grid Y=5e-6
 Enable=Enable
 Line Color=#008000
 Text Color=#008000
+Rainbow=False
+VFmtX=3
+VFmtY=3
+ScaleFactorX="None"
+ScaleFactorY="None"
+ScaleUnitsX="Auto"
+ScaleUnitsY="Auto"
+SFmtX=2
+SFmtY=2
+NOFmtX=3E
+NOFmtY=3E
+
+[WaveForm]
+Analysis=Transient
+AliasID=4
+XExp=T
+XRng=AutoAlways
+YRng=-0.2112,-0.2172
+Options=LINEARX,LINEARY
+Range Grid Y=0.0012
+Enable=Enable
+Line Color=#FF00FF
+Text Color=#FF00FF
 Rainbow=False
 VFmtX=3
 VFmtY=3

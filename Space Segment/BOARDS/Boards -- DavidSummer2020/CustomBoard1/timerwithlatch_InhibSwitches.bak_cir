@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1536,864
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=65
+NLCnt=74
 TXCnt=2
 
 [shapedef]
@@ -153,7 +153,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=260
+Used=262
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -164,7 +164,7 @@ Name=Capacitor
 Definition=Capacitor
 Shape=Capacitor
 Mask=7937
-Used=22
+Used=24
 memo=Capacitor
 Label Offset=16,12,12,12
 PinCnt=2
@@ -240,7 +240,7 @@ Pin="Plus Input",0,0,-28,-3
 Pin="Minus Input",0,6,-39,18
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 78,78,1122,530
+Window Placement=2,3, -1,-1, -8,-31, 0,0,1076,468
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -420,7 +420,7 @@ V
 
 [Comp]
 Name=Ground
-Px=712,280
+Px=704,280
 Rot=7
 
 [Wire]
@@ -699,7 +699,7 @@ Pxs=264,72,304,72
 
 [Comp]
 Name=Switch
-Px=600,104
+Px=688,144
 
 [Attr]
 ON=-46,55,PART
@@ -716,7 +716,7 @@ V
 
 [Comp]
 Name=Switch
-Px=600,176
+Px=544,144
 
 [Attr]
 ON=-46,55,PART
@@ -732,19 +732,64 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=648,208,648,224
-
-[Wire]
-Pxs=648,152,648,176
-
-[Wire]
 Pxs=376,72,648,72
 
 [Wire]
-Pxs=648,72,648,104
+Pxs=648,72,648,144
 
 [Wire]
 Pxs=648,72,936,72
+
+[Wire]
+Pxs=648,144,688,144
+
+[Wire]
+Pxs=688,144,736,144
+
+[Wire]
+Pxs=736,192,736,232
+
+[Wire]
+Pxs=648,232,736,232
+
+[Wire]
+Pxs=592,232,648,232
+
+[Wire]
+Pxs=592,192,592,232
+
+[Wire]
+Pxs=592,144,648,144
+
+[Comp]
+Name=Capacitor
+Px=760,424
+Rot=7
+
+[Attr]
+ON=-29,12,PART
+V=C4
+Style=8192
+
+[Attr]
+ON=-48,26,CAPACITANCE
+V=0.01u
+Style=8192
+
+[Attr]
+ON=0,0,PACKAGE
+V
+
+[Comp]
+Name=Ground
+Px=760,472
+Rot=7
+
+[Wire]
+Pxs=760,416,760,424
+
+[Wire]
+Pxs=704,416,760,416
 
 [Grid Text]
 Text="OBC, Comms, ADCS"
@@ -770,7 +815,7 @@ CurrentSection 3=0
 Splitter.xs=0
 Splitter.ys=0
 TextQuad=4099
-Scale=1
+Scale=1.3333333333333333
 GridUser=10
 ShapeGroups="Main","Euro","Polarity","Main1","Main11","Electrolytic","GroundArrow","DeMorgan"
 CalcRMS=False
@@ -958,8 +1003,8 @@ PrinterScale=1
 Scale 0=1
 Scale 1=1
 Scale 2=1
-Scale 3=1
-Px=972,132
+Scale 3=1.3333333333333333
+Px=932,304
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
