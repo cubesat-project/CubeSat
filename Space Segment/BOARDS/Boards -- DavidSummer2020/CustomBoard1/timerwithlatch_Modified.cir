@@ -181,6 +181,7 @@ Name=PNP
 Definition=PNP
 Shape=PNP
 Mask=4609
+Used=3
 memo=PNP Transistor
 Label Offset=37,-13,-8,35
 PinCnt=3
@@ -796,7 +797,7 @@ ALIGNBOTTOM=Yes
 
 [Section]
 Index=0
-Name="timerwithlatch"
+Name="timerwithlatch_Modified"
 Type=Main
 Enable=True
 CurrentPage 0=0
@@ -820,7 +821,7 @@ Scale 1=1
 Scale 2=1
 SB 3=133,0
 Scale 3=0.66666666666666663
-Px=919,113
+Px=972,83
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000

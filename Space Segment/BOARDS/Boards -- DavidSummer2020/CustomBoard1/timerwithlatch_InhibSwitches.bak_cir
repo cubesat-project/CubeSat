@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1536,864
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=74
+NLCnt=75
 TXCnt=2
 
 [shapedef]
@@ -153,7 +153,7 @@ Name=Ground
 Definition=Ground
 Shape=Ground
 Mask=1793
-Used=262
+Used=264
 memo=Ground
 Label Offset=0,0,0,0
 PinCnt=1
@@ -240,7 +240,7 @@ Pin="Plus Input",0,0,-28,-3
 Pin="Minus Input",0,6,-39,18
 
 [Circuit]
-Window Placement=2,3, -1,-1, -8,-31, 0,0,1076,468
+Window Placement=2,3, -1,-1, -8,-31, 78,78,1122,530
 Default Object=Color=#000080
 Default Object Font=Height=-15,FStyle=0,Color=#000080,Name=Arial
 Default Object Apply Border To Text=No
@@ -374,7 +374,7 @@ Pxs=464,288,648,288
 Pxs=648,288,648,328
 
 [Wire]
-Pxs=648,232,648,288
+Pxs=648,232,648,256
 
 [Wire]
 Pxs=624,328,648,328
@@ -659,13 +659,10 @@ Pxs=464,400,464,448
 Pxs=592,400,592,416
 
 [Wire]
-Pxs=352,72,376,72
+Pxs=352,72,648,72
 
 [Wire]
-Pxs=376,72,376,200
-
-[Wire]
-Pxs=248,200,376,200
+Pxs=248,200,472,200
 
 [Wire]
 Pxs=248,200,248,248
@@ -732,9 +729,6 @@ ON=0,0,PACKAGE
 V
 
 [Wire]
-Pxs=376,72,648,72
-
-[Wire]
 Pxs=648,72,648,144
 
 [Wire]
@@ -790,6 +784,15 @@ Pxs=760,416,760,424
 
 [Wire]
 Pxs=704,416,760,416
+
+[Wire]
+Pxs=472,200,472,256
+
+[Wire]
+Pxs=472,256,648,256
+
+[Wire]
+Pxs=648,256,648,288
 
 [Grid Text]
 Text="OBC, Comms, ADCS"
@@ -1004,7 +1007,7 @@ Scale 0=1
 Scale 1=1
 Scale 2=1
 Scale 3=1.3333333333333333
-Px=932,304
+Px=1575,135
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000

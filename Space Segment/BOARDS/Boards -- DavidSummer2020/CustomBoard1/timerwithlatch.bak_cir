@@ -7,7 +7,7 @@ Shape Version=11.00
 Screen=1536,864
 MCAPVersion=12.2.0.3
 Key ID=Demo
-NLCnt=53
+NLCnt=50
 TXCnt=0
 
 [shapedef]
@@ -320,9 +320,6 @@ Pxs=312,80,496,80
 Pxs=496,80,496,120
 
 [Wire]
-Pxs=496,32,496,80
-
-[Wire]
 Pxs=472,120,496,120
 
 [Wire]
@@ -586,9 +583,6 @@ ON=0,0,Saved_Pulse
 V=DC 0 AC 0 0 Pulse 0 5 100n 500n 10n 2500 2000
 Style=256
 
-[Wire]
-Pxs=496,32,856,32
-
 [Comp]
 Name=Capacitor
 Px=584,216
@@ -619,58 +613,14 @@ Pxs=552,208,584,208
 [Wire]
 Pxs=584,208,584,216
 
-[Comp]
-Name=Voltage Source
-Px=600,176
-
-[Attr]
-ON=19,13,PART
-V=V5
-Style=8192
-
-[Attr]
-ON=19,27,VALUE
-V=DC 0 AC 0 0 Pulse 0 5 2000 500n 10n 500 3000
-
-[Attr]
-ON=0,0,PACKAGE
-V
-
-[Attr]
-ON=0,0,SMOOTHING
-V=N
-Style=256
-
-[Attr]
-ON=0,0,Saved_PulseS
-V=N
-Style=256
-
-[Attr]
-ON=0,0,FRACTION
-V=.2
-Style=256
-
-[Attr]
-ON=0,0,Saved_PulseF
-V=.2
-Style=256
-
-[Attr]
-ON=0,0,Saved_Pulse
-V=DC 0 AC 0 0 Pulse 0 5 2000 500n 10n 500 3000
-Style=256
+[Wire]
+Pxs=552,176,704,176
 
 [Wire]
-Pxs=648,176,704,176
-
-[Comp]
-Name=Ground
-Px=576,176
-Rot=7
+Pxs=496,32,496,56
 
 [Wire]
-Pxs=576,176,600,176
+Pxs=496,32,856,32
 
 [Schematic]
 CurrentSection 0=0
@@ -870,7 +820,7 @@ Scale 1=1
 Scale 2=1
 SB 3=133,0
 Scale 3=0.66666666666666663
-Px=160,83
+Px=1305,199
 WinBackGround Color=#FFFFFF
 Select Color=#FF0000
 Anchor Color=#000000
@@ -1476,7 +1426,7 @@ Analysis=Transient
 Plt=1
 AliasID=1
 XExp=T
-YExp=v(1)
+YExp=v(8)
 XRng=AutoAlways
 YRng=7.5
 Options=LINEARX,LINEARY
@@ -1501,11 +1451,11 @@ Analysis=Transient
 Plt=2
 AliasID=2
 XExp=T
-YExp=v(10)
+YExp=v(6)
 XRng=AutoAlways
-YRng=7.5
+YRng=-0.001055,-0.00108
 Options=LINEARX,LINEARY
-Range Grid Y=1.5
+Range Grid Y=5e-6
 Enable=Enable
 Line Color=#FF0000
 Text Color=#FF0000
@@ -1523,14 +1473,12 @@ NOFmtY=3E
 
 [WaveForm]
 Analysis=Transient
-Plt=3
 AliasID=3
 XExp=T
-YExp=v(6)
 XRng=AutoAlways
-YRng=6.75,-0.75
+YRng=-0.001055,-0.00108
 Options=LINEARX,LINEARY
-Range Grid Y=1.5
+Range Grid Y=5e-6
 Enable=Enable
 Line Color=#008000
 Text Color=#008000
@@ -1548,14 +1496,12 @@ NOFmtY=3E
 
 [WaveForm]
 Analysis=Transient
-Plt=4
 AliasID=4
 XExp=T
-YExp=v(3)
 XRng=AutoAlways
-YRng=8,-2
+YRng=-0.2112,-0.2172
 Options=LINEARX,LINEARY
-Range Grid Y=2
+Range Grid Y=0.0012
 Enable=Enable
 Line Color=#FF00FF
 Text Color=#FF00FF

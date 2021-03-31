@@ -2,27 +2,9 @@
 ***                       Micro-Cap 12.2.0.3 (64 bit)                        ***
 ***                                                                          ***
 ***                                                                          ***
-***                   Transient Analysis of timerwithlatch                   ***
-***                          2021-03-14 6:41:37 PM                           ***
+***                       Dynamic DC of timerwithlatch                       ***
+***                          2021-03-14 6:41:20 PM                           ***
 ********************************************************************************
-Limits
-======
-Maximum Run Time           4000s
-Output Start Time (tstart) 0
-Maximum Time Step          0
-Number of Points           10000
-Temperature                Linear 27
-Retrace Runs               1
-Run Options                Normal
-State Variables            Zero
-Operating Point            On
-Operating Point Only       Off
-Auto Scale Ranges          On
-Accumulate Plots           Off
-Fixed Time Step            Off
-Periodic Steady State      Off
-Ignore Expression Errors   Off
-
 
 *****************************************************
 ***                Temperature=27                 ***
